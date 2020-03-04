@@ -1,0 +1,29 @@
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% if page.title %}
+    <title>{{ page.title }}</title>
+    <meta name="title" content="{{ page.title }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+{% else %}
+    <title>{{ site.name }} – {{ site.description }}</title>
+    <meta name="title" content="{{ site.name }} – {{ site.description }}" />
+    <meta property="og:title" content="{{ site.name }} – {{ site.description }}" />
+{% endif %}
+
+{% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt | strip_html }}" />
+    <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
+{% else %}
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.description }}" />
+{% endif %}
+
+    <meta name="author" content="{{ site.author }}" />
+
+    <link rel="shortcut icon" href="{{ site.baseurl }}/{{ site.favicon }}" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/media-icons.css" />
+  </head>

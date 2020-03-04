@@ -1,0 +1,41 @@
+---
+---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="{{ '' | relative_url }}/">
+          <img class="ba br3 b--black-10
+                      h3 w3"
+               alt="Back to home"
+               src="{{ site.avatar | relative_url }}" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">{{ site.name }}</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">{{ site.description }}</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="{{ '' | relative_url }}/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+{% if site.media.github %}
+        <a href="https://github.com/{{ site.media.github }}"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+{% endif %}
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center pv4 ph2
+                 bt b--light-gray
+                 lh-copy markdown">
+{{ content }}
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+{% include media-icons.html %}
+    </footer>
+  </body>
+</html>
