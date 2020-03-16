@@ -32,7 +32,7 @@ jobs:
     # Install all dependencies required to generate a wide range of resources
     # we import from external repositories.
     #
-    - name: System Setup
+    - name: Install Dependencies
       run: |
         sudo apt-get update
         sudo apt-get -y install \
@@ -40,6 +40,10 @@ jobs:
           perl \
           python3-docutils \
           python3-setuptools
+    - name: Configure GIT
+      run: |
+        git config --global user.name "Automation"
+        git config --global user.email "automation@osbuild.org"
 
     #
     # Configuration Variables
@@ -134,8 +138,5 @@ jobs:
       working-directory: webpages
       run: |
         git add --all .
-        git commit \
-          --author="Automation <automation@osbuild.org>" \
-          -m "Import external resources" \
-          || echo "Nothing changed."
+        git commit -m "Import external resources" || echo "Nothing changed."
         git push
