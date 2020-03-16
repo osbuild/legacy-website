@@ -38,7 +38,8 @@ jobs:
         sudo apt-get -y install \
           groff \
           perl \
-          python3-docutils
+          python3-docutils \
+          python3-setuptools
 
     #
     # Configuration Variables
@@ -112,6 +113,7 @@ jobs:
       run: |
         make man -f osbuild/Makefile SRCDIR=osbuild BUILDDIR=build
         for MAN in build/docs/* ; do
+          echo "Generating: ${MAN}.html"
           cat "${MAN}" | \
             groff -mandoc -Txhtml -P -r -P -l | \
             perl -0777 -pe 's|^.*?<body>(.*)</body>.*?$|---\n---\n\1|s' \
@@ -120,7 +122,7 @@ jobs:
     - name: Import Manpages
       run: |
         mkdir -p "webpages/man/"
-        cp -t "webpages/man/" "build/docs/*.html"
+        cp -t "webpages/man/" build/docs/*.html
 
     #
     # Deploy Imported Resources
