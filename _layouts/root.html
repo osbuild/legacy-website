@@ -20,6 +20,10 @@
       <nav class="lh-copy">
         <a href="{{ '' | relative_url }}/"
            class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="{{ 'news' | relative_url }}/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="{{ 'documentation' | relative_url }}/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
 {% if site.media.github %}
         <a href="https://github.com/{{ site.media.github }}"
            class="mh2 link blue hover-mid-gray">@GitHub</a>
@@ -28,7 +32,7 @@
     </header>
 
     <main class="mw7 overflow-hidden
-                 center pv4 ph2
+                 center
                  bt b--light-gray
                  lh-copy markdown">
 {{ content }}

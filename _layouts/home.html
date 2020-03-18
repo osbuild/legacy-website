@@ -1,0 +1,24 @@
+---
+layout: root
+---
+{%- include global.html -%}
+
+{% if global_news_by_rdate.size >= 2 %}
+{% assign news0 = global_news_by_rdate[0] %}
+{% assign news1 = global_news_by_rdate[1] %}
+<section class="pv2 ph5
+                bb b--light-gray">
+  <article class="tj">
+    <span class="b">News #0:</span>
+    <a href="{{ news0.url | relative_url }}">{{ news0.caption }}</a>
+  </article>
+  <article class="tj">
+    <span class="b">News #1:</span>
+    <a href="{{ news1.url | relative_url }}">{{ news1.caption }}</a>
+  </article>
+</section>
+{% endif %}
+
+<article class="pv4 ph2">
+{{ content }}
+</article>

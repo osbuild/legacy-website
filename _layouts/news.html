@@ -1,0 +1,16 @@
+---
+layout: root
+---
+<article class="pv4 ph2">
+  <h1>{{ page.caption }}</h1>
+  <section>
+{{ content }}
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+{% if page.author.size > 0 %}
+    by {{ page.author }},
+{% endif %}
+    on {{ page.date | date: "%B %e, %Y" }}.
+  </section>
+</article>

@@ -1,0 +1,30 @@
+---
+permalink: /news
+---
+{%- include global.html -%}
+
+{% assign news_limit = 16 %}
+
+{% for news in global_news_by_rdate limit:news_limit %}
+<article class="tj">
+  <h1><a href="{{ news.url | relative_url }}">{{ news.caption }}</a></h1>
+  <section>
+{{ news.excerpt }}
+  </section>
+  <a href="{{ news.url | relative_url }}">Read More</a>
+</article>
+{% endfor %}
+
+{% if global_news_by_rdate.size > news_limit %}
+<section class="mv3 pv3
+                bt b--light-gray">
+  <span class="b">Older entries:</span>
+  <ul>
+{% for news in global_news_by_rdate offset:news_limit %}
+    <li class="tj">
+      <a href="{{ news.url | relative_url }}">{{ news.caption }}</a>
+    </li>
+{% endfor %}
+  </ul>
+</section>
+{% endif %}

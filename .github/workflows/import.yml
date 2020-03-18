@@ -108,7 +108,7 @@ jobs:
     #
     # Import Manpages
     #
-    # Build all man-pages and make them available in a combined `man/`
+    # Build all man-pages and make them available in a combined
     # directory. We use `groff` to convert man-pages to XHTML and then strip
     # everything but the body via `perl -e`, while appending an empty front
     # matter.
@@ -125,8 +125,8 @@ jobs:
         done
     - name: Import Manpages
       run: |
-        mkdir -p "webpages/man/"
-        cp -t "webpages/man/" build/docs/*.html
+        mkdir -p "webpages/_collections/_manpages/"
+        cp -t "webpages/_collections/_manpages/" build/docs/*.html
 
     #
     # Deploy Imported Resources

@@ -1,0 +1,4 @@
+{%- assign global__news = site.news | where_exp: "post", "post.hidden != true" -%}
+{%- assign global_news_by_rdate = global__news | sort: "date" | reverse -%}
+
+{%- assign global_manpages = site.manpages | sort: "path" -%}

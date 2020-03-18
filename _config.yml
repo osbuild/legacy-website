@@ -13,6 +13,13 @@ url: "https://www.osbuild.org"
 media:
   github: "osbuild"
 
+# Define collections of sub-pages
+collections:
+  news:
+    output: true
+  manpages:
+    output: true
+
 # Define default layouts for each page type
 defaults:
   - scope:
@@ -20,6 +27,18 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+  - scope:
+      path: "_collections/_manpages"
+    values:
+      layout: "page"
+      permalink: "/man/:title"
+  - scope:
+      path: "_collections/_news"
+    values:
+      layout: "news"
+
+# Keep all collections together to avoid naming conflicts
+collections_dir: "_collections"
 
 #
 # External plugins:
