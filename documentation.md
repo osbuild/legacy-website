@@ -1,5 +1,5 @@
 ---
-permalink: /documentation
+permalink: /documentation/
 ---
 {%- include global.html -%}
 
