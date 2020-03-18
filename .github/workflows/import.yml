@@ -103,7 +103,9 @@ jobs:
     # available in a combined `schemas/` directory.
     #
     - name: Import Schemas
-      run: cp -rt "webpages/" "osbuild/schemas"
+      run: |
+        rm -rf "webpages/schemas"
+        cp -rt "webpages/" "osbuild/schemas"
 
     #
     # Import Manpages
@@ -125,6 +127,7 @@ jobs:
         done
     - name: Import Manpages
       run: |
+        rm -rf "webpages/_collections/_manpages"
         mkdir -p "webpages/_collections/_manpages/"
         cp -t "webpages/_collections/_manpages/" build/docs/*.html
 
