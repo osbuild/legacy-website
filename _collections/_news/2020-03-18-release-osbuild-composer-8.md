@@ -2,8 +2,8 @@
 caption: "Release of osbuild-composer 8"
 author: "David Rheinsberg"
 ---
-We are happy to announce version 8 of *osbuild*, again one of our regular
-biweekly releases.
+We are happy to announce version 8 of *osbuild-composer*, again one of our
+regular biweekly releases.
 
 The biggest change is that we now use the `org.osbuild.rpm`
 stages, rather than `org.osbuild.dnf`. This makes the dependency resolution of
