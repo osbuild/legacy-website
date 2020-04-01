@@ -2,7 +2,7 @@
 caption: "Release of osbuild 11"
 author: "Lars Karlitski"
 ---
-We are happy to announce version 10 of *osbuild*, again one of our regular
+We are happy to announce version 11 of *osbuild*, again one of our regular
 biweekly releases. Most of our efforts were again spent on general cleanups and
 minor documentation improvements. No big reworks or feature announcements this
 time.
