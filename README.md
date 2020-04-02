@@ -26,6 +26,12 @@ To build the website from its sources, use:
 jekyll build
 ```
 
+To try it out locally, use:
+
+```sh
+jekyll serve
+```
+
 ### Repository:
 
  - **web**:   <https://github.com/osbuild/osbuild.github.io>
