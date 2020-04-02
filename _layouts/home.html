@@ -9,11 +9,11 @@ layout: root
 <section class="pv2 ph5
                 bb b--light-gray">
   <article class="tj">
-    <span class="b">News #0:</span>
+    <span class="gray">{{ news0.date | date: "%B %e, %Y" }}</span>
     <a href="{{ news0.url | relative_url }}">{{ news0.caption }}</a>
   </article>
   <article class="tj">
-    <span class="b">News #1:</span>
+    <span class="gray">{{ news1.date | date: "%B %e, %Y" }}</span>
     <a href="{{ news1.url | relative_url }}">{{ news1.caption }}</a>
   </article>
 </section>
