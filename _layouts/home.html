@@ -3,21 +3,15 @@ layout: root
 ---
 {%- include global.html -%}
 
-{% if global_news_by_rdate.size >= 2 %}
-{% assign news0 = global_news_by_rdate[0] %}
-{% assign news1 = global_news_by_rdate[1] %}
 <section class="pv2 ph5
                 bb b--light-gray">
+  {% for news in global_news_by_rdate limit:2 %}
   <article class="tj">
-    <span class="gray">{{ news0.date | date: "%B %e, %Y" }}</span>
-    <a href="{{ news0.url | relative_url }}">{{ news0.caption }}</a>
+    <span class="gray">{{ news.date | date: "%B %e, %Y" }}</span>
+    <a href="{{ news.url | relative_url }}">{{ news.caption }}</a>
   </article>
-  <article class="tj">
-    <span class="gray">{{ news1.date | date: "%B %e, %Y" }}</span>
-    <a href="{{ news1.url | relative_url }}">{{ news1.caption }}</a>
-  </article>
+  {% endfor %}
 </section>
-{% endif %}
 
 <article class="pv4 ph2">
 {{ content }}
