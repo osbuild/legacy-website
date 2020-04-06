@@ -24,6 +24,13 @@ respective user interface is the best source of help. Furthermore, the
 documentation of _OSBuild Composer_ (see below) will provide insights into the
 internals of the image building tools.
 
+* **Development**: [@GitHub](https://github.com/weldr/cockpit-composer)
+
+* **Packages**: The _Image Builder_ project is pre-packaged for the
+  following distributions:
+
+  * **Fedora**: [rpms/cockpit-composer](https://src.fedoraproject.org/rpms/cockpit-composer)
+
 ## Composer
 
 _OSBuild Composer_ is a project providing system services to build operating
