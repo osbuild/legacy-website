@@ -12,6 +12,7 @@ url: "https://www.osbuild.org"
 # Media handles used to autogenerate external links
 media:
   github: "osbuild"
+  rss: "feed.xml"
 
 # Define collections of sub-pages
 collections:
