@@ -1,6 +1,7 @@
 ---
 caption: "Release of osbuild-composer 8"
 author: "David Rheinsberg"
+categories: [fedoraplanet]
 ---
 We are happy to announce version 8 of *osbuild-composer*, again one of our
 regular biweekly releases.

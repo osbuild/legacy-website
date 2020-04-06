@@ -1,6 +1,7 @@
 ---
 caption: "Release of osbuild-composer 9"
 author: "Lars Karlitski"
+categories: [fedoraplanet]
 ---
 We are happy to announce version 9 of *osbuild-composer*, again one of our
 regular biweekly releases.
