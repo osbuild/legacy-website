@@ -1,6 +1,7 @@
 ---
 caption: "Release of osbuild 11"
 author: "Lars Karlitski"
+categories: [fedoraplanet]
 ---
 We are happy to announce version 11 of *osbuild*, again one of our regular
 biweekly releases. Most of our efforts were again spent on general cleanups and

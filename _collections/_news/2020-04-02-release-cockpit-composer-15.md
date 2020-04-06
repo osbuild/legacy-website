@@ -1,6 +1,7 @@
 ---
 caption: "Release of cockpit-composer 15"
 author: "Jacob Kozol"
+categories: [fedoraplanet]
 ---
 We are happy to announce version 15 of *cockpit-composer*. Most of the work was 
 spent migrating the backend from *lorax-composer* to *osbuild-composer*. There 

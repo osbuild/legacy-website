@@ -1,6 +1,7 @@
 ---
 caption: "Release of osbuild 10"
 author: "David Rheinsberg"
+categories: [fedoraplanet]
 ---
 We are happy to announce version 10 of *osbuild*, again one of our regular
 biweekly releases. Most of our efforts were spent on general cleanups and minor
