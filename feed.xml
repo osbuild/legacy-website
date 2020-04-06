@@ -1,0 +1,17 @@
+---
+layout: feed
+---
+{%- include global.html -%}
+{% for entry in global_news_by_rdate limit: 1024 %}
+<entry>
+  <title>{{ entry.caption | xml_escape }}</title>
+  <id>{{ entry.id | absolute_url | xml_escape }}</id>
+  <published>{{ entry.date | date_to_xmlschema }}</published>
+  <updated>{{ entry.last_modified_at | default: entry.date | date_to_xmlschema }}</updated>
+  <author><name>{{ site.author | xml_escape }}</name></author>
+  <link href="{{ entry.url | absolute_url }}" rel="alternate" type="text/html" title="{{ entry.caption | xml_escape }}" />
+
+  <summary type="html">{{ entry.excerpt | strip | xml_escape }}</summary>
+  <content type="html" xml:base="{{ entry.url | absolute_url | xml_escape }}">{{ entry.content | strip | xml_escape }}</content>
+</entry>
+{% endfor %}
