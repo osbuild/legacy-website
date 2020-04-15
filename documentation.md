@@ -24,7 +24,7 @@ respective user interface is the best source of help. Furthermore, the
 documentation of _OSBuild Composer_ (see below) will provide insights into the
 internals of the image building tools.
 
-* **Development**: [@GitHub](https://github.com/weldr/cockpit-composer)
+* **Development**: [@GitHub](https://github.com/osbuild/cockpit-composer)
 
 * **Packages**: The _Image Builder_ project is pre-packaged for the
   following distributions:
