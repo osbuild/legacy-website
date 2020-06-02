@@ -18,7 +18,8 @@ providing a complete solution yet, so let me walk you through it.
 # Prerequisites
 
 The naming of *Image Builder* and its various parts need
-[some introduction](../documentation/) before they make sense. So I'll
+[some introduction]({% link documentation.md %})
+before they make sense. So I'll
 list the actual package names you need for a complete working *Image Builder*
 setup. We'll also use `podman` later on:
 
@@ -50,25 +51,25 @@ Use a web browser, to connect your machine on port 9090, and log in with
 your usual Linux user name and password. Make sure your Linux user is an
 administrative account on the local machine. Then click on *Image Builder* in the menu:
 
-![Image Builder empty screen](howto-ostree-anaconda-empty.png)
+![Image Builder empty screen]({% link images/pages/2020-06-01-how-to-ostree-anaconda/empty.png %})
 
 Click the *Create Blueprint* button to make a new blueprint and give it
 a simple name. In the instructions below we use `iot` so for simplicity
 just stick with that here:
 
-![Image Builder Create Blueprint](howto-ostree-anaconda-create-blueprint.png)
+![Image Builder Create Blueprint]({% link images/pages/2020-06-01-how-to-ostree-anaconda/create-blueprint.png %})
 
 You don't need to add any additional software to the blueprint to get a bootable
 system. Click the *Create Image* button, and choose *Fedora IoT Commit* as
 the image *Type*:
 
-![Image Builder Create Image](howto-ostree-anaconda-create-image.png)
+![Image Builder Create Image]({% link images/pages/2020-06-01-how-to-ostree-anaconda/create-image.png %})
 
 Once you click *Create* the image build will start, and take several minutes
 to complete. You won't see any progress information or logs until its done,
 so just be patient:
 
-![Image Builder in progress](howto-ostree-anaconda-queue-progress.png)
+![Image Builder in progress]({% link images/pages/2020-06-01-how-to-ostree-anaconda/queue-progress.png %})
 
 Once the image build is done, choose the option to *Download* the image which
 is hidden in the kebab menu next to the *Logs* button. You'll get a tarball
@@ -77,7 +78,7 @@ which contains the OSTree commit that was just created. Save that file
 to a local directory and we'll place a few additional files next to it
 in later steps.
 
-![Image Builder download](howto-ostree-anaconda-download.png)
+![Image Builder download]({% link images/pages/2020-06-01-how-to-ostree-anaconda/download.png %})
 
 # Create the OSTree in Image Builder command line
 
@@ -195,7 +196,7 @@ cover here.
 At the initial screen that the Installer ISO displays, you'll see a line
 something like *Install Fedora 32*:
 
-![Anaconda boot menu](howto-ostree-anaconda-bootmenu.png)
+![Anaconda boot menu]({% link images/pages/2020-06-01-how-to-ostree-anaconda/bootmenu.png %})
 
 Before the time out, use the arrow keys to select that line, and press
 the TAB key. You'll see a line of kernel command line options appear below.
@@ -208,14 +209,14 @@ use the IP address you discovered earlier:
 
     inst.ks=http://192.168.11.5:8000/ostree.ks
 
-![Anaconda kernel command line](howto-ostree-anaconda-kernel-commandline.png)
+![Anaconda kernel command line]({% link images/pages/2020-06-01-how-to-ostree-anaconda/kernel-commandline.png %})
 
 After you press ENTER, the installer should start. If things are working the
 GUI should display but proceed automatically to the installation stage. You'll
 see text about the system being installed from the OSTree repo, and how it's
 pulling various objects.
 
-![Anaconda kernel installing](howto-ostree-anaconda-installing.png)
+![Anaconda kernel installing]({% link images/pages/2020-06-01-how-to-ostree-anaconda/installing.png %})
 
 Once the system is installed, it'll reboot automatically. To log into your
 newly minted system use the login `core` and the password `foobar`
