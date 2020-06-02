@@ -3,7 +3,7 @@ caption: "How to: Image Builder + OSTree + Anaconda"
 author: "Stef Walter"
 categories: [fedoraplanet]
 ---
-In version 15, *Image Builder* gained support for creating 
+In version 15, *Image Builder* gained support for creating
 [OSTree](https://ostree.readthedocs.io/en/latest/) commits.
 You can install a Linux system using those OSTree commits by using
 the [Anaconda Installer](https://fedoraproject.org/wiki/Anaconda)
@@ -16,8 +16,8 @@ providing a complete solution yet, so let me walk you through it.
 
 # Prerequisites
 
-The naming of *Image Builder* and it's various parts need
-[some introduction](../documentation/) before they make sense. So I'll give
+The naming of *Image Builder* and its various parts need
+[some introduction](../documentation/) before they make sense. So I'll
 list the actual package names you need for a complete working *Image Builder*
 setup. We'll also use `podman` later on:
 
@@ -70,7 +70,7 @@ so just be patient:
 ![Image Builder in progress](howto-ostree-anaconda-queue-progress.png)
 
 Once the image build is done, choose the option to *Download* the image which
-is hidden in the kebab menu next to *Logs* button. You'll get a tarball
+is hidden in the kebab menu next to the *Logs* button. You'll get a tarball
 named something like `8e8014f8-4d15-441a-a26d-9ed7fc89e23a-commit.tar`
 which contains the OSTree commit that was just created. Save that file
 to a local directory and we'll place a few additional files next to it
@@ -219,4 +219,3 @@ pulling various objects.
 Once the system is installed, it'll reboot automatically. To log into your
 newly minted system use the login `core` and the password `foobar`
 that you saw in the `ostree.ks` file.
-
