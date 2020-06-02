@@ -1,6 +1,7 @@
 ---
 caption: "How to: Image Builder + OSTree + Anaconda"
 author: "Stef Walter"
+guestpost: true
 categories: [fedoraplanet]
 ---
 In version 15, *Image Builder* gained support for creating
