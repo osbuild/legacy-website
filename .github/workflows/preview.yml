@@ -1,0 +1,107 @@
+#
+# Preview Branch
+#
+# This workflow triggers on any pushes to this repository and then runs jekyll
+# on this ref (branches or tags). The result is then pushed to the `preview`
+# branch in a subdirectory named after the ref:
+#
+#     ./preview/refs/{heads,tags}/{name}
+#
+# This allows inspecting the rendered results and checking how each file was
+# converted. Furthermore, if the `preview` branch is viewed via GitHub-Pages,
+# the individual previews can even be inspected via the browser. The BaseUrl
+# is adjusted according to the way gh-pages works.
+#
+
+name: "Preview for GitHub Pages"
+
+on:
+  push:
+    branches-ignore:
+    - preview
+
+jobs:
+  preview:
+    name: "Build jekyll pages"
+    runs-on: ubuntu-latest
+
+    steps:
+    #
+    # System setup
+    #
+    # Install jekyll dependencies and configure git parameters so we can push
+    # to git repositories.
+    #
+    - name: "Configure git"
+      run: |
+        git config --global user.name "Automation"
+        git config --global user.email "automation@osbuild.org"
+    - name: "Pull build environment"
+      run: docker pull jekyll/jekyll:stable
+
+    #
+    # Configure Base-URL
+    #
+    # GitHub-Pages serves pages on an URL depending on the user/org and the
+    # repository name. We check here whether our repository is the primary
+    # pages-repository of a user. Accordingly, we set the baseurl with or
+    # without the repo-prefix.
+    #
+    - name: "Configure base-url"
+      run: |
+        USER=$(echo "${GITHUB_REPOSITORY}" | sed -e 's|/[^/]*$||')
+        REPO=$(echo "${GITHUB_REPOSITORY}" | sed -e 's|^[^/]*/||')
+        if [[ "${REPO}" = "${USER}.github.io" ]] ; then
+          BASEURL=""
+        else
+          BASEURL="/${REPO}"
+        fi
+        echo "Base-url: ${BASEURL}"
+        echo "::set-env name=BASEURL::${BASEURL}"
+
+    #
+    # Build pages
+    #
+    # Clone the source branch as well as the `preview` branch. Build the
+    # jekyll pages and store them in a subdirectory of the `preview` branch.
+    #
+    - name: "Clone local repository"
+      uses: actions/checkout@v2
+      with:
+        path: src
+    - name: "Clone target repository"
+      uses: actions/checkout@v2
+      with:
+        path: dst
+        ref: preview
+    - name: "Build pages"
+      run: |
+        docker run \
+          --env "JEKYLL_UID=$(id -u)" \
+          --env "JEKYLL_GID=$(id -u)" \
+          --rm \
+          --volume "${PWD}/src:/srv/jekyll" \
+          --volume "${PWD}/dst:/srv/dst" \
+          "jekyll/jekyll:stable" \
+          jekyll \
+            build \
+              --source "/srv/jekyll/" \
+              --destination "/srv/dst/preview/${GITHUB_REF}" \
+              --baseurl "${BASEURL}/preview/${GITHUB_REF}"
+
+    #
+    # Push preview
+    #
+    # This pushes the preview branch out. Note that pushing can fail if another
+    # workflow raced this one (i.e., non-fast-forward pushes fail). Since this
+    # is a non-critical path, we simply fail. You can easily re-run the
+    # workflow to give it another go.
+    #
+    - name: "Push preview branch"
+      working-directory: dst
+      run: |
+        git add --all .
+        git commit -m "Render preview" || echo "Nothing changed."
+        echo "Pushing new preview..."
+        echo "(if this fails due to conflicts, you should rerun this workflow)"
+        git push
