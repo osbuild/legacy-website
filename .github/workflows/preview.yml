@@ -72,8 +72,15 @@ jobs:
     - name: "Clone target repository"
       uses: actions/checkout@v2
       with:
+        fetch-depth: 0
         path: dst
-        ref: preview
+    - name: "Prepare target branch"
+      working-directory: dst
+      run: |
+        if ! git checkout -b preview --track origin/preview ; then
+          git checkout --orphan preview
+          git rm -rf .
+        fi
     - name: "Build pages"
       run: |
         docker run \
@@ -104,4 +111,4 @@ jobs:
         git commit -m "Render preview" || echo "Nothing changed."
         echo "Pushing new preview..."
         echo "(if this fails due to conflicts, you should rerun this workflow)"
-        git push
+        git push origin preview:preview
