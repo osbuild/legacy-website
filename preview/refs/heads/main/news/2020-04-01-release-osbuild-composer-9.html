@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 9</title>
+    <meta name="title" content="Release Osbuild Composer 9" />
+    <meta property="og:title" content="Release Osbuild Composer 9" />
+
+
+
+    <meta name="description" content="We are happy to announce version 9 of osbuild-composer, again one of our
+regular biweekly releases.
+" />
+    <meta property="og:description" content="We are happy to announce version 9 of osbuild-composer, again one of our
+regular biweekly releases.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 9</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 9 of <em>osbuild-composer</em>, again one of our
+regular biweekly releases.</p>
+
+<p>The most visible changes are that we’re building up-to-date Fedora images now
+by including the <em>updates</em> repositories and that we’re releasing into Fedora 32
+and 33 under a new—less confusing—package name: <em>osbuild-composer</em>.</p>
+
+<p>Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!</p>
+
+<hr />
+
+<h2 id="changes-with-9">CHANGES WITH 9:</h2>
+
+<ul>
+  <li>
+    <p>Fedora is now build with updates and modules repositories enabled, therefore
+up-to-date images are now produced.</p>
+  </li>
+  <li>
+    <p>A new man-page <code class="language-plaintext highlighter-rouge">osbuild-composer(7)</code> with high-level description of the
+project is now available. It can be built by the new man target in the
+Makfile.</p>
+  </li>
+  <li>
+    <p>All Fedora images have now a generic initramfs. This should make the images
+more reproducible and less likely failing to boot if the image build was done
+in a less usual environment.</p>
+  </li>
+  <li>
+    <p>Metalink is now used to access the Fedora repositories. This change should
+hopefully lead to more stable builds.</p>
+  </li>
+  <li>
+    <p>Composer is now released to Fedora 32 and 33 in a new osbuild-composer
+package. The old golang-github-osbuild-composer package will be automatically
+upgraded to the new one.</p>
+  </li>
+  <li>
+    <p>The internal osbuild-pipeline command now has a more user-friendly interface.</p>
+  </li>
+  <li>
+    <p>The RCM API (in development, experimental) is reworked to allow any
+distribution-architecture-image type combination.</p>
+  </li>
+  <li>
+    <p>The work on a high-level description of image types began.  See image-types
+directory.</p>
+  </li>
+  <li>
+    <p>The osbuild-worker arguments are reworked, they are now much more flexible.</p>
+  </li>
+  <li>
+    <p>The image-info tool used in the integration tests can be now run on Fedora
+32.</p>
+  </li>
+  <li>
+    <p>The unit test coverage is now much bigger, thanks to all contributors!</p>
+  </li>
+  <li>
+    <p>Internal distribution representation is significantly reworked, this
+simplifies the process of adding the support for all currently missing
+architectures.</p>
+  </li>
+  <li>
+    <p>Integration tests were also improved, the image tests are fully switched to
+the new Go implementation and an automatic way of generating test cases is
+added. The weldr API coverage is also much better. Several bugs in it were
+fixed in the process.</p>
+  </li>
+  <li>
+    <p>Codecov.io is now used to monitor the test coverage of the code.</p>
+  </li>
+  <li>
+    <p>As always, minor fixes and improvements all over the place.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Alexander Todorov, Brian C. Lane, David Rheinsberg, Jacob
+Kozol, Jakub Rusz, Jiri Kortus, Lars Karlitski, Martin Sehnoutka, Ondřej Budai,
+Tom Gundersen</p>
+
+<p>– Liberec, 2020-04-01</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on April  1, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

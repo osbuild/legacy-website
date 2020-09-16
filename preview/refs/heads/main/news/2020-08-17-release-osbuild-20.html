@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 20</title>
+    <meta name="title" content="Release Osbuild 20" />
+    <meta property="og:title" content="Release Osbuild 20" />
+
+
+
+    <meta name="description" content="We are happy to announce version 20 of osbuild. This time with a big set
+of new features, including support for btrfs assemblers, as well as reworked
+and improved progress output on the terminal. As usual, a round of bugfixes is
+included as well.
+" />
+    <meta property="og:description" content="We are happy to announce version 20 of osbuild. This time with a big set
+of new features, including support for btrfs assemblers, as well as reworked
+and improved progress output on the terminal. As usual, a round of bugfixes is
+included as well.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 20</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 20 of <em>osbuild</em>. This time with a big set
+of new features, including support for <em>btrfs</em> assemblers, as well as reworked
+and improved progress output on the terminal. As usual, a round of bugfixes is
+included as well.</p>
+
+<p>Below you can find the official changelog from the <em>osbuild-20</em> sources. All
+users are recommended to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>The filesystem assemblers gained support for btrfs. They can
+now output image files as btrfs, similar to the existing support
+for ext4 and xfs.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">--libdir=DIR</code> handling was generalized in that an empty
+<code class="language-plaintext highlighter-rouge">osbuild</code> subdirectory will now always cause osbuild to use the
+system osbuild package. This means a custom <code class="language-plaintext highlighter-rouge">libdir</code> via
+<code class="language-plaintext highlighter-rouge">--libdir=DIR</code> no longer requires the entire osbuild python
+package to be bundled in an <code class="language-plaintext highlighter-rouge">osbuild</code> subdirectory.</p>
+  </li>
+  <li>
+    <p>When run on a terminal, <code class="language-plaintext highlighter-rouge">osbuild</code> will now output the duration
+of a stage (or other module).</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">--output-directory</code> switch is now mandatory if no checkpoint
+was specified. In this situation, running <code class="language-plaintext highlighter-rouge">osbuild</code> would be a
+no-op.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">ostree</code> assembler now optionally emits version metadata in
+its commits.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">osbuild</code> now supports running on Ubuntu-20.04.</p>
+  </li>
+  <li>
+    <p>Modules can now pass metadata alongside the filesystem objects
+they emit. This metadata is not stored in the final artifact, but
+passed to the caller via the structured osbuild output.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">ostree</code> assembler now emits compose metadata as part of its
+build. This can be inspected by the caller to get detailed compose
+information.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">rpm</code> stage now emits detailed metadata about the installed
+RPM packages.</p>
+  </li>
+  <li>
+    <p>Lots of fixes all over the place, including SELinux reworks and
+PEP-8 conformance.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, David Rheinsberg, Davide Cavalca,
+                    Major Hayden, chloenayon</p>
+
+<p>— Berlin, 2020-08-13</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by David Rheinsberg,
+
+    on August 17, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

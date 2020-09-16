@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 11</title>
+    <meta name="title" content="Release Osbuild Composer 11" />
+    <meta property="og:title" content="Release Osbuild Composer 11" />
+
+
+
+    <meta name="description" content="We are happy to announce version 11 of osbuild-composer, again one of our
+regular biweekly releases. It now supports uploading images to Azure as well.
+" />
+    <meta property="og:description" content="We are happy to announce version 11 of osbuild-composer, again one of our
+regular biweekly releases. It now supports uploading images to Azure as well.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 11</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 11 of <em>osbuild-composer</em>, again one of our
+regular biweekly releases. It now supports uploading images to Azure as well.</p>
+
+<p>Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>The support for uploading VHD images to Azure is now available.</p>
+  </li>
+  <li>
+    <p>AMI images are now produced in the vhdx format. This fixes the issue that
+those images couldn’t be previously booted in EC2.</p>
+  </li>
+  <li>
+    <p>In version 10 the logs weren’t saved when osbuild failed. This is now fixed.</p>
+  </li>
+  <li>
+    <p>The warnings when upgrading/removing the RPM package are now fixed. Note that
+updating to version 11 still produces them because the upgrade process runs
+also the scriptlets from version 10.</p>
+  </li>
+  <li>
+    <p>The size calculation for Fedora 31 vhd images is fixed.</p>
+  </li>
+  <li>
+    <p>The size field was removed from the tar assembler struct. The field has
+actually never been supported in osbuild and it doesn’t make any sense.</p>
+  </li>
+  <li>
+    <p>The minimal required version of osbuild is bumped to 12.</p>
+  </li>
+  <li>
+    <p>This release also got big upgrades to the testing infrastructure, more tests
+are run on a CI and they now run faster. Also, the unit test coverage is
+improved.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Alexander Todorov, Jacob Kozol, Jakub Rusz, Jiri Kortus,
+Lars Karlitski, Major Hayden, Ondřej Budai, Tom Gundersen</p>
+
+<ul>
+  <li>Liberec, 2020-04-29</li>
+</ul>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on April 30, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

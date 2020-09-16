@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 12</title>
+    <meta name="title" content="Release Osbuild Composer 12" />
+    <meta property="og:title" content="Release Osbuild Composer 12" />
+
+
+
+    <meta name="description" content="Today, we released version 12 of osbuild-composer. This time, there are no
+major features. However, you are still encouraged to upgrade because the new
+version contains a lot of fixes and refactorings making the tool more stable.
+" />
+    <meta property="og:description" content="Today, we released version 12 of osbuild-composer. This time, there are no
+major features. However, you are still encouraged to upgrade because the new
+version contains a lot of fixes and refactorings making the tool more stable.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 12</h1>
+
+  </section>
+  <section>
+<p>Today, we released version 12 of <em>osbuild-composer</em>. This time, there are no
+major features. However, you are still encouraged to upgrade because the new
+version contains a lot of fixes and refactorings making the tool more stable.</p>
+
+<p>Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>In previous versions support for running remote workers was broken. This is
+ now fixed and running remote workers is once again possible. See #568 for
+ more information.</p>
+  </li>
+  <li>
+    <p>The job queue and the store are now two separate Go packages. One of
+ the benefits is that it is now possible to build images without using
+ the store which is too complicated for some usecases.</p>
+  </li>
+  <li>
+    <p>A blueprint name is now checked against the regex “^[a-zA-Z0-9._-]+$”. This
+ is the same limitation as in lorax-composer.</p>
+  </li>
+  <li>
+    <p>All osbuild calls now use the new –output-directory argument. This change
+ is a must because the old way of retrieving images from the osbuild store
+ will soon be deprecated.</p>
+  </li>
+  <li>
+    <p>Some routes from the weldr API are now implemented in a more efficient way.</p>
+  </li>
+  <li>
+    <p>As always, the team worked hard on improving the tests and the CI.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Brian C. Lane, David Rheinsberg, Jiri Kortus,
+                    Lars Karlitski, Major Hayden, Ondřej Budai</p>
+
+<ul>
+  <li>Liberec, 2020-05-13</li>
+</ul>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Ondřej Budai,
+
+    on May 14, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

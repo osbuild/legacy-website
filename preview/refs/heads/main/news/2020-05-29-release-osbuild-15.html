@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 15</title>
+    <meta name="title" content="Release Osbuild 15" />
+    <meta property="og:title" content="Release Osbuild 15" />
+
+
+
+    <meta name="description" content="We are happy to announce version 15 of osbuild. A handful of new features
+and, as usual, lots of bugfixes all over.
+" />
+    <meta property="og:description" content="We are happy to announce version 15 of osbuild. A handful of new features
+and, as usual, lots of bugfixes all over.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 15</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 15 of <em>osbuild</em>. A handful of new features
+and, as usual, lots of bugfixes all over.</p>
+
+<p>Below you can find the official changelog from the <em>osbuild-15</em> sources. All
+users are recommended to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>A new assembler, <code class="language-plaintext highlighter-rouge">org.osbuild.oci-archive</code>, that will turn a tree
+into an Open Container Initiative Image compliant archive. These
+archives can be used to run containers via e.g. podman.</p>
+  </li>
+  <li>
+    <p>Support for client side certificates to download content from the
+Red Hat servers: the <code class="language-plaintext highlighter-rouge">org.osbuild.files</code> source got support for
+reading entitlements and pass those certificates along when
+fetching content, i.e. RPMs.</p>
+  </li>
+  <li>
+    <p>A new ManifestPreProcessor (MPP) was added as a new tool located
+in <code class="language-plaintext highlighter-rouge">tools/mpp-depsolve.py</code>. Currently, it can take an existing
+manifest and dep-solve packages specified via a new <code class="language-plaintext highlighter-rouge">mpp-depsolve</code>
+option in existing <code class="language-plaintext highlighter-rouge">org.osbuild.rpm</code> stages.
+This is now used to generate Fedora 32 based test pipelines.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">org.osbuild.ostree.commit</code> assembler gained an option to produce
+a tarball archive instead of emitting the plain OSTree repository.</p>
+  </li>
+  <li>
+    <p>Schema validation is now done with the draft 4 validator, and works
+therefore with pyhthon-jsonschema 2.6.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">tree_id</code> and <code class="language-plaintext highlighter-rouge">output_id</code> fields got dropped from the resulting
+JSON when inspecting pipelines via <code class="language-plaintext highlighter-rouge">osbuild --inspect</code>.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">--build-env</code> option has been dropped from the command line
+interface. It was deprecated and not used anymore.</p>
+  </li>
+  <li>
+    <p>Tests have been converted to not rely on <code class="language-plaintext highlighter-rouge">tree_id</code> and <code class="language-plaintext highlighter-rouge">output_id</code>
+anymore, as they are deprecated and will be removed in the future.</p>
+  </li>
+  <li>
+    <p>Lots of other improvements to the test infrastructure and the CI.</p>
+  </li>
+  <li>
+    <p>And finally for something meta: this file has been re-formatted to
+be proper markdown.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, David Rheinsberg, Jacob Kozol,
+                    Major Hayden</p>
+
+<p>— Berlin, 2020-05-20</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by David Rheinsberg,
+
+    on May 29, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

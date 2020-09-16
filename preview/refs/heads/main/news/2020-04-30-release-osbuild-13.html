@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 13</title>
+    <meta name="title" content="Release Osbuild 13" />
+    <meta property="og:title" content="Release Osbuild 13" />
+
+
+
+    <meta name="description" content="We are happy to announce version 13 of osbuild, again one of our regular
+biweekly releases.
+" />
+    <meta property="og:description" content="We are happy to announce version 13 of osbuild, again one of our regular
+biweekly releases.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 13</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 13 of <em>osbuild</em>, again one of our regular
+biweekly releases.</p>
+
+<p>Below you can find the official change log, compiled By Christian Kellner.
+Everyone is encouraged to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Stage <code class="language-plaintext highlighter-rouge">org.osbuild.yum</code> has been dropped. It has been deprecated for some
+time and <code class="language-plaintext highlighter-rouge">org.osbuild.rpm</code> provides a better alternative.</p>
+  </li>
+  <li>
+    <p>XZ compression now utilizes all available CPU cores. This affects all stages
+and assemblers that support XZ compression. It should decrease compression
+times considerably.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">org.osbuild.grub2</code> now supports referring to file-systems via a label
+additionally to a UUID. This affects all places where an existing file-system
+is referred to. Disk creation still requires a UUID to be provided.
+<code class="language-plaintext highlighter-rouge">org.osbuild.fstab</code> gained similar support.</p>
+  </li>
+  <li>
+    <p>RHEL-8.3 is now supported as host system.</p>
+  </li>
+  <li>
+    <p>The ‘libdir’ layout in <code class="language-plaintext highlighter-rouge">/usr/lib/osbuild/</code> has been simplified. Distributions
+are no longer required to create mount anchors during installation. Instead,
+all modules (stages, assemblers, sources, and runners) can be copied verbatim
+from the source tree.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">org.osbuild.grub2</code> now correctly pads <code class="language-plaintext highlighter-rouge">grubenv</code> files to 1024 bytes. This
+was not done correctly, previously, and caused other parsers to fail.</p>
+  </li>
+  <li>
+    <p>The containerization via systemd-nspawn was adjusted to support running in a
+container. With sufficient privileges, you can now run osbuild pipelines from
+within a container.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, David Rheinsberg, Major Hayden</p>
+
+<ul>
+  <li>Berlin, 2020-04-29</li>
+</ul>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on April 30, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

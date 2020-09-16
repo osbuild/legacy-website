@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 8</title>
+    <meta name="title" content="Release Osbuild Composer 8" />
+    <meta property="og:title" content="Release Osbuild Composer 8" />
+
+
+
+    <meta name="description" content="We are happy to announce version 8 of osbuild-composer, again one of our
+regular biweekly releases.
+" />
+    <meta property="og:description" content="We are happy to announce version 8 of osbuild-composer, again one of our
+regular biweekly releases.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 8</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 8 of <em>osbuild-composer</em>, again one of our
+regular biweekly releases.</p>
+
+<p>The biggest change is that we now use the <code class="language-plaintext highlighter-rouge">org.osbuild.rpm</code>
+stages, rather than <code class="language-plaintext highlighter-rouge">org.osbuild.dnf</code>. This makes the dependency resolution of
+package installations a lot simpler and cleaner. This should not have any user
+visible effects, other than reduced build-times and slightly different pipeline
+output.</p>
+
+<p>Below you can find the official change log. Everyone is encouraged to upgrade!</p>
+
+<hr />
+
+<h2 id="changes-with-8">CHANGES WITH 8:</h2>
+
+<ul>
+  <li>
+    <p>All generated pipelines now use the rpm stage rather than the dnf stage.</p>
+  </li>
+  <li>
+    <p>The state directory can be now set using <code class="language-plaintext highlighter-rouge">STATE_DIRECTORY</code> env variable.</p>
+  </li>
+  <li>
+    <p>Several fixes in blueprint weldr API.</p>
+  </li>
+  <li>
+    <p>Mising systemd scriplets were added to the spec file.</p>
+  </li>
+</ul>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by David Rheinsberg,
+
+    on March 18, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

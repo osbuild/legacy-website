@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>OSBuild – Build-Pipelines for Operating System Artifacts</title>
+    <meta name="title" content="OSBuild – Build-Pipelines for Operating System Artifacts" />
+    <meta property="og:title" content="OSBuild – Build-Pipelines for Operating System Artifacts" />
+
+
+
+    <meta name="description" content="Documentation
+" />
+    <meta property="og:description" content="Documentation
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+<h1 id="documentation">Documentation</h1>
+
+<p>OSBuild consists of many different projects, each serving a particular purpose.
+This site tries to list all available documentation, tutorials, and resources
+available for the different osbuild projects:</p>
+
+<ul>
+  <li><a href="#image-builder"><strong>Image Builder</strong></a>: Product name around OSBuild, usually
+refers to the different web-interfaces for <em>OSBuild</em>.</li>
+  <li><a href="#composer"><strong>Composer</strong></a>: System and API services that orchestrate image
+build requests.</li>
+  <li><a href="#osbuild"><strong><em>osbuild</em></strong></a>: Execution engine that consumes image build
+descriptions and executes the related pipelines.</li>
+</ul>
+
+<h2 id="image-builder">Image Builder</h2>
+
+<p><em>Image Builder</em> is the product name around OSBuild. It consists of different
+user interfaces for <em>OSBuild Composer</em>. In most cases, the documentation of the
+respective user interface is the best source of help. Furthermore, the
+documentation of <em>OSBuild Composer</em> (see below) will provide insights into the
+internals of the image building tools.</p>
+
+<ul>
+  <li><strong>How Tos</strong>:
+    <ul>
+      <li><a href="/preview/refs/heads/main/news/2020-06-01-how-to-ostree-anaconda.html"><strong>Image Builder + OSTree + Anaconda</strong></a></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Development</strong>: <a href="https://github.com/osbuild/cockpit-composer">@GitHub</a></p>
+  </li>
+  <li>
+    <p><strong>Packages</strong>: The <em>Image Builder</em> project is pre-packaged for the
+following distributions:</p>
+
+    <ul>
+      <li><strong>Fedora</strong>: <a href="https://src.fedoraproject.org/rpms/cockpit-composer">rpms/cockpit-composer</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="composer">Composer</h2>
+
+<p><em>OSBuild Composer</em> is a project providing system services to build operating
+system images based on pre-defined, well-tested blueprints. The services
+provide OpenAPI-compatible interfaces, as well as integration with common user
+interfaces for linux systems including <a href="https://cockpit-project.org">Cockpit</a>.</p>
+
+<ul>
+  <li>
+    <p><strong>Development</strong>: <a href="https://github.com/osbuild/osbuild-composer">@GitHub</a></p>
+  </li>
+  <li>
+    <p><strong>Packages</strong>: The <em>OSBuild Composer</em> project is pre-packaged for the
+following distributions:</p>
+
+    <ul>
+      <li><strong>Fedora</strong>: <a href="https://src.fedoraproject.org/rpms/osbuild-composer">rpms/osbuild-composer</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="osbuild"><em>osbuild</em></h2>
+
+<p>The <em>osbuild</em> project is the heart of OSBuild. It defines a pipeline
+description to build arbitrary operating system images out of many small and
+self-contained stages. Furthermore, it provides an execution engine that will
+consume a pipeline description, execute the pipeline, and provide the resulting
+image back to the user. The <em>osbuild</em> interfaces are meant to be used by
+machines, not humans. Therefore, access to <em>osbuild</em> resources should only be
+required if you plan to develop new <em>osbuild</em> frontends, debug <em>osbuild</em>
+failures on your own, or contribute to the <em>osbuild</em> development.</p>
+
+<ul>
+  <li>
+    <p><strong>Development</strong>: <a href="https://github.com/osbuild/osbuild">@GitHub</a></p>
+  </li>
+  <li>
+    <p><strong>Packages</strong>: The <em>osbuild</em> project is pre-packaged for the following
+distributions:</p>
+
+    <ul>
+      <li><strong>Fedora</strong>: <a href="https://src.fedoraproject.org/rpms/osbuild">rpms/osbuild</a></li>
+      <li><strong>Arch Linux</strong>: <a href="https://aur.archlinux.org/packages/osbuild/">AUR/osbuild</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Manual Pages</strong>: All <em>osbuild</em> interfaces are documented in standard Linux
+Manual Pages. They are distributed together with <em>osbuild</em>, but their latest
+version can also be accessed online:</p>
+    <ul>
+      <li><a href="/preview/refs/heads/main/man/osbuild-manifest.5">osbuild-manifest.5</a></li>
+      <li><a href="/preview/refs/heads/main/man/osbuild.1">osbuild.1</a></li>
+    </ul>
+  </li>
+</ul>
+
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
