@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 13</title>
+    <meta name="title" content="Release Osbuild Composer 13" />
+    <meta property="og:title" content="Release Osbuild Composer 13" />
+
+
+
+    <meta name="description" content="Yesterday, we released version 13 of osbuild-composer. We are very proud of
+this release as it contains lots of very nice improvements. The most important
+ones are: support for building Fedora IoT commit tarballs, revamped support
+for RHEL 8 and dropping the ability to build Fedora 30 and several poorly-
+defined image types.
+" />
+    <meta property="og:description" content="Yesterday, we released version 13 of osbuild-composer. We are very proud of
+this release as it contains lots of very nice improvements. The most important
+ones are: support for building Fedora IoT commit tarballs, revamped support
+for RHEL 8 and dropping the ability to build Fedora 30 and several poorly-
+defined image types.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/master/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/master/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/master/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/master/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/master/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/master/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/master/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 13</h1>
+
+  </section>
+  <section>
+<p>Yesterday, we released version 13 of <em>osbuild-composer</em>. We are very proud of
+this release as it contains lots of very nice improvements. The most important
+ones are: support for building Fedora IoT commit tarballs, revamped support
+for RHEL 8 and dropping the ability to build Fedora 30 and several poorly-
+defined image types.</p>
+
+<p>But there’s much more, see the list of changes below. An upgrade is highly
+recommended!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Fedora IoT is now supported for Fedora 32 in the form of producing the
+commit tarball. Feel free to test it and report any issues you find.</p>
+  </li>
+  <li>
+    <p>Support for RHEL was completely revamped. Now, osbuild-composer supports
+building images only for the latest RHEL 8. The separate minor versions
+are no longer available. Additionally, it now uses the Red Hat CDN which
+requires the host system to be properly subscribed. If you need to use
+different package repositories to build RHEL from, use a repository
+override in /etc/osbuild-composer/repositories.</p>
+  </li>
+  <li>
+    <p>Several image types were removed: ext4-filesystem, partitioned-disk,
+and tar. The use-cases for these image types were not clearly defined and
+without a clear definition, it was very hard to define test cases for
+them.</p>
+  </li>
+  <li>
+    <p>Support for Fedora 30 was dropped as it is now EOL. So long and thanks
+for all the fish!</p>
+  </li>
+  <li>
+    <p>The timeout for AWS upload is removed. It’s very hard to predict how long
+will the AWS upload take. With the timeout in place, it caused the test
+suite to produce a lot of false positives.</p>
+  </li>
+  <li>
+    <p>Build logs were broken in the previous release, this release fixes it.
+This time, they were properly saved but weldr API read them from a wrong
+location. This is now fixed and covered with basic tests.</p>
+  </li>
+  <li>
+    <p>Weldr API has now support for /compose/metadata and /compose/results
+routes. This allows users to easily access a manifest used to build
+an image.</p>
+  </li>
+  <li>
+    <p>Preliminary support for ppc64le and s390x is added to RHEL distribution.
+No images cannot be built yet but at least it won’t crash on startup.</p>
+  </li>
+  <li>
+    <p>The weldr API socket has now correct permissions. As the result, it can
+be read and written only by root and the weldr group. This is the same
+behaviour as Lorax has.</p>
+  </li>
+  <li>
+    <p>By mistake, workers incorrectly used the default store for every build.
+However, this can currently cause the store to grow indefinitely, so
+this release switched the osbuild store to use a temporary directory again.</p>
+  </li>
+  <li>
+    <p>/status route in weldr API now correctly returns msgs field.</p>
+  </li>
+  <li>
+    <p>Handling of json (un)marshalling in store is revamped. It should
+make it more stable and simplify the maintenance of the store backwards
+compatibility.</p>
+  </li>
+  <li>
+    <p>Initial support for koji is now added. It’s currently not hooked up
+to composer and only supports password authentication. More coming soon.</p>
+  </li>
+  <li>
+    <p>Again, the automated testing was greatly improved during this cycle,
+big thanks to everyone involved!</p>
+  </li>
+</ul>
+
+<p>Contributions from: Alexander Todorov, Brian C. Lane, David Rheinsberg, Jacob
+                    Kozol, Lars Karlitski, Major Hayden, Ondřej Budai, Tom
+                    Gundersen</p>
+
+<p>— Liberec, 2020-05-28</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Ondřej Budai,
+
+    on May 29, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/master/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

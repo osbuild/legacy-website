@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 19</title>
+    <meta name="title" content="Release Osbuild 19" />
+    <meta property="og:title" content="Release Osbuild 19" />
+
+
+
+    <meta name="description" content="We are happy to announce version 19 of osbuild. After a rather long period
+of development, this release comes with a wide range of new features and
+improvements, as well as the usual round of bug fixes.
+" />
+    <meta property="og:description" content="We are happy to announce version 19 of osbuild. After a rather long period
+of development, this release comes with a wide range of new features and
+improvements, as well as the usual round of bug fixes.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/master/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/master/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/master/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/master/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/master/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/master/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/master/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 19</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 19 of <em>osbuild</em>. After a rather long period
+of development, this release comes with a wide range of new features and
+improvements, as well as the usual round of bug fixes.</p>
+
+<p>Below you can find the official changelog from the <em>osbuild-19</em> sources. All
+users are recommended to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>osbuild is now warning if neither output-directory nor any
+checkpoints were specified on the command line. No attempt
+to actually build anything will be made.</p>
+  </li>
+  <li>
+    <p>Fix a bug in the <code class="language-plaintext highlighter-rouge">org.osbuild.files</code> source where the timeout
+was passed as a floating point value to curl, which in
+certain locales would result in a comma being used for the
+decimal separator, which can not be parsed by curl.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">org.osbuild.systemd</code> stage gained the ability to mask
+services. Additionally, <code class="language-plaintext highlighter-rouge">enabled_services</code> is not a required
+option anymore.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">org.osbuild.script</code> stage has been dropped.</p>
+  </li>
+  <li>
+    <p>The ability to pass in secrets via the command line has been
+removed. It was only used by the deprecated <code class="language-plaintext highlighter-rouge">dnf</code> stage.</p>
+  </li>
+  <li>
+    <p>The JSON schema was fixed for the <code class="language-plaintext highlighter-rouge">org.osbuild.noop</code> stage.</p>
+  </li>
+  <li>
+    <p>Stages and assemblers are now contained via <code class="language-plaintext highlighter-rouge">bubblewrap</code>
+instead of <code class="language-plaintext highlighter-rouge">systemd-nspawn</code>, which has many advantages,
+including but not limited to: being faster, not requiring
+root, better control of the contents of the build-root.</p>
+  </li>
+  <li>
+    <p>Internally, the logging of output and the communication
+between the stages and the osbuild process on the host has
+been reworked and cleaned up. This should allow better
+monitoring in the future.</p>
+  </li>
+  <li>
+    <p>The network of the sandbox that is used to run stages and the
+assemblers is now isolated from the host network.</p>
+  </li>
+  <li>
+    <p>As always, lots of improvements to the testing infrastructure,
+that should lead to better and quicker tests. Static analysis
+is run nightly as well.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Chloe Kaubisch, Christian Kellner, David Rheinsberg,
+                    Major Hayden, Martin Sehnoutka, Ondřej Budai,
+                    Tom Gundersen</p>
+
+<p>— Berlin, 2020-07-30</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by David Rheinsberg,
+
+    on July 31, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/master/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 12</title>
+    <meta name="title" content="Release Osbuild 12" />
+    <meta property="og:title" content="Release Osbuild 12" />
+
+
+
+    <meta name="description" content="We are happy to announce version 12 of osbuild, again one of our regular
+biweekly releases.
+" />
+    <meta property="og:description" content="We are happy to announce version 12 of osbuild, again one of our regular
+biweekly releases.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/master/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/master/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/master/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/master/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/master/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/master/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/master/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 12</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 12 of <em>osbuild</em>, again one of our regular
+biweekly releases.</p>
+
+<p>This release adds multiple stages and sources for building OSTree-based
+systems. See <code class="language-plaintext highlighter-rouge">samples/f31-ostree-*.json</code> for examples how to use it.</p>
+
+<p>It also drops support for the <code class="language-plaintext highlighter-rouge">org.osbuild.dnf</code> source and stage. Please use
+the rpm stage instead.</p>
+
+<p>Below you can find the official change log, compiled By Christian Kellner.
+Everyone is encouraged to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">qemu</code> assembler now supports the <code class="language-plaintext highlighter-rouge">VHDX</code> image format. This is the
+preferred format for AWS targets, so it is a natural fit for our assemblers.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">grub2</code> stage now disables the legacy compatibility by default.  You have
+to explicitly enable it in the stage options if you require it.</p>
+  </li>
+  <li>
+    <p>Additionally, the <code class="language-plaintext highlighter-rouge">grub2</code> stage now also has a <code class="language-plaintext highlighter-rouge">uefi.install</code> option to
+control whether it installs the UEFI configuration from the build tree into
+the target tree. Furthermore, a new option called <code class="language-plaintext highlighter-rouge">write_defaults</code> controls
+whether default options are written to <code class="language-plaintext highlighter-rouge">/etc</code> (enabled by default).</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">dnf</code> stage was removed. The <code class="language-plaintext highlighter-rouge">rpm</code> stage fully replaces all its
+functionality.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">fedora27</code> runner is no longer supported. Fedora 30 is the minimum
+required host version for Fedora systems.</p>
+  </li>
+  <li>
+    <p>Add OSTree integration. This includes multiple stages and sources which allow
+to export osbuild trees as ostree commits, or import ostree commits into an
+osbuild pipeline:</p>
+
+    <ul>
+      <li>
+        <p>org.osbuild.rpm-ostree: This stage uses <code class="language-plaintext highlighter-rouge">rpm-ostree compose</code> to post-process
+a tree and prepare it for committing to ostree.</p>
+      </li>
+      <li>
+        <p>org.osbuild.ostree.commit: A new assembler that takes a tree that conforms to
+the ostree layout and turns it into an ostree commit.</p>
+      </li>
+      <li>
+        <p>org.osbuild.ostree: A new source that provides external ostree commits to a
+pipeline.</p>
+      </li>
+      <li>
+        <p>org.osbuild.ostree: A new stage that takes an ostree commit and prepares the
+working directory with its content.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">osbuild</code> binary now has an <code class="language-plaintext highlighter-rouge">--output-directory=DIR</code> argument which
+allows to specify a directory where to put the output of the pipeline
+assembler. This is optional for now, but will be made mandatory in the
+future.</p>
+  </li>
+  <li>
+    <p>A new stage called <code class="language-plaintext highlighter-rouge">org.osbuild.first-boot</code> allows to control the execution
+of scripts at the first bootup of the generated images.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, David Rheinsberg, Major Hayden, Ondřej
+Budai, Tom Gundersen</p>
+
+<ul>
+  <li>Berlin, 2020-04-15</li>
+</ul>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on April 15, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/master/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

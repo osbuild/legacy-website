@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 11</title>
+    <meta name="title" content="Release Osbuild 11" />
+    <meta property="og:title" content="Release Osbuild 11" />
+
+
+
+    <meta name="description" content="We are happy to announce version 11 of osbuild, again one of our regular
+biweekly releases. Most of our efforts were again spent on general cleanups and
+minor documentation improvements. No big reworks or feature announcements this
+time.
+" />
+    <meta property="og:description" content="We are happy to announce version 11 of osbuild, again one of our regular
+biweekly releases. Most of our efforts were again spent on general cleanups and
+minor documentation improvements. No big reworks or feature announcements this
+time.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/master/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/master/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/master/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/master/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/master/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/master/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/master/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/master/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 11</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 11 of <em>osbuild</em>, again one of our regular
+biweekly releases. Most of our efforts were again spent on general cleanups and
+minor documentation improvements. No big reworks or feature announcements this
+time.</p>
+
+<p>Below you can find the official change log, compiled By Christian Kellner.
+Everyone is encouraged to upgrade!</p>
+
+<hr />
+
+<h2 id="changes-with-11">CHANGES WITH 11:</h2>
+
+<ul>
+  <li>
+    <p>Drop support for legacy input: passing in non-manifest style pipelines is now
+not supported anymore.</p>
+  </li>
+  <li>
+    <p>Support for specifying an UUID for partitions when using the GPT partition
+layout was added to the org.osbuild.qemu assembler.</p>
+  </li>
+  <li>
+    <p>Fix a crash in the case the assembler failed, which was caused by cleanup up
+the object while the object was still being written to.</p>
+  </li>
+  <li>
+    <p>Delay the cleanup of the build tree to after the error checking since in the
+error case there is nothing to clean up and trying to do so will lead to
+crash.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">objectstore.Object</code> now directly cleans its working tree up, in contrast to
+relying on the implicit cleanup of <code class="language-plaintext highlighter-rouge">TemporaryDirectory</code>.  One advantage of
+this is that the custom cleanup code can handle immutable directories, which
+Python 3 fails to clean up.</p>
+  </li>
+  <li>
+    <p>Drop custom <code class="language-plaintext highlighter-rouge">os-release</code> creation from the RHEL 8.2 runner. The issue that
+made this neccessary got fixed upstream.</p>
+  </li>
+  <li>
+    <p>Ensure the build tree is always being built even if there are no stages
+specified.</p>
+  </li>
+  <li>
+    <p>spec file: Do no generate dependencies for the internal files and add NEWS.md
+to the documentation section.</p>
+  </li>
+  <li>
+    <p>The Fedora 30 based aarch64 example was fixed and now builds again.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, David Rheinsberg, Lars Karlitski, Major
+Hayden, Martin Sehnoutka, Ondřej Budai</p>
+
+<p>– Berlin, 2020-04-01</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on April  1, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/master/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
