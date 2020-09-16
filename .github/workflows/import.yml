@@ -1,9 +1,9 @@
 #
 # Import Resources
 #
-# This workflow runs periodically and under given triggers on the master branch
+# This workflow runs periodically and under given triggers on the main branch
 # and imports resources from external repositories, prepares them for
-# publication and then pushes them to master. If nothing changed, no commit
+# publication and then pushes them to main. If nothing changed, no commit
 # will be created nor pushed.
 #
 # Note that Github operations triggered from a workflow will *NEVER* trigger
@@ -16,7 +16,7 @@ name: Import Resources
 on:
   push:
     branches:
-    - master
+    - main
   schedule:
   - cron:  '0 0 * * *'
 
