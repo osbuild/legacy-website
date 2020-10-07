@@ -1,0 +1,1922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="html">OSBuild</title>
+  <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/</id>
+  <updated>2020-10-07T10:53:37-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news" rel="alternate" type="text/html" />
+
+
+
+<entry>
+  <title>Release of osbuild 21</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-21</id>
+  <published>2020-10-07T00:00:00-05:00</published>
+  <updated>2020-10-07T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-10-07-release-osbuild-21.html" rel="alternate" type="text/html" title="Release of osbuild 21" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
+support for running on Fedora 34. Furthermore, internal errors during
+container setup are now properly reported. And lastly, a lot of work has
+been done to improve the code readability.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-10-07-release-osbuild-21.html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
+support for running on Fedora 34. Furthermore, internal errors during
+container setup are now properly reported. And lastly, a lot of work has
+been done to improve the code readability.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-21&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The way that output of modules is communicated to osbuild was
+re-factored in a way that now makes it possible to also capture
+and log the output of the container runtime, i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bubblewrap&lt;/code&gt;.
+This should prove useful to track down errors where the runner
+can not be executed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;runners: support for Fedora 34 was added&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A lot of internal re-factoring was done, to make the code nicer
+and easier to read. For example the way objects are exported in
+the pipeline is now unified.
+Additionally, a dedicated API is used to fetch the arguments in
+the modules, instead of relying on standard input.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: chloenayon, Christian Kellner&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-09-10&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>First release of koji-osbuild</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-koji-osbuild-1</id>
+  <published>2020-10-07T00:00:00-05:00</published>
+  <updated>2020-10-07T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-10-07-release-koji-osbuild-1.html" rel="alternate" type="text/html" title="First release of koji-osbuild" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce the first release of &lt;em&gt;koji-osbuild&lt;/em&gt;, a new project
+to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;, the
+build and tracking system primarily used by the Fedora Project and Red Hat.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-10-07-release-koji-osbuild-1.html">&lt;p&gt;We are happy to announce the first release of &lt;em&gt;koji-osbuild&lt;/em&gt;, a new project
+to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;, the
+build and tracking system primarily used by the Fedora Project and Red Hat.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;koji-osbuild-1&lt;/em&gt;
+sources, which contains more details about the project and a description
+of its individual components.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Initial implementation of three plugins for the koji
+hub, the builder and command line client, which allows
+images and other OS artifacts to be built in composer
+via koji.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;em&gt;command line client&lt;/em&gt; gained an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild-image&lt;/code&gt;
+sub-command that is very similar to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image-build&lt;/code&gt;.
+It internally uses the new hub plugin to make a XML-RPC
+call, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuildImage&lt;/code&gt; to request the building of a new
+image or artifact.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;em&gt;hub&lt;/em&gt; plugin adds the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuildImage&lt;/code&gt; XML-RPC method,
+verifies the parameters and then creates a new task of
+type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuildImage&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;em&gt;builder&lt;/em&gt; plugin does most of the work by adding a
+handler for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuildImage&lt;/code&gt; tasks. It will use the new
+koji API of osbuild-composer version 21 to request a
+compose and wait until it is done. After a successful
+build the result will be tagged into the destination
+tag of the build target.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;An integration test suite was added to CI that checks
+the end-to-end building of a cloud image on RHEL and
+Fedora.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unit tests currently cover around 92% of the plugins.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Detailed instructions on how to run a local test setup
+are included in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HACKING.md&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, Lars Karlitski &amp;amp;
+                    Tom Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-09-30&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 20</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-20</id>
+  <published>2020-08-17T00:00:00-05:00</published>
+  <updated>2020-08-17T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-08-17-release-osbuild-20.html" rel="alternate" type="text/html" title="Release of osbuild 20" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 20 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a big set
+of new features, including support for &lt;em&gt;btrfs&lt;/em&gt; assemblers, as well as reworked
+and improved progress output on the terminal. As usual, a round of bugfixes is
+included as well.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-08-17-release-osbuild-20.html">&lt;p&gt;We are happy to announce version 20 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a big set
+of new features, including support for &lt;em&gt;btrfs&lt;/em&gt; assemblers, as well as reworked
+and improved progress output on the terminal. As usual, a round of bugfixes is
+included as well.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-20&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The filesystem assemblers gained support for btrfs. They can
+now output image files as btrfs, similar to the existing support
+for ext4 and xfs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--libdir=DIR&lt;/code&gt; handling was generalized in that an empty
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; subdirectory will now always cause osbuild to use the
+system osbuild package. This means a custom &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;libdir&lt;/code&gt; via
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--libdir=DIR&lt;/code&gt; no longer requires the entire osbuild python
+package to be bundled in an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; subdirectory.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When run on a terminal, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; will now output the duration
+of a stage (or other module).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--output-directory&lt;/code&gt; switch is now mandatory if no checkpoint
+was specified. In this situation, running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; would be a
+no-op.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ostree&lt;/code&gt; assembler now optionally emits version metadata in
+its commits.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; now supports running on Ubuntu-20.04.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Modules can now pass metadata alongside the filesystem objects
+they emit. This metadata is not stored in the final artifact, but
+passed to the caller via the structured osbuild output.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ostree&lt;/code&gt; assembler now emits compose metadata as part of its
+build. This can be inspected by the caller to get detailed compose
+information.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rpm&lt;/code&gt; stage now emits detailed metadata about the installed
+RPM packages.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lots of fixes all over the place, including SELinux reworks and
+PEP-8 conformance.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Davide Cavalca,
+                    Major Hayden, chloenayon&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-08-13&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 19</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-19</id>
+  <published>2020-07-31T00:00:00-05:00</published>
+  <updated>2020-07-31T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-07-31-release-osbuild-19.html" rel="alternate" type="text/html" title="Release of osbuild 19" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;osbuild&lt;/em&gt;. After a rather long period
+of development, this release comes with a wide range of new features and
+improvements, as well as the usual round of bug fixes.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-07-31-release-osbuild-19.html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;osbuild&lt;/em&gt;. After a rather long period
+of development, this release comes with a wide range of new features and
+improvements, as well as the usual round of bug fixes.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-19&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;osbuild is now warning if neither output-directory nor any
+checkpoints were specified on the command line. No attempt
+to actually build anything will be made.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fix a bug in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.files&lt;/code&gt; source where the timeout
+was passed as a floating point value to curl, which in
+certain locales would result in a comma being used for the
+decimal separator, which can not be parsed by curl.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.systemd&lt;/code&gt; stage gained the ability to mask
+services. Additionally, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enabled_services&lt;/code&gt; is not a required
+option anymore.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.script&lt;/code&gt; stage has been dropped.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The ability to pass in secrets via the command line has been
+removed. It was only used by the deprecated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dnf&lt;/code&gt; stage.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The JSON schema was fixed for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.noop&lt;/code&gt; stage.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stages and assemblers are now contained via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bubblewrap&lt;/code&gt;
+instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;systemd-nspawn&lt;/code&gt;, which has many advantages,
+including but not limited to: being faster, not requiring
+root, better control of the contents of the build-root.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Internally, the logging of output and the communication
+between the stages and the osbuild process on the host has
+been reworked and cleaned up. This should allow better
+monitoring in the future.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The network of the sandbox that is used to run stages and the
+assemblers is now isolated from the host network.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As always, lots of improvements to the testing infrastructure,
+that should lead to better and quicker tests. Static analysis
+is run nightly as well.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Chloe Kaubisch, Christian Kellner, David Rheinsberg,
+                    Major Hayden, Martin Sehnoutka, Ondřej Budai,
+                    Tom Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-07-30&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of cockpit-composer 23</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-cockpit-composer-23</id>
+  <published>2020-07-30T00:00:00-05:00</published>
+  <updated>2020-07-30T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-07-30-release-cockpit-composer-23.html" rel="alternate" type="text/html" title="Release of cockpit-composer 23" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce the release of cockpit-composer 23. This release has 
+no major features but contains useful fixes.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-07-30-release-cockpit-composer-23.html">&lt;p&gt;We are happy to announce the release of cockpit-composer 23. This release has 
+no major features but contains useful fixes.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log. Everyone is encouraged to
+upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update pagination component for pf4&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add wildcards and support for multiple values to input filter&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Upgrade patternfly 4 package&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add and improve tests&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update minor NPM dependencies&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update translations from weblate&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Jacob Kozol, Jenn Giardino, Xiaofeng Wang&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-07-30&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 16</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-16</id>
+  <published>2020-06-30T00:00:00-05:00</published>
+  <updated>2020-06-30T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-30-release-osbuild-composer-16.html" rel="alternate" type="text/html" title="Release of osbuild-composer 16" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce that we released osbuild-composer 16 yesterday.
+This release has no new features but contains a lot of useful fixes.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-30-release-osbuild-composer-16.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 16 yesterday.
+This release has no new features but contains a lot of useful fixes.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log. Everyone is encouraged to
+upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;osbuild-composer now obsoletes lorax-composer on RHEL.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;An upload failure (e.g. due to invalid credentials) now causes the compose
+to appear as failed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RHEL 8 repositories are switched to the beta ones to allow composer to be
+tested on 8.3 Beta. This will be reverted when GA comes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;OSTree images no longer contains /etc/fstab. The filesystem layout is
+determined by the installer and thus it doesn’t make any sense to include
+it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If both group and user customizations were used, the user would be created
+before the group, causing a build to fail. This is now fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer now correctly passes UID and GID to org.osbuild.{users,groups}
+stages as ints instead of strings.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The subpackages (worker, tests and rcm) now require a matching version of
+osbuild-composer to be installed. Previously, they would be happy with
+just an arbitrary one.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for testing OpenStack images in actual OpenStack is now available.
+Note that upload to OpenStack is still not available for the end users
+(it’s on the roadmap though).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Worker now logs not only job failures but also job successes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;All DNF errors were mistakenly tagged as RepoError, this is now fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As always, a lot of test and CI improvements are included in this release.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Alexander Todorov, Christian Kellner, Major Hayden, Martin
+                    Sehnoutka, Ondřej Budai, Tom Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Liberec, 2020-06-29&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 15</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-15</id>
+  <published>2020-06-12T00:00:00-05:00</published>
+  <updated>2020-06-12T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-12-release-osbuild-composer-15.html" rel="alternate" type="text/html" title="Release of osbuild-composer 15" />
+
+  <summary type="html">&lt;p&gt;Today, we released osbuild-composer 15 with several very exciting features.
+Most notably, Composer has now support for building RHEL For Edge and also
+for building images for ppc64le and s390x architectures. Also, a lot of very
+nice fixes are included in this release.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-12-release-osbuild-composer-15.html">&lt;p&gt;Today, we released osbuild-composer 15 with several very exciting features.
+Most notably, Composer has now support for building RHEL For Edge and also
+for building images for ppc64le and s390x architectures. Also, a lot of very
+nice fixes are included in this release.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log. Everyone is encouraged to
+upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for building RHEL for Edge is now available.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer has now support for building QCOW2 and tar images for ppc64le and
+s390x architectures.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tar images for RHEL have returned. The Image Builder team found out that
+they are used as a way to install RHEL for Satellite.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Blueprints containing packages with a wildcard version no longer causes
+the built image to have both x86_64 and i686 versions of one package
+installed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GPG check is now disabled by default. If you have a custom
+repository in /etc/osbuild-composer/repositories, just set gpg_check
+to true to enable the check. Note that all the pre-defined repositories
+have GPG check enabled.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer now supports a cancellation of jobs. This can be done by calling
+/compose/cancel route of Weldr API.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;osbuild-composer previously crashed when osbuild didn’t return the right
+machine-readable output (e.g. because of a disk being out of space). This
+is now fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Because of the GPG check change and RHEL for Edge support, composer
+now requires osbuild 17 or higher.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;osbuild-composer previously required the python package to be installed
+on RHEL. Now, it uses the always-installed platform-python.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The buildroot for RHEL 8 didn’t have selinux labels before. This is now
+fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When Composer crashed, it left temporary directories in /var/cache. The
+temporary directories are now moved to /var/tmp, which is managed by
+systemd with PrivateTmp set to true, so they’re now correctly removed
+after a crash.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Several weldr API routes were aligned to work in the same way as with
+Lorax. /blueprints/freeze now correctly supports option to output TOML.
+Projects and modules routes return all fields as Lorax returns.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS upload now logs the current state to the system journal. Emojis are
+of course included. 🎉&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As always, amazing improvements in the CI infrastructure happened. Also,
+the test coverage went up. Thanks all for doing this!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Alexander Todorov, Brian C. Lane, Christian Kellner,
+                    Jakub Rusz, Lars Karlitski, Major Hayden, Martin
+                    Sehnoutka, Ondřej Budai, Peter Robinson, Tom
+                    Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Liberec, 2020-06-12&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 14</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-14</id>
+  <published>2020-06-04T00:00:00-05:00</published>
+  <updated>2020-06-04T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-04-release-osbuild-composer-14.html" rel="alternate" type="text/html" title="Release of osbuild-composer 14" />
+
+  <summary type="html">&lt;p&gt;Osbuild-composer 13 had numerous new exciting features but unfortunately,
+several annoying bugs slipped into that release too. To address all these
+issues, yesterday our team decided to roll-out an off-schedule bug-fix
+release. Say hi to osbuild-composer 14.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-04-release-osbuild-composer-14.html">&lt;p&gt;Osbuild-composer 13 had numerous new exciting features but unfortunately,
+several annoying bugs slipped into that release too. To address all these
+issues, yesterday our team decided to roll-out an off-schedule bug-fix
+release. Say hi to osbuild-composer 14.&lt;/p&gt;
+
+&lt;p&gt;The most important news is: AWS upload support got several fixes making it
+more stable and the internal store can now handle manifests with a no longer
+supported schema. Also, we dropped support for i686 architecture. Building
+images for it was never supported and we now no longer provide i686 RPMs.&lt;/p&gt;
+
+&lt;p&gt;See the full changelog below.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS uploads doesn’t anymore report to AWS that composer uploads
+the image in vhdx format. This surprisingly makes the upload process
+more stable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Uploads were always in WAITING state. This is now fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The /projects/source/* routes now correctly supports all the features
+of Weldr API v1.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS upload now logs the progress to journal. Even better logging is
+hopefully coming soon.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS upload’s status is now correctly set to FAILED when ImportSnapshot
+fails. Before, this hanged the upload indefinitely.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Store unmarshalling is now safer in some cases. For example, stored
+manifests are now longer checked when loaded from disk. Therefore,
+changing of manifest schema doesn’t lead to crashes when old manifests
+are present in the store.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When store loading failed in non-verbose mode of osbuild-composer, it
+crashed the process because of nil logger. This is now fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The upstream spec file for building osbuild-composer package now
+excludes the i686 architecture. Note that composer never supported
+this arch.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The upstream spec file now correctly specifies the composer’s dependency
+to osbuild-ostree. This was forgotten in the previous release which
+introduced Fedora IoT support.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The previous version didn’t have repositories defined for s390x and
+ppc64le architectures. This is now fixed. Note that this only fixes
+some codepaths, osbuild-composer still cannot build any images on
+these architectures.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Brian C. Lane, Lars Karlitski, Major Hayden, Martin
+                    Sehnoutka, Ondřej Budai, Stef Walter, Tom Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Liberec, 2020-06-03&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of cockpit-composer 19</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-cockpit-composer-19</id>
+  <published>2020-06-04T00:00:00-05:00</published>
+  <updated>2020-06-04T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-04-release-cockpit-composer-19.html" rel="alternate" type="text/html" title="Release of cockpit-composer 19" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases. There are no major features in this release but 
+upgrading is encouraged.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-04-release-cockpit-composer-19.html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases. There are no major features in this release but 
+upgrading is encouraged.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minor UI improvements for the images list view and the images dropdown&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fixes to the password tests&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Prepartion for future osbuild-tree support&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minor NPM updates for react&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minor translation updates&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Jenn Giardino, Matej Marusak, Stef Walter, Tom Gundersen, Xiaofeng Wang&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-06-03&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of cockpit-composer 18</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-cockpit-composer-18</id>
+  <published>2020-06-04T00:00:00-05:00</published>
+  <updated>2020-06-04T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-04-release-cockpit-composer-18.html" rel="alternate" type="text/html" title="Release of cockpit-composer 18" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 18 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-04-release-cockpit-composer-18.html">&lt;p&gt;We are happy to announce version 18 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fix flake8 E302 error in tests&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minor NPM updates for patternfly and jquery&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Translations updates&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Xiaofeng Wang&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-05-20&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>How to: Image Builder + OSTree + Anaconda</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/how-to-ostree-anaconda</id>
+  <published>2020-06-01T00:00:00-05:00</published>
+  <updated>2020-06-01T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-01-how-to-ostree-anaconda.html" rel="alternate" type="text/html" title="How to: Image Builder + OSTree + Anaconda" />
+
+  <summary type="html">&lt;p&gt;In version 15, &lt;em&gt;Image Builder&lt;/em&gt; gained support for creating
+&lt;a href=&quot;https://ostree.readthedocs.io/en/latest/&quot;&gt;OSTree&lt;/a&gt; commits.
+You can install a Linux system using those OSTree commits by using
+the &lt;a href=&quot;https://fedoraproject.org/wiki/Anaconda&quot;&gt;Anaconda Installer&lt;/a&gt;
+and its
+&lt;a href=&quot;https://anaconda-installer.readthedocs.io/en/latest/kickstart.html&quot;&gt;Kickstart functionality&lt;/a&gt;.
+This process is rather involved, with none of the individual parts
+providing a complete solution yet, so let me walk you through it.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-06-01-how-to-ostree-anaconda.html">&lt;p&gt;In version 15, &lt;em&gt;Image Builder&lt;/em&gt; gained support for creating
+&lt;a href=&quot;https://ostree.readthedocs.io/en/latest/&quot;&gt;OSTree&lt;/a&gt; commits.
+You can install a Linux system using those OSTree commits by using
+the &lt;a href=&quot;https://fedoraproject.org/wiki/Anaconda&quot;&gt;Anaconda Installer&lt;/a&gt;
+and its
+&lt;a href=&quot;https://anaconda-installer.readthedocs.io/en/latest/kickstart.html&quot;&gt;Kickstart functionality&lt;/a&gt;.
+This process is rather involved, with none of the individual parts
+providing a complete solution yet, so let me walk you through it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h1&gt;
+
+&lt;p&gt;The naming of &lt;em&gt;Image Builder&lt;/em&gt; and its various parts need
+&lt;a href=&quot;/preview/refs/heads/osbuild_21/documentation/&quot;&gt;some introduction&lt;/a&gt;
+before they make sense. So I’ll
+list the actual package names you need for a complete working &lt;em&gt;Image Builder&lt;/em&gt;
+setup. We’ll also use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;podman&lt;/code&gt; later on:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install osbuild osbuild-ostree osbuild-composer composer-cli podman
+$ sudo systemctl start osbuild-composer.socket
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You will need one of the bootable install ISO images for
+&lt;a href=&quot;https://getfedora.org/&quot;&gt;Fedora&lt;/a&gt; or &lt;a href=&quot;https://developers.redhat.com/products/rhel/download&quot;&gt;RHEL&lt;/a&gt;.
+I used a
+&lt;a href=&quot;https://ftp.fau.de/fedora/linux/releases/32/Server/x86_64/iso/Fedora-Server-netinst-x86_64-32-1.6.iso&quot;&gt;Fedora 32 netinst image&lt;/a&gt; so get that downloading ahead of time.&lt;/p&gt;
+
+&lt;p&gt;Lastly, make note of the IP address of your system that is accessible
+from other machines. This address will be peppered through various files
+and commands:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ nmcli -p device show | grep IP4.ADDRESS
+IP4.ADDRESS[1]:                         192.168.11.5/24
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;create-the-ostree-in-image-builder-gui&quot;&gt;Create the OSTree in Image Builder GUI&lt;/h1&gt;
+
+&lt;p&gt;You can create OSTree commits nicely in the Image Builder GUI. If
+you’d rather do this via the command line, then skip this section.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo yum install cockpit cockpit-composer
+$ sudo systemctl start cockpit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Use a web browser, to connect your machine on port 9090, and log in with
+your usual Linux user name and password. Make sure your Linux user is an
+administrative account on the local machine. Then click on &lt;em&gt;Image Builder&lt;/em&gt; in the menu:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/empty.png&quot; alt=&quot;Image Builder empty screen&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click the &lt;em&gt;Create Blueprint&lt;/em&gt; button to make a new blueprint and give it
+a simple name. In the instructions below we use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iot&lt;/code&gt; so for simplicity
+just stick with that here:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/create-blueprint.png&quot; alt=&quot;Image Builder Create Blueprint&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You don’t need to add any additional software to the blueprint to get a bootable
+system. Click the &lt;em&gt;Create Image&lt;/em&gt; button, and choose &lt;em&gt;Fedora IoT Commit&lt;/em&gt; as
+the image &lt;em&gt;Type&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/create-image.png&quot; alt=&quot;Image Builder Create Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you click &lt;em&gt;Create&lt;/em&gt; the image build will start, and take several minutes
+to complete. You won’t see any progress information or logs until its done,
+so just be patient:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/queue-progress.png&quot; alt=&quot;Image Builder in progress&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the image build is done, choose the option to &lt;em&gt;Download&lt;/em&gt; the image which
+is hidden in the kebab menu next to the &lt;em&gt;Logs&lt;/em&gt; button. You’ll get a tarball
+named something like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8e8014f8-4d15-441a-a26d-9ed7fc89e23a-commit.tar&lt;/code&gt;
+which contains the OSTree commit that was just created. Save that file
+to a local directory and we’ll place a few additional files next to it
+in later steps.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/download.png&quot; alt=&quot;Image Builder download&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;create-the-ostree-in-image-builder-command-line&quot;&gt;Create the OSTree in Image Builder command line&lt;/h1&gt;
+
+&lt;p&gt;If you created an OSTree via the GUI above, you can skip this section.
+Here’s how to create an OSTree via Image Builder from the command line.
+The &lt;em&gt;Image Builder&lt;/em&gt; command line tool is called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;composer-cli&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We first have to have a blueprint defined. To do this we write
+an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iot.toml&lt;/code&gt; file that defines what the image will contain:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;name = &quot;iot&quot;
+description = &quot;&quot;
+version = &quot;0.0.0&quot;
+packages = []
+modules = []
+groups = []
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I’ve chosen the name &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iot&lt;/code&gt;, which is used in the steps below. For your
+first go around just keep this simple name so you don’t have to figure out all
+the places below to change the name. Even though we haven’t added any specific
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;packages&lt;/code&gt; to this blueprint, all the necessary packages to get a
+bootable system will be automatically included.&lt;/p&gt;
+
+&lt;p&gt;Import the blueprint &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iot.toml&lt;/code&gt; file into Image Builder like this, and
+start an image build for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fedora-iot-commit&lt;/code&gt; image type:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo composer-cli blueprints push iot.toml
+$ sudo composer-cli compose start iot fedora-iot-commit
+Compose 8e8014f8-4d15-441a-a26d-9ed7fc89e23a added to the queue
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can check on status of the image build like so:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo composer-cli compose status
+8e8014f8-4d15-441a-a26d-9ed7fc89e23a RUNNING  Sat May 30 07:03:54 2020 iot             0.0.0 fedora-iot-commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once the image has been created, download it into the current directory
+using the UUID identifier that was displayed in the output of the previous
+command. We’ll be creating further files in the same directory below.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo composer-cli compose image 8e8014f8-4d15-441a-a26d-9ed7fc89e23a
+8e8014f8-4d15-441a-a26d-9ed7fc89e23a-commit.tar: 587.60 MB
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;setting-up-the-kickstart&quot;&gt;Setting up the Kickstart&lt;/h1&gt;
+
+&lt;p&gt;We’ll install the OSTree in the Anaconda Installer using a Kickstart file.
+Create a file called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ostree.ks&lt;/code&gt; containing the following content
+in the current directory:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lang en_US.UTF-8
+keyboard us
+timezone UTC
+zerombr
+clearpart --all --initlabel
+autopart
+reboot
+user --name=core --groups=wheel --password=foobar
+ostreesetup --nogpg --url=http://192.168.11.5:8000/repo/ --osname=iot --remote=iot --ref=fedora/32/x86_64/iot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Replace the IP address in the last line with the address you saw in the
+first section. This kickstart file must be in the same directory as
+the OSTree tarball you downloaded from Image Builder above.&lt;/p&gt;
+
+&lt;h1 id=&quot;serving-the-ostree-via-http&quot;&gt;Serving the OSTree via HTTP&lt;/h1&gt;
+
+&lt;p&gt;OSTree doesn’t come with a stock way to push or serve OSTree commits,
+so we’ll need to build our own mechanism to serve the
+OSTree content. Lets use &lt;a href=&quot;https://httpd.apache.org/&quot;&gt;Apache httpd&lt;/a&gt; in
+a container. The OSTree client can overwhelm certain HTTP servers
+with too many connections. Don’t get too fancy or opinionated
+about using your favorite HTTP server here.&lt;/p&gt;
+
+&lt;p&gt;Create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; with the following content. This file must be
+in the same directory as the tarball and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ostree.ks&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM registry.access.redhat.com/ubi8/ubi
+RUN yum -y install httpd &amp;amp;&amp;amp; yum clean all
+ADD *.tar *.ks /var/www/html
+EXPOSE 80
+CMD [&quot;/usr/sbin/httpd&quot;, &quot;-D&quot;, &quot;FOREGROUND&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now lets build and run the container:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ls
+8e8014f8-4d15-441a-a26d-9ed7fc89e23a-commit.tar
+Dockerfile
+iot.toml
+ostree.ks
+$ podman build -t ostree .
+STEP 1: FROM registry.access.redhat.com/ubi8/ubi
+STEP 2: RUN yum -y install httpd &amp;amp;&amp;amp; yum clean all
+...
+$ podman run --rm -p 8000:80 ostree
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In another terminal, check that you can access the content
+using the IP address you discovered earlier:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl http://192.168.11.5:8000/ostree.ks
+lang en_US.UTF-8
+keyboard us
+timezone UTC
+...
+$ curl http://192.168.11.5:8000/repo/config
+[core]
+repo_version=1
+mode=archive-z2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And we’re ready to rock and roll!&lt;/p&gt;
+
+&lt;h1 id=&quot;installing-from-an-ostree&quot;&gt;Installing from an OSTree&lt;/h1&gt;
+
+&lt;p&gt;Boot a system using the ISO image you downloaded earlier. If you’re using a
+virtual machine or hardware you can do this in different ways that I won’t
+cover here.&lt;/p&gt;
+
+&lt;p&gt;At the initial screen that the Installer ISO displays, you’ll see a line
+something like &lt;em&gt;Install Fedora 32&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/bootmenu.png&quot; alt=&quot;Anaconda boot menu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Before the time out, use the arrow keys to select that line, and press
+the TAB key. You’ll see a line of kernel command line options appear below.
+Something like:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; vmlinuz initrd=initrd.img inst.stage2=hd:LABEL=Fedora quiet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the following to that line. Make sure to leave a space before it, and again
+use the IP address you discovered earlier:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;inst.ks=http://192.168.11.5:8000/ostree.ks
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/kernel-commandline.png&quot; alt=&quot;Anaconda kernel command line&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After you press ENTER, the installer should start. If things are working the
+GUI should display but proceed automatically to the installation stage. You’ll
+see text about the system being installed from the OSTree repo, and how it’s
+pulling various objects.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/osbuild_21/images/pages/2020-06-01-how-to-ostree-anaconda/installing.png&quot; alt=&quot;Anaconda kernel installing&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the system is installed, it’ll reboot automatically. To log into your
+newly minted system use the login &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;core&lt;/code&gt; and the password &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foobar&lt;/code&gt;
+that you saw in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ostree.ks&lt;/code&gt; file.&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 13</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-13</id>
+  <published>2020-05-29T00:00:00-05:00</published>
+  <updated>2020-05-29T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-29-release-osbuild-composer-13.html" rel="alternate" type="text/html" title="Release of osbuild-composer 13" />
+
+  <summary type="html">&lt;p&gt;Yesterday, we released version 13 of &lt;em&gt;osbuild-composer&lt;/em&gt;. We are very proud of
+this release as it contains lots of very nice improvements. The most important
+ones are: support for building Fedora IoT commit tarballs, revamped support
+for RHEL 8 and dropping the ability to build Fedora 30 and several poorly-
+defined image types.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-29-release-osbuild-composer-13.html">&lt;p&gt;Yesterday, we released version 13 of &lt;em&gt;osbuild-composer&lt;/em&gt;. We are very proud of
+this release as it contains lots of very nice improvements. The most important
+ones are: support for building Fedora IoT commit tarballs, revamped support
+for RHEL 8 and dropping the ability to build Fedora 30 and several poorly-
+defined image types.&lt;/p&gt;
+
+&lt;p&gt;But there’s much more, see the list of changes below. An upgrade is highly
+recommended!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fedora IoT is now supported for Fedora 32 in the form of producing the
+commit tarball. Feel free to test it and report any issues you find.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for RHEL was completely revamped. Now, osbuild-composer supports
+building images only for the latest RHEL 8. The separate minor versions
+are no longer available. Additionally, it now uses the Red Hat CDN which
+requires the host system to be properly subscribed. If you need to use
+different package repositories to build RHEL from, use a repository
+override in /etc/osbuild-composer/repositories.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Several image types were removed: ext4-filesystem, partitioned-disk,
+and tar. The use-cases for these image types were not clearly defined and
+without a clear definition, it was very hard to define test cases for
+them.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for Fedora 30 was dropped as it is now EOL. So long and thanks
+for all the fish!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The timeout for AWS upload is removed. It’s very hard to predict how long
+will the AWS upload take. With the timeout in place, it caused the test
+suite to produce a lot of false positives.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Build logs were broken in the previous release, this release fixes it.
+This time, they were properly saved but weldr API read them from a wrong
+location. This is now fixed and covered with basic tests.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Weldr API has now support for /compose/metadata and /compose/results
+routes. This allows users to easily access a manifest used to build
+an image.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Preliminary support for ppc64le and s390x is added to RHEL distribution.
+No images cannot be built yet but at least it won’t crash on startup.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The weldr API socket has now correct permissions. As the result, it can
+be read and written only by root and the weldr group. This is the same
+behaviour as Lorax has.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;By mistake, workers incorrectly used the default store for every build.
+However, this can currently cause the store to grow indefinitely, so
+this release switched the osbuild store to use a temporary directory again.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;/status route in weldr API now correctly returns msgs field.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Handling of json (un)marshalling in store is revamped. It should
+make it more stable and simplify the maintenance of the store backwards
+compatibility.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Initial support for koji is now added. It’s currently not hooked up
+to composer and only supports password authentication. More coming soon.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Again, the automated testing was greatly improved during this cycle,
+big thanks to everyone involved!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Alexander Todorov, Brian C. Lane, David Rheinsberg, Jacob
+                    Kozol, Lars Karlitski, Major Hayden, Ondřej Budai, Tom
+                    Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Liberec, 2020-05-28&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 15</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-15</id>
+  <published>2020-05-29T00:00:00-05:00</published>
+  <updated>2020-05-29T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-29-release-osbuild-15.html" rel="alternate" type="text/html" title="Release of osbuild 15" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
+and, as usual, lots of bugfixes all over.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-29-release-osbuild-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
+and, as usual, lots of bugfixes all over.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-15&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A new assembler, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.oci-archive&lt;/code&gt;, that will turn a tree
+into an Open Container Initiative Image compliant archive. These
+archives can be used to run containers via e.g. podman.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for client side certificates to download content from the
+Red Hat servers: the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.files&lt;/code&gt; source got support for
+reading entitlements and pass those certificates along when
+fetching content, i.e. RPMs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A new ManifestPreProcessor (MPP) was added as a new tool located
+in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tools/mpp-depsolve.py&lt;/code&gt;. Currently, it can take an existing
+manifest and dep-solve packages specified via a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mpp-depsolve&lt;/code&gt;
+option in existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; stages.
+This is now used to generate Fedora 32 based test pipelines.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.ostree.commit&lt;/code&gt; assembler gained an option to produce
+a tarball archive instead of emitting the plain OSTree repository.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Schema validation is now done with the draft 4 validator, and works
+therefore with pyhthon-jsonschema 2.6.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tree_id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output_id&lt;/code&gt; fields got dropped from the resulting
+JSON when inspecting pipelines via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild --inspect&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--build-env&lt;/code&gt; option has been dropped from the command line
+interface. It was deprecated and not used anymore.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tests have been converted to not rely on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tree_id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output_id&lt;/code&gt;
+anymore, as they are deprecated and will be removed in the future.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lots of other improvements to the test infrastructure and the CI.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;And finally for something meta: this file has been re-formatted to
+be proper markdown.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Jacob Kozol,
+                    Major Hayden&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-05-20&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 12</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-12</id>
+  <published>2020-05-14T00:00:00-05:00</published>
+  <updated>2020-05-14T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-14-release-osbuild-composer-12.html" rel="alternate" type="text/html" title="Release of osbuild-composer 12" />
+
+  <summary type="html">&lt;p&gt;Today, we released version 12 of &lt;em&gt;osbuild-composer&lt;/em&gt;. This time, there are no
+major features. However, you are still encouraged to upgrade because the new
+version contains a lot of fixes and refactorings making the tool more stable.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-14-release-osbuild-composer-12.html">&lt;p&gt;Today, we released version 12 of &lt;em&gt;osbuild-composer&lt;/em&gt;. This time, there are no
+major features. However, you are still encouraged to upgrade because the new
+version contains a lot of fixes and refactorings making the tool more stable.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;In previous versions support for running remote workers was broken. This is
+ now fixed and running remote workers is once again possible. See #568 for
+ more information.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The job queue and the store are now two separate Go packages. One of
+ the benefits is that it is now possible to build images without using
+ the store which is too complicated for some usecases.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A blueprint name is now checked against the regex “^[a-zA-Z0-9._-]+$”. This
+ is the same limitation as in lorax-composer.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;All osbuild calls now use the new –output-directory argument. This change
+ is a must because the old way of retrieving images from the osbuild store
+ will soon be deprecated.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Some routes from the weldr API are now implemented in a more efficient way.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As always, the team worked hard on improving the tests and the CI.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Brian C. Lane, David Rheinsberg, Jiri Kortus,
+                    Lars Karlitski, Major Hayden, Ondřej Budai&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Liberec, 2020-05-13&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 14</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-14</id>
+  <published>2020-05-12T00:00:00-05:00</published>
+  <updated>2020-05-12T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-12-release-osbuild-14.html" rel="alternate" type="text/html" title="Release of osbuild 14" />
+
+  <summary type="html">&lt;p&gt;Last week, we released version 14 of &lt;em&gt;osbuild&lt;/em&gt;. It is a regular release with a
+handful of new features, as well as a bunch of fixes. The major new feature is
+support for input-validation via JSON-schemata, as well as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--inspect&lt;/code&gt;
+command-line option to get more information about manifests without running the
+pipeline engine.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-12-release-osbuild-14.html">&lt;p&gt;Last week, we released version 14 of &lt;em&gt;osbuild&lt;/em&gt;. It is a regular release with a
+handful of new features, as well as a bunch of fixes. The major new feature is
+support for input-validation via JSON-schemata, as well as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--inspect&lt;/code&gt;
+command-line option to get more information about manifests without running the
+pipeline engine.&lt;/p&gt;
+
+&lt;p&gt;This release is one week early, but we intend to continue bi-weekly releases.
+However, from now on &lt;em&gt;osbuild&lt;/em&gt; and its dependents (including &lt;em&gt;osbuild-composer&lt;/em&gt;)
+will release alternatingly.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-14&lt;/em&gt; sources. Go
+forth and fetch it while it is hot!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Schema validation: The osbuild python library gained support for
+retrieving the metadata of modules and schema validation. This is
+being used on each invocation of osbuild in order to validate the
+manifest. Should the validation fail the build is aborted and
+validation errors are returned, either in human readable form or
+in JSON, if &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--json&lt;/code&gt; was specified.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--inspect&lt;/code&gt; command line option was added for osbuild. Instead
+of attempting to build the pipeline, the manifest will be printed
+to stdout in JSON form, including all the calulcated identifiers
+of stages, the assembler and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tree_id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output_id&lt;/code&gt; of the
+pipeline (and build pipelines). Schema validation will be done and
+errors will be reported.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Internally, the buildroot class now uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PYTHONPATH&lt;/code&gt; to point to
+the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; module instead of the symlinks or bind-mounts in the
+individual modules.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fixes to the CI and many cleanups to the schemata, sample and test
+pipelines as a result of the schema validation work.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Ondřej Budai&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-05-06&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of cockpit-composer 17</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-cockpit-composer-17</id>
+  <published>2020-05-06T00:00:00-05:00</published>
+  <updated>2020-05-06T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-06-release-cockpit-composer-17.html" rel="alternate" type="text/html" title="Release of cockpit-composer 17" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 17 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-05-06-release-cockpit-composer-17.html">&lt;p&gt;We are happy to announce version 17 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The support for uploading VHD images to Azure is now available.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Help text is now provided for all AWS fields. This texts explains what
+each field represents and where to find their values in the AWS
+web console.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The image size can now be specified when creating an image.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tests are refactored to run on Cockpit’s testing framework. All tests
+have been moved away from selenium.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minor NPM updates&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Jacob Kozol, Jenn Giardino, Tom Gundersen, and Xiaofeng Wang&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-05-06&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 11</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-11</id>
+  <published>2020-04-30T00:00:00-05:00</published>
+  <updated>2020-04-30T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-30-release-osbuild-composer-11.html" rel="alternate" type="text/html" title="Release of osbuild-composer 11" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases. It now supports uploading images to Azure as well.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-30-release-osbuild-composer-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases. It now supports uploading images to Azure as well.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The support for uploading VHD images to Azure is now available.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AMI images are now produced in the vhdx format. This fixes the issue that
+those images couldn’t be previously booted in EC2.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In version 10 the logs weren’t saved when osbuild failed. This is now fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The warnings when upgrading/removing the RPM package are now fixed. Note that
+updating to version 11 still produces them because the upgrade process runs
+also the scriptlets from version 10.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The size calculation for Fedora 31 vhd images is fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The size field was removed from the tar assembler struct. The field has
+actually never been supported in osbuild and it doesn’t make any sense.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The minimal required version of osbuild is bumped to 12.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This release also got big upgrades to the testing infrastructure, more tests
+are run on a CI and they now run faster. Also, the unit test coverage is
+improved.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Alexander Todorov, Jacob Kozol, Jakub Rusz, Jiri Kortus,
+Lars Karlitski, Major Hayden, Ondřej Budai, Tom Gundersen&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Liberec, 2020-04-29&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 13</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-13</id>
+  <published>2020-04-30T00:00:00-05:00</published>
+  <updated>2020-04-30T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-30-release-osbuild-13.html" rel="alternate" type="text/html" title="Release of osbuild 13" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 13 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-30-release-osbuild-13.html">&lt;p&gt;We are happy to announce version 13 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled By Christian Kellner.
+Everyone is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stage &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.yum&lt;/code&gt; has been dropped. It has been deprecated for some
+time and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; provides a better alternative.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;XZ compression now utilizes all available CPU cores. This affects all stages
+and assemblers that support XZ compression. It should decrease compression
+times considerably.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.grub2&lt;/code&gt; now supports referring to file-systems via a label
+additionally to a UUID. This affects all places where an existing file-system
+is referred to. Disk creation still requires a UUID to be provided.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.fstab&lt;/code&gt; gained similar support.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RHEL-8.3 is now supported as host system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The ‘libdir’ layout in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/usr/lib/osbuild/&lt;/code&gt; has been simplified. Distributions
+are no longer required to create mount anchors during installation. Instead,
+all modules (stages, assemblers, sources, and runners) can be copied verbatim
+from the source tree.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.grub2&lt;/code&gt; now correctly pads &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grubenv&lt;/code&gt; files to 1024 bytes. This
+was not done correctly, previously, and caused other parsers to fail.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The containerization via systemd-nspawn was adjusted to support running in a
+container. With sufficient privileges, you can now run osbuild pipelines from
+within a container.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Major Hayden&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-04-29&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of cockpit-composer 16</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-cockpit-composer-16</id>
+  <published>2020-04-16T00:00:00-05:00</published>
+  <updated>2020-04-16T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-16-release-cockpit-composer-16.html" rel="alternate" type="text/html" title="Release of cockpit-composer 16" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 16 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-16-release-cockpit-composer-16.html">&lt;p&gt;We are happy to announce version 16 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;
+
+&lt;p&gt;This release adds the ability to upload to AWS. When creating an image 
+compatible with AWS, a user has the option to upload the image to Amazon’s EC2. 
+This release also has minor changes to support the migration of the 
+cockpit-composer repo on github to the OSBuild organization.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The ability to upload to AWS has been added. The create image modal is
+replaced with a wizard enabling additional customizations and
+functionality. If the user creates an AMI the user can also enter the
+credentials and parameters needed to upload this image to EC2 in AWS.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cockpit-composer has migrated from Weldr to the OSBuild github
+organization. It can now be found at osbuild/cockpit-composer instead
+of weldr/cockpit-composer.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minor NPM updates have been made for React and Patternfly&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Jacob Kozol&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-04-16&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 12</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-12</id>
+  <published>2020-04-15T00:00:00-05:00</published>
+  <updated>2020-04-15T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-15-release-osbuild-12.html" rel="alternate" type="text/html" title="Release of osbuild 12" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 12 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-15-release-osbuild-12.html">&lt;p&gt;We are happy to announce version 12 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases.&lt;/p&gt;
+
+&lt;p&gt;This release adds multiple stages and sources for building OSTree-based
+systems. See &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;samples/f31-ostree-*.json&lt;/code&gt; for examples how to use it.&lt;/p&gt;
+
+&lt;p&gt;It also drops support for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.dnf&lt;/code&gt; source and stage. Please use
+the rpm stage instead.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled By Christian Kellner.
+Everyone is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;qemu&lt;/code&gt; assembler now supports the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VHDX&lt;/code&gt; image format. This is the
+preferred format for AWS targets, so it is a natural fit for our assemblers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grub2&lt;/code&gt; stage now disables the legacy compatibility by default.  You have
+to explicitly enable it in the stage options if you require it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Additionally, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grub2&lt;/code&gt; stage now also has a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uefi.install&lt;/code&gt; option to
+control whether it installs the UEFI configuration from the build tree into
+the target tree. Furthermore, a new option called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;write_defaults&lt;/code&gt; controls
+whether default options are written to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc&lt;/code&gt; (enabled by default).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dnf&lt;/code&gt; stage was removed. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rpm&lt;/code&gt; stage fully replaces all its
+functionality.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fedora27&lt;/code&gt; runner is no longer supported. Fedora 30 is the minimum
+required host version for Fedora systems.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add OSTree integration. This includes multiple stages and sources which allow
+to export osbuild trees as ostree commits, or import ostree commits into an
+osbuild pipeline:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;org.osbuild.rpm-ostree: This stage uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rpm-ostree compose&lt;/code&gt; to post-process
+a tree and prepare it for committing to ostree.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;org.osbuild.ostree.commit: A new assembler that takes a tree that conforms to
+the ostree layout and turns it into an ostree commit.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;org.osbuild.ostree: A new source that provides external ostree commits to a
+pipeline.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;org.osbuild.ostree: A new stage that takes an ostree commit and prepares the
+working directory with its content.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; binary now has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--output-directory=DIR&lt;/code&gt; argument which
+allows to specify a directory where to put the output of the pipeline
+assembler. This is optional for now, but will be made mandatory in the
+future.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A new stage called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.first-boot&lt;/code&gt; allows to control the execution
+of scripts at the first bootup of the generated images.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Major Hayden, Ondřej
+Budai, Tom Gundersen&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-04-15&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 10</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-10</id>
+  <published>2020-04-15T00:00:00-05:00</published>
+  <updated>2020-04-15T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-15-release-osbuild-composer-10.html" rel="alternate" type="text/html" title="Release of osbuild-composer 10" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases. This release contains mostly bug fixes and internal
+refactorings. We’ve also landed more integration tests and increased unit test
+coverage.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-15-release-osbuild-composer-10.html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases. This release contains mostly bug fixes and internal
+refactorings. We’ve also landed more integration tests and increased unit test
+coverage.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The correct metadata_expire value is now passed to dnf. In the past, this led
+to a lot of failed builds, because dnf has the default expire time set to 48
+hours, whereas the Fedora updates repos have the expire time of 6 hours.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A decision was made that the minimal Go version required for building the
+project is 1.12. This is now enforced by the CI.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The intermediate s3 object is now deleted after the upload to AWS is
+finished. It has no value for users.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The upload to AWS has now a bigger timeout. The current coronavirus situation
+is affecting the AWS responsiveness in a negative way.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The weldr API has better test coverage. In the process, several bugs in
+sources and composes were fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Worker and jobqueue packages are receiving a big refactoring.  This is the
+prerequisite for having multiple job queues for building images for different
+distributions and architectures.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The image tests now boot the AWS images in the actual EC2.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Alexander Todorov, Brian C. Lane, Jacob Kozol, Jakub Rusz,
+Lars Karlitski, Major Hayden, Martin Sehnoutka, Ondřej Budai, Tom Gundersen&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Liberec, 2020-04-15&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of cockpit-composer 15</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-cockpit-composer-15</id>
+  <published>2020-04-02T00:00:00-05:00</published>
+  <updated>2020-04-02T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-02-release-cockpit-composer-15.html" rel="alternate" type="text/html" title="Release of cockpit-composer 15" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;cockpit-composer&lt;/em&gt;. Most of the work was 
+spent migrating the backend from &lt;em&gt;lorax-composer&lt;/em&gt; to &lt;em&gt;osbuild-composer&lt;/em&gt;. There 
+were also minor updates to the tests and CI.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-02-release-cockpit-composer-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;cockpit-composer&lt;/em&gt;. Most of the work was 
+spent migrating the backend from &lt;em&gt;lorax-composer&lt;/em&gt; to &lt;em&gt;osbuild-composer&lt;/em&gt;. There 
+were also minor updates to the tests and CI.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log compiled by Jacob Kozol. Everyone is 
+encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;changes-with-15&quot;&gt;CHANGES WITH 15:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Replace lorax-composer with osbuild-composer. This switch does not change 
+existing functionality but does enable future features.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update tests to increase stability and to support changes in the default 
+store.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Remove Travis configuration which pushes to Zanata.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update NPM dependencies.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Jacob Kozol, Lars Karlitski, Xiaofeng Wang&lt;/p&gt;
+
+&lt;p&gt;– Berlin, 2020-04-02&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 11</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-11</id>
+  <published>2020-04-01T00:00:00-05:00</published>
+  <updated>2020-04-01T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-01-release-osbuild-11.html" rel="alternate" type="text/html" title="Release of osbuild 11" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases. Most of our efforts were again spent on general cleanups and
+minor documentation improvements. No big reworks or feature announcements this
+time.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-01-release-osbuild-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases. Most of our efforts were again spent on general cleanups and
+minor documentation improvements. No big reworks or feature announcements this
+time.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled By Christian Kellner.
+Everyone is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;changes-with-11&quot;&gt;CHANGES WITH 11:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Drop support for legacy input: passing in non-manifest style pipelines is now
+not supported anymore.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for specifying an UUID for partitions when using the GPT partition
+layout was added to the org.osbuild.qemu assembler.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fix a crash in the case the assembler failed, which was caused by cleanup up
+the object while the object was still being written to.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Delay the cleanup of the build tree to after the error checking since in the
+error case there is nothing to clean up and trying to do so will lead to
+crash.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objectstore.Object&lt;/code&gt; now directly cleans its working tree up, in contrast to
+relying on the implicit cleanup of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TemporaryDirectory&lt;/code&gt;.  One advantage of
+this is that the custom cleanup code can handle immutable directories, which
+Python 3 fails to clean up.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Drop custom &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os-release&lt;/code&gt; creation from the RHEL 8.2 runner. The issue that
+made this neccessary got fixed upstream.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ensure the build tree is always being built even if there are no stages
+specified.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;spec file: Do no generate dependencies for the internal files and add NEWS.md
+to the documentation section.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Fedora 30 based aarch64 example was fixed and now builds again.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Lars Karlitski, Major
+Hayden, Martin Sehnoutka, Ondřej Budai&lt;/p&gt;
+
+&lt;p&gt;– Berlin, 2020-04-01&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 9</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-9</id>
+  <published>2020-04-01T00:00:00-05:00</published>
+  <updated>2020-04-01T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-01-release-osbuild-composer-9.html" rel="alternate" type="text/html" title="Release of osbuild-composer 9" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 9 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-04-01-release-osbuild-composer-9.html">&lt;p&gt;We are happy to announce version 9 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;
+
+&lt;p&gt;The most visible changes are that we’re building up-to-date Fedora images now
+by including the &lt;em&gt;updates&lt;/em&gt; repositories and that we’re releasing into Fedora 32
+and 33 under a new—less confusing—package name: &lt;em&gt;osbuild-composer&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;changes-with-9&quot;&gt;CHANGES WITH 9:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fedora is now build with updates and modules repositories enabled, therefore
+up-to-date images are now produced.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A new man-page &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild-composer(7)&lt;/code&gt; with high-level description of the
+project is now available. It can be built by the new man target in the
+Makfile.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;All Fedora images have now a generic initramfs. This should make the images
+more reproducible and less likely failing to boot if the image build was done
+in a less usual environment.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Metalink is now used to access the Fedora repositories. This change should
+hopefully lead to more stable builds.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer is now released to Fedora 32 and 33 in a new osbuild-composer
+package. The old golang-github-osbuild-composer package will be automatically
+upgraded to the new one.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The internal osbuild-pipeline command now has a more user-friendly interface.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The RCM API (in development, experimental) is reworked to allow any
+distribution-architecture-image type combination.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The work on a high-level description of image types began.  See image-types
+directory.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The osbuild-worker arguments are reworked, they are now much more flexible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The image-info tool used in the integration tests can be now run on Fedora
+32.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The unit test coverage is now much bigger, thanks to all contributors!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Internal distribution representation is significantly reworked, this
+simplifies the process of adding the support for all currently missing
+architectures.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Integration tests were also improved, the image tests are fully switched to
+the new Go implementation and an automatic way of generating test cases is
+added. The weldr API coverage is also much better. Several bugs in it were
+fixed in the process.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Codecov.io is now used to monitor the test coverage of the code.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As always, minor fixes and improvements all over the place.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Alexander Todorov, Brian C. Lane, David Rheinsberg, Jacob
+Kozol, Jakub Rusz, Jiri Kortus, Lars Karlitski, Martin Sehnoutka, Ondřej Budai,
+Tom Gundersen&lt;/p&gt;
+
+&lt;p&gt;– Liberec, 2020-04-01&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild-composer 8</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-composer-8</id>
+  <published>2020-03-18T00:00:00-05:00</published>
+  <updated>2020-03-18T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-03-18-release-osbuild-composer-8.html" rel="alternate" type="text/html" title="Release of osbuild-composer 8" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 8 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-03-18-release-osbuild-composer-8.html">&lt;p&gt;We are happy to announce version 8 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+regular biweekly releases.&lt;/p&gt;
+
+&lt;p&gt;The biggest change is that we now use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt;
+stages, rather than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.dnf&lt;/code&gt;. This makes the dependency resolution of
+package installations a lot simpler and cleaner. This should not have any user
+visible effects, other than reduced build-times and slightly different pipeline
+output.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log. Everyone is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;changes-with-8&quot;&gt;CHANGES WITH 8:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;All generated pipelines now use the rpm stage rather than the dnf stage.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The state directory can be now set using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;STATE_DIRECTORY&lt;/code&gt; env variable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Several fixes in blueprint weldr API.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mising systemd scriplets were added to the spec file.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 10</title>
+  <id>https://www.osbuild.org/preview/refs/heads/osbuild_21/news/release-osbuild-10</id>
+  <published>2020-03-18T00:00:00-05:00</published>
+  <updated>2020-03-18T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-03-18-release-osbuild-10.html" rel="alternate" type="text/html" title="Release of osbuild 10" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases. Most of our efforts were spent on general cleanups and minor
+documentation improvements. No big reworks or feature announcements this time.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/osbuild_21/news/2020-03-18-release-osbuild-10.html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases. Most of our efforts were spent on general cleanups and minor
+documentation improvements. No big reworks or feature announcements this time.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log. Everyone is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;changes-with-10&quot;&gt;CHANGES WITH 10:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A new man-page &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild-manifest(5)&lt;/code&gt; is available, which describes
+the input format of the JSON manifest that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild&lt;/code&gt; expects.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Man-pages can now be built via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;make man&lt;/code&gt;. This supports &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SRCDIR&lt;/code&gt; and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BUILDDIR&lt;/code&gt; variables to build out-of-tree.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Temporary objects in the object-store are now created in
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.osbuild/tmp/&lt;/code&gt;, rather than in the top-level directory. This should
+help cleaning up temporary objects after a crash. If no osbuild
+process is running, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmp/&lt;/code&gt; subdirectory should not exist.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The final stage of a build-pipeline is no longer automatically
+committed. You must pass checkpoints via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--checkpoint&lt;/code&gt; to commit
+anything to the store.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Improve curl timeout handling. This should improve osbuild behavior
+with slow or bad mirrors and make sure operations are retried
+correctly, or time-out if no progress is made.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Lars Karlitski,
+                    Major Hayden, Tom Gundersen&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berlin, 2020-03-18&lt;/li&gt;
+&lt;/ul&gt;</content>
+</entry>
+
+
+
+
+
+</feed>

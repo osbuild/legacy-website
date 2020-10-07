@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 10</title>
+    <meta name="title" content="Release Osbuild 10" />
+    <meta property="og:title" content="Release Osbuild 10" />
+
+
+
+    <meta name="description" content="We are happy to announce version 10 of osbuild, again one of our regular
+biweekly releases. Most of our efforts were spent on general cleanups and minor
+documentation improvements. No big reworks or feature announcements this time.
+" />
+    <meta property="og:description" content="We are happy to announce version 10 of osbuild, again one of our regular
+biweekly releases. Most of our efforts were spent on general cleanups and minor
+documentation improvements. No big reworks or feature announcements this time.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/osbuild_21/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/osbuild_21/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/osbuild_21/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/osbuild_21/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/osbuild_21/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/osbuild_21/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/osbuild_21/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 10</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 10 of <em>osbuild</em>, again one of our regular
+biweekly releases. Most of our efforts were spent on general cleanups and minor
+documentation improvements. No big reworks or feature announcements this time.</p>
+
+<p>Below you can find the official change log. Everyone is encouraged to upgrade!</p>
+
+<hr />
+
+<h2 id="changes-with-10">CHANGES WITH 10:</h2>
+
+<ul>
+  <li>
+    <p>A new man-page <code class="language-plaintext highlighter-rouge">osbuild-manifest(5)</code> is available, which describes
+the input format of the JSON manifest that <code class="language-plaintext highlighter-rouge">osbuild</code> expects.</p>
+  </li>
+  <li>
+    <p>Man-pages can now be built via <code class="language-plaintext highlighter-rouge">make man</code>. This supports <code class="language-plaintext highlighter-rouge">SRCDIR</code> and
+<code class="language-plaintext highlighter-rouge">BUILDDIR</code> variables to build out-of-tree.</p>
+  </li>
+  <li>
+    <p>Temporary objects in the object-store are now created in
+<code class="language-plaintext highlighter-rouge">.osbuild/tmp/</code>, rather than in the top-level directory. This should
+help cleaning up temporary objects after a crash. If no osbuild
+process is running, the <code class="language-plaintext highlighter-rouge">tmp/</code> subdirectory should not exist.</p>
+  </li>
+  <li>
+    <p>The final stage of a build-pipeline is no longer automatically
+committed. You must pass checkpoints via <code class="language-plaintext highlighter-rouge">--checkpoint</code> to commit
+anything to the store.</p>
+  </li>
+  <li>
+    <p>Improve curl timeout handling. This should improve osbuild behavior
+with slow or bad mirrors and make sure operations are retried
+correctly, or time-out if no progress is made.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, David Rheinsberg, Lars Karlitski,
+                    Major Hayden, Tom Gundersen</p>
+
+<ul>
+  <li>Berlin, 2020-03-18</li>
+</ul>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by David Rheinsberg,
+
+    on March 18, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/osbuild_21/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

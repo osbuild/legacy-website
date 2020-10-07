@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 16</title>
+    <meta name="title" content="Release Osbuild Composer 16" />
+    <meta property="og:title" content="Release Osbuild Composer 16" />
+
+
+
+    <meta name="description" content="We are happy to announce that we released osbuild-composer 16 yesterday.
+This release has no new features but contains a lot of useful fixes.
+" />
+    <meta property="og:description" content="We are happy to announce that we released osbuild-composer 16 yesterday.
+This release has no new features but contains a lot of useful fixes.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/osbuild_21/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/osbuild_21/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/osbuild_21/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/osbuild_21/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/osbuild_21/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/osbuild_21/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/osbuild_21/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 16</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce that we released osbuild-composer 16 yesterday.
+This release has no new features but contains a lot of useful fixes.</p>
+
+<p>Below you can find the official change log. Everyone is encouraged to
+upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>osbuild-composer now obsoletes lorax-composer on RHEL.</p>
+  </li>
+  <li>
+    <p>An upload failure (e.g. due to invalid credentials) now causes the compose
+to appear as failed.</p>
+  </li>
+  <li>
+    <p>RHEL 8 repositories are switched to the beta ones to allow composer to be
+tested on 8.3 Beta. This will be reverted when GA comes.</p>
+  </li>
+  <li>
+    <p>OSTree images no longer contains /etc/fstab. The filesystem layout is
+determined by the installer and thus it doesn’t make any sense to include
+it.</p>
+  </li>
+  <li>
+    <p>If both group and user customizations were used, the user would be created
+before the group, causing a build to fail. This is now fixed.</p>
+  </li>
+  <li>
+    <p>Composer now correctly passes UID and GID to org.osbuild.{users,groups}
+stages as ints instead of strings.</p>
+  </li>
+  <li>
+    <p>The subpackages (worker, tests and rcm) now require a matching version of
+osbuild-composer to be installed. Previously, they would be happy with
+just an arbitrary one.</p>
+  </li>
+  <li>
+    <p>Support for testing OpenStack images in actual OpenStack is now available.
+Note that upload to OpenStack is still not available for the end users
+(it’s on the roadmap though).</p>
+  </li>
+  <li>
+    <p>Worker now logs not only job failures but also job successes.</p>
+  </li>
+  <li>
+    <p>All DNF errors were mistakenly tagged as RepoError, this is now fixed.</p>
+  </li>
+  <li>
+    <p>As always, a lot of test and CI improvements are included in this release.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Alexander Todorov, Christian Kellner, Major Hayden, Martin
+                    Sehnoutka, Ondřej Budai, Tom Gundersen</p>
+
+<p>— Liberec, 2020-06-29</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Ondřej Budai,
+
+    on June 30, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/osbuild_21/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

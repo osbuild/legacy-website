@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 15</title>
+    <meta name="title" content="Release Osbuild Composer 15" />
+    <meta property="og:title" content="Release Osbuild Composer 15" />
+
+
+
+    <meta name="description" content="Today, we released osbuild-composer 15 with several very exciting features.
+Most notably, Composer has now support for building RHEL For Edge and also
+for building images for ppc64le and s390x architectures. Also, a lot of very
+nice fixes are included in this release.
+" />
+    <meta property="og:description" content="Today, we released osbuild-composer 15 with several very exciting features.
+Most notably, Composer has now support for building RHEL For Edge and also
+for building images for ppc64le and s390x architectures. Also, a lot of very
+nice fixes are included in this release.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/osbuild_21/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/osbuild_21/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/osbuild_21/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/osbuild_21/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/osbuild_21/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/osbuild_21/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/osbuild_21/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 15</h1>
+
+  </section>
+  <section>
+<p>Today, we released osbuild-composer 15 with several very exciting features.
+Most notably, Composer has now support for building RHEL For Edge and also
+for building images for ppc64le and s390x architectures. Also, a lot of very
+nice fixes are included in this release.</p>
+
+<p>Below you can find the official change log. Everyone is encouraged to
+upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Support for building RHEL for Edge is now available.</p>
+  </li>
+  <li>
+    <p>Composer has now support for building QCOW2 and tar images for ppc64le and
+s390x architectures.</p>
+  </li>
+  <li>
+    <p>Tar images for RHEL have returned. The Image Builder team found out that
+they are used as a way to install RHEL for Satellite.</p>
+  </li>
+  <li>
+    <p>Blueprints containing packages with a wildcard version no longer causes
+the built image to have both x86_64 and i686 versions of one package
+installed.</p>
+  </li>
+  <li>
+    <p>GPG check is now disabled by default. If you have a custom
+repository in /etc/osbuild-composer/repositories, just set gpg_check
+to true to enable the check. Note that all the pre-defined repositories
+have GPG check enabled.</p>
+  </li>
+  <li>
+    <p>Composer now supports a cancellation of jobs. This can be done by calling
+/compose/cancel route of Weldr API.</p>
+  </li>
+  <li>
+    <p>osbuild-composer previously crashed when osbuild didn’t return the right
+machine-readable output (e.g. because of a disk being out of space). This
+is now fixed.</p>
+  </li>
+  <li>
+    <p>Because of the GPG check change and RHEL for Edge support, composer
+now requires osbuild 17 or higher.</p>
+  </li>
+  <li>
+    <p>osbuild-composer previously required the python package to be installed
+on RHEL. Now, it uses the always-installed platform-python.</p>
+  </li>
+  <li>
+    <p>The buildroot for RHEL 8 didn’t have selinux labels before. This is now
+fixed.</p>
+  </li>
+  <li>
+    <p>When Composer crashed, it left temporary directories in /var/cache. The
+temporary directories are now moved to /var/tmp, which is managed by
+systemd with PrivateTmp set to true, so they’re now correctly removed
+after a crash.</p>
+  </li>
+  <li>
+    <p>Several weldr API routes were aligned to work in the same way as with
+Lorax. /blueprints/freeze now correctly supports option to output TOML.
+Projects and modules routes return all fields as Lorax returns.</p>
+  </li>
+  <li>
+    <p>AWS upload now logs the current state to the system journal. Emojis are
+of course included. 🎉</p>
+  </li>
+  <li>
+    <p>As always, amazing improvements in the CI infrastructure happened. Also,
+the test coverage went up. Thanks all for doing this!</p>
+  </li>
+</ul>
+
+<p>Contributions from: Alexander Todorov, Brian C. Lane, Christian Kellner,
+                    Jakub Rusz, Lars Karlitski, Major Hayden, Martin
+                    Sehnoutka, Ondřej Budai, Peter Robinson, Tom
+                    Gundersen</p>
+
+<p>— Liberec, 2020-06-12</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Ondřej Budai,
+
+    on June 12, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/osbuild_21/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

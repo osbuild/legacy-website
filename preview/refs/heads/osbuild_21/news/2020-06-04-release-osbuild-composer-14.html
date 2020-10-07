@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 14</title>
+    <meta name="title" content="Release Osbuild Composer 14" />
+    <meta property="og:title" content="Release Osbuild Composer 14" />
+
+
+
+    <meta name="description" content="Osbuild-composer 13 had numerous new exciting features but unfortunately,
+several annoying bugs slipped into that release too. To address all these
+issues, yesterday our team decided to roll-out an off-schedule bug-fix
+release. Say hi to osbuild-composer 14.
+" />
+    <meta property="og:description" content="Osbuild-composer 13 had numerous new exciting features but unfortunately,
+several annoying bugs slipped into that release too. To address all these
+issues, yesterday our team decided to roll-out an off-schedule bug-fix
+release. Say hi to osbuild-composer 14.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/osbuild_21/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/osbuild_21/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/osbuild_21/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/osbuild_21/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/osbuild_21/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/osbuild_21/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/osbuild_21/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/osbuild_21/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 14</h1>
+
+  </section>
+  <section>
+<p>Osbuild-composer 13 had numerous new exciting features but unfortunately,
+several annoying bugs slipped into that release too. To address all these
+issues, yesterday our team decided to roll-out an off-schedule bug-fix
+release. Say hi to osbuild-composer 14.</p>
+
+<p>The most important news is: AWS upload support got several fixes making it
+more stable and the internal store can now handle manifests with a no longer
+supported schema. Also, we dropped support for i686 architecture. Building
+images for it was never supported and we now no longer provide i686 RPMs.</p>
+
+<p>See the full changelog below.</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>AWS uploads doesn’t anymore report to AWS that composer uploads
+the image in vhdx format. This surprisingly makes the upload process
+more stable.</p>
+  </li>
+  <li>
+    <p>Uploads were always in WAITING state. This is now fixed.</p>
+  </li>
+  <li>
+    <p>The /projects/source/* routes now correctly supports all the features
+of Weldr API v1.</p>
+  </li>
+  <li>
+    <p>AWS upload now logs the progress to journal. Even better logging is
+hopefully coming soon.</p>
+  </li>
+  <li>
+    <p>AWS upload’s status is now correctly set to FAILED when ImportSnapshot
+fails. Before, this hanged the upload indefinitely.</p>
+  </li>
+  <li>
+    <p>Store unmarshalling is now safer in some cases. For example, stored
+manifests are now longer checked when loaded from disk. Therefore,
+changing of manifest schema doesn’t lead to crashes when old manifests
+are present in the store.</p>
+  </li>
+  <li>
+    <p>When store loading failed in non-verbose mode of osbuild-composer, it
+crashed the process because of nil logger. This is now fixed.</p>
+  </li>
+  <li>
+    <p>The upstream spec file for building osbuild-composer package now
+excludes the i686 architecture. Note that composer never supported
+this arch.</p>
+  </li>
+  <li>
+    <p>The upstream spec file now correctly specifies the composer’s dependency
+to osbuild-ostree. This was forgotten in the previous release which
+introduced Fedora IoT support.</p>
+  </li>
+  <li>
+    <p>The previous version didn’t have repositories defined for s390x and
+ppc64le architectures. This is now fixed. Note that this only fixes
+some codepaths, osbuild-composer still cannot build any images on
+these architectures.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Brian C. Lane, Lars Karlitski, Major Hayden, Martin
+                    Sehnoutka, Ondřej Budai, Stef Walter, Tom Gundersen</p>
+
+<p>— Liberec, 2020-06-03</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Ondřej Budai,
+
+    on June  4, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/osbuild_21/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
