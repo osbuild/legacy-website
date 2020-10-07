@@ -3,11 +3,54 @@
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
   <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2020-09-16T04:09:11-05:00</updated>
+  <updated>2020-10-07T09:09:15-05:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator>
   <link href="https://www.osbuild.org/preview/refs/heads/main/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
+
+
+
+<entry>
+  <title>Release of cockpit-composer 25</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-25</id>
+  <published>2020-10-06T00:00:00-05:00</published>
+  <updated>2020-10-06T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-06-release-cockpit-composer-25.html" rel="alternate" type="text/html" title="Release of cockpit-composer 25" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce the release of cockpit-composer 25. This release has 
+no major features but contains useful fixes.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-06-release-cockpit-composer-25.html">&lt;p&gt;We are happy to announce the release of cockpit-composer 25. This release has 
+no major features but contains useful fixes.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log. Everyone is encouraged to
+upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Improve error state messages&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add additional console error logging&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update CDP testing library&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update translations from weblate&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update minor NPM dependencies&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Jacob Kozol, Martin Pitt, Matej Marusak, Sanne Raymaekers, Xiaofeng Wang&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-10-06&lt;/p&gt;</content>
+</entry>
 
 
 
