@@ -77,7 +77,7 @@ build pipelines.
 For high-level documentation and information on development, see its
 [Project Pages @GitHub](https://github.com/osbuild/osbuild-composer).
 
-* **OSBuild System Documentation**:
+* **OSBuild Administrator Documentation**:
 
   * TBD
 
@@ -95,10 +95,14 @@ failures on your own, or contribute to the _osbuild_ development.
 For high-level documentation and information on development, see its
 [Project Pages @GitHub](https://github.com/osbuild/osbuild).
 
-* **OSBuild Pipeline Documentation**:
+* **OSBuild System Documentation**:
 
-{%- for man in global_manpages -%}
+{% for man in global_manpages -%}
 {%- assign file = man.path | split: "/" | last -%}
 {% assign name = file | split: '.' | reverse | shift | reverse | join: '.' %}
   * [**MAN: {{ name }}**]({{ man.url | relative_url }})
-{%- endfor -%}
+{%- endfor %}
+
+* **OSBuild Developer Documentation**:
+
+  * [**RPMrepo: RPM Repository Snapshots**]({% link _docs/rpmrepo.md %})

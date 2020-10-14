@@ -16,9 +16,11 @@ media:
 
 # Define collections of sub-pages
 collections:
-  news:
+  docs:
     output: true
   manpages:
+    output: true
+  news:
     output: true
 
 # Define default layouts for each page type
@@ -26,6 +28,10 @@ defaults:
   - scope:
       path: ""
       type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "_collections/_docs"
     values:
       layout: "page"
   - scope:
