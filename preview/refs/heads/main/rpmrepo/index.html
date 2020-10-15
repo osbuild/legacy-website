@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Rpmrepo</title>
+    <meta name="title" content="Rpmrepo" />
+    <meta property="og:title" content="Rpmrepo" />
+
+
+
+    <meta name="description" content="RPM Repository Snapshots
+" />
+    <meta property="og:description" content="RPM Repository Snapshots
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+<h1 id="rpm-repository-snapshots">RPM Repository Snapshots</h1>
+
+<p>For reliable continuous development, the OSBuild project employs its own RPM
+repository snapshots. These snapshots are persistent and immutable. They are
+meant to be used by test farms, CI systems, and other development tools, in
+case the official RPM repositories are not suitable.</p>
+
+<hr />
+
+<p><strong>WARNING</strong>: <em>These snapshots are not meant for production use! No guarantee of
+safety, applicability, or fitness for a particular purpose is made. No security
+fixes are applied to the repositories!</em></p>
+
+<hr />
+
+<h2 id="repositories">Repositories</h2>
+
+<p>An enumeration of all available snapshots can be retrieved via:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl https://rpmrepo.osbuild.org/control/snapshots | jq .
+</code></pre></div></div>
+
+<p>The following table lists the repositories that are snapshotted, as well as the
+availability guarantees, and the different variants.</p>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th style="text-align: center">Version</th>
+      <th style="text-align: center">Architectures</th>
+      <th>Lifetime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fedora</td>
+      <td style="text-align: center">31</td>
+      <td style="text-align: center">x86_64</td>
+      <td>6 months</td>
+    </tr>
+    <tr>
+      <td>Fedora</td>
+      <td style="text-align: center">32</td>
+      <td style="text-align: center">x86_64</td>
+      <td>6 months</td>
+    </tr>
+    <tr>
+      <td>Fedora</td>
+      <td style="text-align: center">33</td>
+      <td style="text-align: center">x86_64</td>
+      <td>6 months</td>
+    </tr>
+    <tr>
+      <td>RHEL</td>
+      <td style="text-align: center">8.2</td>
+      <td style="text-align: center">aarch64, ppc64le, s390x, x86_64</td>
+      <td>6 months</td>
+    </tr>
+    <tr>
+      <td>RHEL</td>
+      <td style="text-align: center">8.3</td>
+      <td style="text-align: center">aarch64, ppc64le, s390x, x86_64</td>
+      <td>6 months</td>
+    </tr>
+    <tr>
+      <td>RHEL</td>
+      <td style="text-align: center">8.4</td>
+      <td style="text-align: center">aarch64, ppc64le, s390x, x86_64</td>
+      <td>6 months</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="usage">Usage</h2>
+
+<p>We provide an RPM repository for every snapshot, accessible via
+<code class="language-plaintext highlighter-rouge">rpmrepo.osbuild.org</code>. The <em>Base URL</em> for a given snapshot is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://rpmrepo.osbuild.org/v1/&lt;storage&gt;/&lt;platform&gt;/&lt;snapshot&gt;/
+</code></pre></div></div>
+
+<p>The parameters are:</p>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th style="text-align: center">Value</th>
+      <th style="text-align: center">Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>&lt;storage&gt;</em></td>
+      <td style="text-align: center"><em>anon</em>, <em>auth</em>, <em>psi</em></td>
+      <td style="text-align: center"><em>anon</em></td>
+    </tr>
+    <tr>
+      <td><em>&lt;platform&gt;</em></td>
+      <td style="text-align: center"><em>f&lt;num&gt;</em>, <em>el&lt;num&gt;</em></td>
+      <td style="text-align: center"><em>f33</em>, <em>el8</em></td>
+    </tr>
+    <tr>
+      <td><em>&lt;snapshot&gt;</em></td>
+      <td style="text-align: center"><em>&lt;tag&gt;</em></td>
+      <td style="text-align: center"><em>f33-x86_64-devel-20201010</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>The <em>storage</em> key selects the actual data store. Available storage includes
+<em>anon</em> for the anonymous storage, <em>auth</em> for data that requires authentication,
+<em>psi</em> for data on Red Hat private infrastructure. The <em>platform</em> key groups the
+data by platform, required for data lifetime management. The <em>snapshot</em> key
+selects the individual snapshot.</p>
+
+<p>Note that not all data is available on all storage locations and platforms. If
+you select the wrong combination, you will get <em>404</em> replies. As a general
+rule, you should select the platform based on the snapshot name (e.g., for the
+snapshot <em>f33-x86_64-devel-20201010</em> you should use <em>f33</em> as platform). As
+storage selector, you should use <em>anon</em> for all publicly available data, <em>psi</em>
+for Red Hat internal data, and <em>auth</em> if you have gotten authentication
+credentials.</p>
+
+<h2 id="access">Access</h2>
+
+<p>By default, all snapshots are publicly available, unless they contain
+confidential or proprietary data. If you decide to use these snapshots, please
+contact the OSBuild Developers and give us a short notice, so we can track the
+users and communicate upcoming changes:</p>
+
+<ul>
+  <li><strong>OSBuild Issue Tracker</strong>: <a href="https://github.com/osbuild/osbuild/issues">@GitHub</a></li>
+  <li><strong>Snapshot Maintainer</strong>: David Rheinsberg</li>
+</ul>
+
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
