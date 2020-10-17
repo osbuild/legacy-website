@@ -3,12 +3,58 @@
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
   <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2020-10-15T02:52:39-05:00</updated>
+  <updated>2020-10-17T14:06:45-05:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator>
   <link href="https://www.osbuild.org/preview/refs/heads/main/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
 
+
+<entry>
+  <title>Release of osbuild-composer 22</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-22</id>
+  <published>2020-10-16T00:00:00-05:00</published>
+  <updated>2020-10-16T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-16-release-osbuild-composer-22.html" rel="alternate" type="text/html" title="Release of osbuild-composer 22" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce that we released osbuild-composer 22.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-16-release-osbuild-composer-22.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 22.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for building Fedora 33 images is now available as a tech preview.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The osbuild-composer-cloud binary is gone. The osbuild-composer binary
+now serves the Composer API along with Weldr and Koji APIs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The testing setup was reworked. All files related to tests are now shipped
+in the tests subpackage. A script to run the test suite locally is now
+also available. See HACKING.md for more details.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GPG keys in Koji API are no longer marked as required.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Osbuild-composer RPM is now buildable on Fedora 33+ and Fedora ELN.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Osbuild-composer for Fedora 34 and higher now obsoletes lorax-composer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Alexander Todorov, Jacob Kozol, Lars Karlitski,
+                    Martin Sehnoutka, Ondřej Budai, Tom Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Liberec, 2020-10-16&lt;/p&gt;</content>
+</entry>
 
 <entry>
   <title>Release of osbuild 22</title>
@@ -49,6 +95,53 @@ to check for spelling mistakes.&lt;/p&gt;
                     Lars Karlitski, Major Hayden&lt;/p&gt;
 
 &lt;p&gt;— Berlin, 2020-10-08&lt;/p&gt;</content>
+</entry>
+
+<entry>
+  <title>Release of osbuild 21</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-21</id>
+  <published>2020-10-07T00:00:00-05:00</published>
+  <updated>2020-10-07T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html" rel="alternate" type="text/html" title="Release of osbuild 21" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
+support for running on Fedora 34. Furthermore, internal errors during
+container setup are now properly reported. And lastly, a lot of work has
+been done to improve the code readability.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
+support for running on Fedora 34. Furthermore, internal errors during
+container setup are now properly reported. And lastly, a lot of work has
+been done to improve the code readability.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-21&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The way that output of modules is communicated to osbuild was
+re-factored in a way that now makes it possible to also capture
+and log the output of the container runtime, i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bubblewrap&lt;/code&gt;.
+This should prove useful to track down errors where the runner
+can not be executed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;runners: support for Fedora 34 was added&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A lot of internal re-factoring was done, to make the code nicer
+and easier to read. For example the way objects are exported in
+the pipeline is now unified.
+Additionally, a dedicated API is used to fetch the arguments in
+the modules, instead of relying on standard input.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: chloenayon, Christian Kellner&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-09-10&lt;/p&gt;</content>
 </entry>
 
 <entry>
@@ -117,53 +210,6 @@ are included in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&
                     Tom Gundersen&lt;/p&gt;
 
 &lt;p&gt;— Berlin, 2020-09-30&lt;/p&gt;</content>
-</entry>
-
-<entry>
-  <title>Release of osbuild 21</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-21</id>
-  <published>2020-10-07T00:00:00-05:00</published>
-  <updated>2020-10-07T00:00:00-05:00</updated>
-  <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html" rel="alternate" type="text/html" title="Release of osbuild 21" />
-
-  <summary type="html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
-support for running on Fedora 34. Furthermore, internal errors during
-container setup are now properly reported. And lastly, a lot of work has
-been done to improve the code readability.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
-support for running on Fedora 34. Furthermore, internal errors during
-container setup are now properly reported. And lastly, a lot of work has
-been done to improve the code readability.&lt;/p&gt;
-
-&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-21&lt;/em&gt; sources. All
-users are recommended to upgrade!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The way that output of modules is communicated to osbuild was
-re-factored in a way that now makes it possible to also capture
-and log the output of the container runtime, i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bubblewrap&lt;/code&gt;.
-This should prove useful to track down errors where the runner
-can not be executed.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;runners: support for Fedora 34 was added&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A lot of internal re-factoring was done, to make the code nicer
-and easier to read. For example the way objects are exported in
-the pipeline is now unified.
-Additionally, a dedicated API is used to fetch the arguments in
-the modules, instead of relying on standard input.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Contributions from: chloenayon, Christian Kellner&lt;/p&gt;
-
-&lt;p&gt;— Berlin, 2020-09-10&lt;/p&gt;</content>
 </entry>
 
 <entry>
@@ -982,78 +1028,6 @@ that you saw in the &lt;code class=&quot;language-plaintext highlighter-rouge&qu
 </entry>
 
 <entry>
-  <title>Release of osbuild 15</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-15</id>
-  <published>2020-05-29T00:00:00-05:00</published>
-  <updated>2020-05-29T00:00:00-05:00</updated>
-  <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html" rel="alternate" type="text/html" title="Release of osbuild 15" />
-
-  <summary type="html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
-and, as usual, lots of bugfixes all over.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
-and, as usual, lots of bugfixes all over.&lt;/p&gt;
-
-&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-15&lt;/em&gt; sources. All
-users are recommended to upgrade!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A new assembler, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.oci-archive&lt;/code&gt;, that will turn a tree
-into an Open Container Initiative Image compliant archive. These
-archives can be used to run containers via e.g. podman.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Support for client side certificates to download content from the
-Red Hat servers: the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.files&lt;/code&gt; source got support for
-reading entitlements and pass those certificates along when
-fetching content, i.e. RPMs.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A new ManifestPreProcessor (MPP) was added as a new tool located
-in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tools/mpp-depsolve.py&lt;/code&gt;. Currently, it can take an existing
-manifest and dep-solve packages specified via a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mpp-depsolve&lt;/code&gt;
-option in existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; stages.
-This is now used to generate Fedora 32 based test pipelines.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.ostree.commit&lt;/code&gt; assembler gained an option to produce
-a tarball archive instead of emitting the plain OSTree repository.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Schema validation is now done with the draft 4 validator, and works
-therefore with pyhthon-jsonschema 2.6.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tree_id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output_id&lt;/code&gt; fields got dropped from the resulting
-JSON when inspecting pipelines via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild --inspect&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--build-env&lt;/code&gt; option has been dropped from the command line
-interface. It was deprecated and not used anymore.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Tests have been converted to not rely on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tree_id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output_id&lt;/code&gt;
-anymore, as they are deprecated and will be removed in the future.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Lots of other improvements to the test infrastructure and the CI.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;And finally for something meta: this file has been re-formatted to
-be proper markdown.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Jacob Kozol,
-                    Major Hayden&lt;/p&gt;
-
-&lt;p&gt;— Berlin, 2020-05-20&lt;/p&gt;</content>
-</entry>
-
-<entry>
   <title>Release of osbuild-composer 13</title>
   <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-13</id>
   <published>2020-05-29T00:00:00-05:00</published>
@@ -1152,6 +1126,78 @@ big thanks to everyone involved!&lt;/p&gt;
                     Gundersen&lt;/p&gt;
 
 &lt;p&gt;— Liberec, 2020-05-28&lt;/p&gt;</content>
+</entry>
+
+<entry>
+  <title>Release of osbuild 15</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-15</id>
+  <published>2020-05-29T00:00:00-05:00</published>
+  <updated>2020-05-29T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html" rel="alternate" type="text/html" title="Release of osbuild 15" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
+and, as usual, lots of bugfixes all over.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
+and, as usual, lots of bugfixes all over.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-15&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A new assembler, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.oci-archive&lt;/code&gt;, that will turn a tree
+into an Open Container Initiative Image compliant archive. These
+archives can be used to run containers via e.g. podman.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for client side certificates to download content from the
+Red Hat servers: the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.files&lt;/code&gt; source got support for
+reading entitlements and pass those certificates along when
+fetching content, i.e. RPMs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A new ManifestPreProcessor (MPP) was added as a new tool located
+in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tools/mpp-depsolve.py&lt;/code&gt;. Currently, it can take an existing
+manifest and dep-solve packages specified via a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mpp-depsolve&lt;/code&gt;
+option in existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; stages.
+This is now used to generate Fedora 32 based test pipelines.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.ostree.commit&lt;/code&gt; assembler gained an option to produce
+a tarball archive instead of emitting the plain OSTree repository.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Schema validation is now done with the draft 4 validator, and works
+therefore with pyhthon-jsonschema 2.6.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tree_id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output_id&lt;/code&gt; fields got dropped from the resulting
+JSON when inspecting pipelines via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;osbuild --inspect&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--build-env&lt;/code&gt; option has been dropped from the command line
+interface. It was deprecated and not used anymore.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tests have been converted to not rely on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tree_id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;output_id&lt;/code&gt;
+anymore, as they are deprecated and will be removed in the future.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lots of other improvements to the test infrastructure and the CI.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;And finally for something meta: this file has been re-formatted to
+be proper markdown.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Jacob Kozol,
+                    Major Hayden&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-05-20&lt;/p&gt;</content>
 </entry>
 
 <entry>
