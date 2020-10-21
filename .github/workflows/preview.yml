@@ -57,7 +57,7 @@ jobs:
           BASEURL="/${REPO}"
         fi
         echo "Base-url: ${BASEURL}"
-        echo "::set-env name=BASEURL::${BASEURL}"
+        echo "BASEURL=${BASEURL}" >>"${GITHUB_ENV}"
 
     #
     # Build pages
