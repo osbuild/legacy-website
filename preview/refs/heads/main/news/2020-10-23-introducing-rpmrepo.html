@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Introducing Rpmrepo</title>
+    <meta name="title" content="Introducing Rpmrepo" />
+    <meta property="og:title" content="Introducing Rpmrepo" />
+
+
+
+    <meta name="description" content="The Image Builder project builds Fedora and RHEL operating system images, as
+such its test infrastructure is reliant on RPM package repositories to verify
+previously succeeding builds do not fail with newer Image Builder updates. It
+is not unusual for CI systems to require external resources, but in the case
+of RPM repositories we are suddenly confronted with a moving target: If a test
+fails, was it our Image Builder modification that broke, or does the RPM
+repository include broken updates?
+" />
+    <meta property="og:description" content="The Image Builder project builds Fedora and RHEL operating system images, as
+such its test infrastructure is reliant on RPM package repositories to verify
+previously succeeding builds do not fail with newer Image Builder updates. It
+is not unusual for CI systems to require external resources, but in the case
+of RPM repositories we are suddenly confronted with a moving target: If a test
+fails, was it our Image Builder modification that broke, or does the RPM
+repository include broken updates?
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Introducing RPMrepo</h1>
+
+    <p class="i gray pl3 mv0 pv0">
+      Guest Post
+
+      by David Rheinsberg,
+
+      on October 23, 2020.
+    </p>
+
+  </section>
+  <section>
+<p>The Image Builder project builds Fedora and RHEL operating system images, as
+such its test infrastructure is reliant on RPM package repositories to verify
+previously succeeding builds do not fail with newer Image Builder updates. It
+is not unusual for CI systems to require external resources, but in the case
+of RPM repositories we are suddenly confronted with a moving target: If a test
+fails, was it our Image Builder modification that broke, or does the RPM
+repository include broken updates?</p>
+
+<p>A way to tackle this is to require all external dependencies to be immutable
+and persistent. Most RPM repositories have neither of those properties, so we
+as the Image Builder team introduced RPMrepo, our immutable and persistent
+RPM repository snapshots.</p>
+
+<hr />
+
+<h1 id="issue-report">Issue Report</h1>
+
+<p><em>Continuous Integration</em> tests software updates on every single change. This
+ensures that problems are caught early and the need for <em>bisects</em> is reduced
+significantly. For the software that is part of Image Builder, this means
+test-building OS Artifacts in the CI. We want to verify that Image Builder
+still correctly assembles, for example, Fedora Cloud Images, that non-standard
+architecture builds still succeed, and that the different file-system types are
+all still correctly compiled. This requires us to build Fedora, RHEL, and other
+Operating System images from their official sources. In case of RPM based
+systems, this means RPM Repositories.</p>
+
+<p>It is not unusual for CI Test Suites to require external dependencies. However,
+as soon as you deal with moving targets, when your dependencies are not content
+addressable, or when their availability is dependent on other factors, you end
+up with a test suite that can fail even though the software to be tested did
+not introduce the failure. This does not necessarily mean it is not at fault,
+but it significantly disrupts the following development efforts of this
+project. When your test-suite starts failing without you introducing any
+changes, you can no longer use it to evaluate proposed changes to your
+software.</p>
+
+<p>If we look at the software repositories of the Fedora project, we will face a
+moving target. While the release repositories of Fedora are immutable, the
+update repositories are not. They can change any time, and there is no way to
+pin them at a specific point in time. This means anyone testing against those
+repositories needs to be prepared with their test dependencies changing without
+control.</p>
+
+<h2 id="immutable-and-persistent-dependencies">Immutable and Persistent Dependencies</h2>
+
+<p>There are different approaches to solve this problem. For Image Builder, we
+decided to require all test input and dependencies to be immutable and
+persistent.</p>
+
+<h4 id="immutability">Immutability</h4>
+
+<p>Immutability means that we know upfront the content that goes into our
+test-suite, and thus can deduce at every step which change introduced possible
+failure. We explicitly depend on a specific content hash of the RPM Repository
+Metadata that is used, and thus control the data that ends up in our tests. Any
+test failure thus means that this particular change caused the failure. As long
+as changes come self-contained and granular, you can rely on test results to
+represent a change.</p>
+
+<p>This comes at a cost, though. You now need to pin the input to your test suite,
+and more importantly, you need to keep it up-to-date. You thus regularly have
+to update the pinned dependencies. Those updates will preferably trigger test
+suite runs as well, this time telling you whether external changes caused the
+failure. If those external changes cause failure, you would have to delay the
+dependency update until those are resolved.</p>
+
+<p>Unfortunately, this also means that all dependencies need to be persistent, so
+as to retain access to the data even after the owner of that data decided to
+drop it.</p>
+
+<h4 id="persistency">Persistency</h4>
+
+<p>Persistency is usually easily solved by pulling dependencies into your
+project, also often known as <em>bundling</em> or <em>vendoring</em>. While it neatly avoids
+any availability and persistency issues, it becomes unwieldly when the
+dependencies grow in size or change regularly. With RPM repositories as
+dependency, you need them to be hosted on separate infrastructure, as they can
+easily surpass 50-GiB in size.</p>
+
+<p>This leaves you with only one option: Mirror the required data yourself on some
+central infrastructure.</p>
+
+<h2 id="rpmrepo">RPMrepo</h2>
+
+<p>After trying a lot of workarounds, mirroring subsets of repositories, avoiding
+update-repositories, and other tricks, we decided that none of this worked out.
+Instead, we started to create snapshots of our RPM repository dependencies, and
+now control their properties ourselves. This infrastructure we called
+<strong>RPMrepo</strong>.</p>
+
+<p><strong>RPMrepo</strong> has a set of input repositories, which it creates snapshots of on a
+regular basis. For now, this is done on a bi-weekly schedule, but can be
+amended with more snapshots at any time. The data is stored on our own
+infrastructure. As those repositories can become quite big, we deploy a content
+addressable shared storage system, which allows us to share any file between
+snapshots in the same group. This way, we were able to significantly reduce the
+required storage space of our snapshots, and we can create snapshots more often
+and more regular.</p>
+
+<p>These snapshots are available publicly, but we retain the option to restrict
+access if this starts to exceed our budget. Furthermore, we ask everyone to
+drop us a short notice if they start using the snapshots, so we can communicate
+upcoming changes.</p>
+
+<h4 id="using-the-snapshots">Using the Snapshots</h4>
+
+<p>For a detailed enumeration of the different parameters, check out the home of
+RPMrepo. It lists the different snapshot parameters as well as the set of
+repositories we currently take snapshots of.</p>
+
+<hr />
+
+<p><strong>Details</strong>: <a href="/preview/refs/heads/main/rpmrepo/">osbuild.org/rpmrepo/</a></p>
+
+<hr />
+
+<p>Followingly, we will walk through a short example how to access these
+repositories. Lets assume you currently use the Fedora <code class="language-plaintext highlighter-rouge">updates-released</code>
+repository and need a most recent snapshot. You can list all available
+snapshots via:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl https://rpmrepo.osbuild.org/control/snapshots | jq .
+</code></pre></div></div>
+
+<p>From this list, you can pick a snapshot of your choice. If you wanted Fedora-32
+on x86_64, with the <em>updates-released</em> repository, you would possibly pick:</p>
+
+<blockquote>
+  <p>f32-x86_64-updates-released-20201010</p>
+</blockquote>
+
+<p>This snapshot was taken on October 10th, 2020. You now fill in the template
+URL:</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">https://rpmrepo.osbuild.org/v1/&lt;storage&gt;/&lt;platform&gt;/&lt;snapshot&gt;/</code></p>
+</blockquote>
+
+<p>with your information:</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">https://rpmrepo.osbuild.org/v1/anon/f32/f32-x86_64-updates-released-20201010/</code></p>
+</blockquote>
+
+<p>and this will be your Base URL ready to be used with <code class="language-plaintext highlighter-rouge">dnf</code> and <code class="language-plaintext highlighter-rouge">yum</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -L https://rpmrepo.osbuild.org/v1/anon/f32/f32-x86_64-updates-released-20201010/repodata/repomd.xml
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;repomd xmlns="http://linux.duke.edu/metadata/repo" xmlns:rpm="http://linux.duke.edu/metadata/rpm"&gt;
+  &lt;revision&gt;1602512073&lt;/revision&gt;
+  &lt;data type="primary"&gt;
+    &lt;checksum type="sha256"&gt;ffb5f6c80f20d9d9d972ba89bab61c564d82f65e6a1e20449056864a6787d92a&lt;/checksum&gt;
+    &lt;open-checksum type="sha256"&gt;9891249bf4ec277851bba6349a51b8a46622ef265f4916b34c3feb6a4bfb7c68&lt;/open-checksum&gt;
+    &lt;location href="repodata/ffb5f6c80f20d9d9d972ba89bab61c564d82f65e6a1e20449056864a6787d92a-primary.xml.gz"/&gt;
+    &lt;timestamp&gt;1602511955&lt;/timestamp&gt;
+    &lt;size&gt;5819822&lt;/size&gt;
+    &lt;open-size&gt;56203423&lt;/open-size&gt;
+  &lt;/data&gt;
+  [...]
+&lt;/repomd&gt;
+</code></pre></div></div>
+
+<p>This is it. This snapshot is immutable and will not change during its lifetime.
+Do not hesitate to contact the Image Builder team if you have questions or
+further requests.</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by David Rheinsberg,
+
+    on October 23, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
