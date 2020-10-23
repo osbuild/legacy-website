@@ -105,4 +105,5 @@ For high-level documentation and information on development, see its
 
 * **OSBuild Developer Documentation**:
 
+  * [**Introducing RPMrepo**]({% link _news/2020-10-23-introducing-rpmrepo.md %})
   * [**RPMrepo: RPM Repository Snapshots**]({% link _docs/rpmrepo.md %})
