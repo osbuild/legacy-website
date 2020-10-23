@@ -3,11 +3,69 @@
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
   <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2020-10-23T08:09:36-05:00</updated>
+  <updated>2020-10-23T11:52:53-05:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator>
   <link href="https://www.osbuild.org/preview/refs/heads/main/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
+
+
+
+<entry>
+  <title>Release of osbuild 23</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-23</id>
+  <published>2020-10-23T00:00:00-05:00</published>
+  <updated>2020-10-23T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html" rel="alternate" type="text/html" title="Release of osbuild 23" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
+possible to build Fedora on RHEL systems.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
+possible to build Fedora on RHEL systems.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-23&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; stage now includes the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIGPGP&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIGGPG&lt;/code&gt;
+fields of each installed package in the returned metadata.
+Additionally, its docs have been improved to specify what metadata
+is returned.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The spec file has been changed so that the shebang for assemblers,
+stages and runners are not automatically mangled anymore. Runners
+were already changed to have the correct shebang for their target
+systems. Assemblers and stages are not meant to be run on the host
+itself, but always inside a build root container, which must bring
+the correct dependencies to run all stages and assemblers. For now,
+Python3 (&amp;gt;= 3.6), located at /usr/bin/python3, is required.
+This change will enable building Fedora systems on RHEL hosts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unit tests have been fixed to run on RHEL by dynamically selecting
+a runner that is suitable for the host system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The stages unit tests are now using generated manifests via mpp,
+and have been updated to use Fedora 32. Additionally, the current
+mirror was replaced with &lt;a href=&quot;https://osbuild.org/rpmrepo&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rpmrepo&lt;/code&gt;&lt;/a&gt;,
+which should provide a faster, more reliable package source.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The CI has dropped Fedora 31 but instead includes Fedora 33 as
+systems to run the composer reverse dependency tests for.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, Lars Karlitski&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-10-23&lt;/p&gt;</content>
+</entry>
 
 
 
@@ -1967,79 +2025,6 @@ store.&lt;/p&gt;
 
 
 <entry>
-  <title>Release of osbuild 11</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-11</id>
-  <published>2020-04-01T00:00:00-05:00</published>
-  <updated>2020-04-01T00:00:00-05:00</updated>
-  <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html" rel="alternate" type="text/html" title="Release of osbuild 11" />
-
-  <summary type="html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
-biweekly releases. Most of our efforts were again spent on general cleanups and
-minor documentation improvements. No big reworks or feature announcements this
-time.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
-biweekly releases. Most of our efforts were again spent on general cleanups and
-minor documentation improvements. No big reworks or feature announcements this
-time.&lt;/p&gt;
-
-&lt;p&gt;Below you can find the official change log, compiled By Christian Kellner.
-Everyone is encouraged to upgrade!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;changes-with-11&quot;&gt;CHANGES WITH 11:&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Drop support for legacy input: passing in non-manifest style pipelines is now
-not supported anymore.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Support for specifying an UUID for partitions when using the GPT partition
-layout was added to the org.osbuild.qemu assembler.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Fix a crash in the case the assembler failed, which was caused by cleanup up
-the object while the object was still being written to.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Delay the cleanup of the build tree to after the error checking since in the
-error case there is nothing to clean up and trying to do so will lead to
-crash.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objectstore.Object&lt;/code&gt; now directly cleans its working tree up, in contrast to
-relying on the implicit cleanup of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TemporaryDirectory&lt;/code&gt;.  One advantage of
-this is that the custom cleanup code can handle immutable directories, which
-Python 3 fails to clean up.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Drop custom &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os-release&lt;/code&gt; creation from the RHEL 8.2 runner. The issue that
-made this neccessary got fixed upstream.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Ensure the build tree is always being built even if there are no stages
-specified.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;spec file: Do no generate dependencies for the internal files and add NEWS.md
-to the documentation section.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The Fedora 30 based aarch64 example was fixed and now builds again.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Lars Karlitski, Major
-Hayden, Martin Sehnoutka, Ondřej Budai&lt;/p&gt;
-
-&lt;p&gt;– Berlin, 2020-04-01&lt;/p&gt;</content>
-</entry>
-
-
-
-<entry>
   <title>Release of osbuild-composer 9</title>
   <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-9</id>
   <published>2020-04-01T00:00:00-05:00</published>
@@ -2132,6 +2117,79 @@ Kozol, Jakub Rusz, Jiri Kortus, Lars Karlitski, Martin Sehnoutka, Ondřej Budai,
 Tom Gundersen&lt;/p&gt;
 
 &lt;p&gt;– Liberec, 2020-04-01&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
+  <title>Release of osbuild 11</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-11</id>
+  <published>2020-04-01T00:00:00-05:00</published>
+  <updated>2020-04-01T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html" rel="alternate" type="text/html" title="Release of osbuild 11" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases. Most of our efforts were again spent on general cleanups and
+minor documentation improvements. No big reworks or feature announcements this
+time.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+biweekly releases. Most of our efforts were again spent on general cleanups and
+minor documentation improvements. No big reworks or feature announcements this
+time.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled By Christian Kellner.
+Everyone is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;changes-with-11&quot;&gt;CHANGES WITH 11:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Drop support for legacy input: passing in non-manifest style pipelines is now
+not supported anymore.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support for specifying an UUID for partitions when using the GPT partition
+layout was added to the org.osbuild.qemu assembler.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fix a crash in the case the assembler failed, which was caused by cleanup up
+the object while the object was still being written to.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Delay the cleanup of the build tree to after the error checking since in the
+error case there is nothing to clean up and trying to do so will lead to
+crash.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;objectstore.Object&lt;/code&gt; now directly cleans its working tree up, in contrast to
+relying on the implicit cleanup of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TemporaryDirectory&lt;/code&gt;.  One advantage of
+this is that the custom cleanup code can handle immutable directories, which
+Python 3 fails to clean up.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Drop custom &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;os-release&lt;/code&gt; creation from the RHEL 8.2 runner. The issue that
+made this neccessary got fixed upstream.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ensure the build tree is always being built even if there are no stages
+specified.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;spec file: Do no generate dependencies for the internal files and add NEWS.md
+to the documentation section.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Fedora 30 based aarch64 example was fixed and now builds again.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, David Rheinsberg, Lars Karlitski, Major
+Hayden, Martin Sehnoutka, Ondřej Budai&lt;/p&gt;
+
+&lt;p&gt;– Berlin, 2020-04-01&lt;/p&gt;</content>
 </entry>
 
 

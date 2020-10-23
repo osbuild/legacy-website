@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 23</title>
+    <meta name="title" content="Release Osbuild 23" />
+    <meta property="og:title" content="Release Osbuild 23" />
+
+
+
+    <meta name="description" content="We are happy to announce version 23 of osbuild. This release makes it
+possible to build Fedora on RHEL systems.
+" />
+    <meta property="og:description" content="We are happy to announce version 23 of osbuild. This release makes it
+possible to build Fedora on RHEL systems.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 23</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 23 of <em>osbuild</em>. This release makes it
+possible to build Fedora on RHEL systems.</p>
+
+<p>Below you can find the official changelog from the <em>osbuild-23</em> sources. All
+users are recommended to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">org.osbuild.rpm</code> stage now includes the <code class="language-plaintext highlighter-rouge">SIGPGP</code> and <code class="language-plaintext highlighter-rouge">SIGGPG</code>
+fields of each installed package in the returned metadata.
+Additionally, its docs have been improved to specify what metadata
+is returned.</p>
+  </li>
+  <li>
+    <p>The spec file has been changed so that the shebang for assemblers,
+stages and runners are not automatically mangled anymore. Runners
+were already changed to have the correct shebang for their target
+systems. Assemblers and stages are not meant to be run on the host
+itself, but always inside a build root container, which must bring
+the correct dependencies to run all stages and assemblers. For now,
+Python3 (&gt;= 3.6), located at /usr/bin/python3, is required.
+This change will enable building Fedora systems on RHEL hosts.</p>
+  </li>
+  <li>
+    <p>Unit tests have been fixed to run on RHEL by dynamically selecting
+a runner that is suitable for the host system.</p>
+  </li>
+  <li>
+    <p>The stages unit tests are now using generated manifests via mpp,
+and have been updated to use Fedora 32. Additionally, the current
+mirror was replaced with <a href="https://osbuild.org/rpmrepo"><code class="language-plaintext highlighter-rouge">rpmrepo</code></a>,
+which should provide a faster, more reliable package source.</p>
+  </li>
+  <li>
+    <p>The CI has dropped Fedora 31 but instead includes Fedora 33 as
+systems to run the composer reverse dependency tests for.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, Lars Karlitski</p>
+
+<p>— Berlin, 2020-10-23</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Christian Kellner,
+
+    on October 23, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
