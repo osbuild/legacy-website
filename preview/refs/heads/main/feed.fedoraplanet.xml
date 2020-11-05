@@ -3,11 +3,64 @@
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
   <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2020-10-23T11:52:53-05:00</updated>
+  <updated>2020-11-05T04:41:22-06:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator>
   <link href="https://www.osbuild.org/preview/refs/heads/main/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
+
+
+
+<entry>
+  <title>Second release of koji-osbuild</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-koji-osbuild-2</id>
+  <published>2020-11-04T00:00:00-06:00</published>
+  <updated>2020-11-04T00:00:00-06:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-04-release-koji-osbuild-2.html" rel="alternate" type="text/html" title="Second release of koji-osbuild" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce the second release of &lt;em&gt;koji-osbuild&lt;/em&gt;, the project
+to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;. This
+is a bugfix release to fix issues uncovered after its first deployment.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-04-release-koji-osbuild-2.html">&lt;p&gt;We are happy to announce the second release of &lt;em&gt;koji-osbuild&lt;/em&gt;, the project
+to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;. This
+is a bugfix release to fix issues uncovered after its first deployment.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from &lt;em&gt;koji-osbuild-2&lt;/em&gt;.
+All users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fix the logic in the builder plugin that checks that
+all requested architectures for a requested build are
+indeed supported by the build tag. The existing check
+had its operands mixed up.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fix the spec file so that the builder package now
+depends on python3-jsonschema.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Adapt the CI for a podman package change: previously
+the podman-plugins package, which contains the dnsname
+plugin, was automatically pulled in on Fedora. This
+changed recently which in turn broke our Fedora
+integration test. Explicitly install podman-plugins.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CI: Integrate codespell spell-checking.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Small fixes for the README.md.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, Tomas Kopecek&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-11-03&lt;/p&gt;</content>
+</entry>
 
 
 
