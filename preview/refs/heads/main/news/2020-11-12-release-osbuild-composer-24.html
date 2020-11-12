@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 24</title>
+    <meta name="title" content="Release Osbuild Composer 24" />
+    <meta property="og:title" content="Release Osbuild Composer 24" />
+
+
+
+    <meta name="description" content="We are happy to announce that we released osbuild-composer 24.
+" />
+    <meta property="og:description" content="We are happy to announce that we released osbuild-composer 24.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 24</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce that we released osbuild-composer 24.</p>
+
+<p>Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Composer now internally supports multi-build composes. A big part of the
+jobqueue and worker was rewritten to support this feature.</p>
+  </li>
+  <li>
+    <p>Composer API for Koji was adjusted to use the new multi-build feature. All
+communication with Koji was moved to the worker so there’s no need to have Koji
+credentials in composer (it’s sufficient to have them in the worker).
+Additionally, the API can now correctly handle requests with multiple images.</p>
+  </li>
+  <li>
+    <p>Composer API for Koji has now /compose/{id}/logs route exposing logs to a
+caller. Keep in mind that the API specification doesn’t guarantee the field
+structure, so it may change at any point in the future.</p>
+  </li>
+  <li>
+    <p>Composer API returned statuses that were not defined in the API specification.
+This is now fixed.</p>
+  </li>
+  <li>
+    <p>As always, there we are improvements in the testing pipeline. The biggest
+change is the introduction of Fedora 33 in composer’s CI.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Chloe Kaubisch, Lars Karlitski, Martin Sehnoutka,
+                    Ondřej Budai, Tom Gundersen</p>
+
+<p>— Liberec, 2020-11-11</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on November 12, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

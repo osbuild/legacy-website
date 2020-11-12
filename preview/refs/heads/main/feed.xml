@@ -3,12 +3,60 @@
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
   <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2020-11-06T02:50:33-06:00</updated>
+  <updated>2020-11-12T06:50:57-06:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator>
   <link href="https://www.osbuild.org/preview/refs/heads/main/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
 
+
+<entry>
+  <title>Release of osbuild-composer 24</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-24</id>
+  <published>2020-11-12T00:00:00-06:00</published>
+  <updated>2020-11-12T00:00:00-06:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-12-release-osbuild-composer-24.html" rel="alternate" type="text/html" title="Release of osbuild-composer 24" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce that we released osbuild-composer 24.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-12-release-osbuild-composer-24.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 24.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer now internally supports multi-build composes. A big part of the
+jobqueue and worker was rewritten to support this feature.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer API for Koji was adjusted to use the new multi-build feature. All
+communication with Koji was moved to the worker so there’s no need to have Koji
+credentials in composer (it’s sufficient to have them in the worker).
+Additionally, the API can now correctly handle requests with multiple images.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer API for Koji has now /compose/{id}/logs route exposing logs to a
+caller. Keep in mind that the API specification doesn’t guarantee the field
+structure, so it may change at any point in the future.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Composer API returned statuses that were not defined in the API specification.
+This is now fixed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;As always, there we are improvements in the testing pipeline. The biggest
+change is the introduction of Fedora 33 in composer’s CI.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Chloe Kaubisch, Lars Karlitski, Martin Sehnoutka,
+                    Ondřej Budai, Tom Gundersen&lt;/p&gt;
+
+&lt;p&gt;— Liberec, 2020-11-11&lt;/p&gt;</content>
+</entry>
 
 <entry>
   <title>Release of osbuild-composer 23</title>
