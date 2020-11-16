@@ -83,11 +83,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: osbuild/osbuild
-        # XXX: This should be:
-        #     ${{ steps.config.outputs.OSBUILD_VERSION }}
-        # However, we use `master` for now until we have a new release which
-        # includes the required Makefile, man-pages, and tooling.
-        ref: master
+        ref: ${{ steps.config.outputs.OSBUILD_VERSION }}
         path: osbuild
     - name: Clone osbuild-composer repository
       uses: actions/checkout@v2
