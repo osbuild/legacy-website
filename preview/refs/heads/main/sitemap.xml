@@ -2,15 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.osbuild.org/preview/refs/heads/main/rpmrepo/</loc>
-<lastmod>2020-11-16T03:55:54-06:00</lastmod>
+<lastmod>2020-11-19T18:07:32-06:00</lastmod>
 </url>
 <url>
 <loc>https://www.osbuild.org/preview/refs/heads/main/man/osbuild-manifest.5</loc>
-<lastmod>2020-11-16T03:55:54-06:00</lastmod>
+<lastmod>2020-11-19T18:07:32-06:00</lastmod>
 </url>
 <url>
 <loc>https://www.osbuild.org/preview/refs/heads/main/man/osbuild.1</loc>
-<lastmod>2020-11-16T03:55:54-06:00</lastmod>
+<lastmod>2020-11-19T18:07:32-06:00</lastmod>
 </url>
 <url>
 <loc>https://www.osbuild.org/preview/refs/heads/main/news/2020-03-17-welcome.html</loc>
@@ -151,6 +151,18 @@
 <url>
 <loc>https://www.osbuild.org/preview/refs/heads/main/news/2020-11-12-release-osbuild-composer-24.html</loc>
 <lastmod>2020-11-12T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-cockpit-composer-26.html</loc>
+<lastmod>2020-11-19T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-koji-osbuild-3.html</loc>
+<lastmod>2020-11-19T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-osbuild-composer-25.html</loc>
+<lastmod>2020-11-19T00:00:00-06:00</lastmod>
 </url>
 <url>
 <loc>https://www.osbuild.org/preview/refs/heads/main/documentation/</loc>

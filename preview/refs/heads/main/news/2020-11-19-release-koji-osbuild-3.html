@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Koji Osbuild 3</title>
+    <meta name="title" content="Release Koji Osbuild 3" />
+    <meta property="og:title" content="Release Koji Osbuild 3" />
+
+
+
+    <meta name="description" content="We are happy to announce that we released koji-osbuild 3, our new project to
+integrate osbuild-composer with koji, the build and
+tracking system primarily used by the Fedora Project and Red Hat.
+
+" />
+    <meta property="og:description" content="We are happy to announce that we released koji-osbuild 3, our new project to
+integrate osbuild-composer with koji, the build and
+tracking system primarily used by the Fedora Project and Red Hat.
+
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of koji-osbuild 3</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce that we released <a href="https://github.com/osbuild/koji-osbuild/releases/tag/v3"><em>koji-osbuild</em> 3</a>, our new project to
+integrate <em>osbuild-composer</em> with <a href="https://pagure.io/koji">koji</a>, the build and
+tracking system primarily used by the Fedora Project and Red Hat.</p>
+
+<p>Below you can find the official change log, compiled by Christian Kellner.</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Ship tests in koji-osbuild-tests package. The tests got reworked so that they
+can be installed and run from the installation. This will be useful for
+reverse dependency testing, i.e. testing the plugins from other projects,
+like composer as well as in gating tests.</p>
+  </li>
+  <li>
+    <p>Add the ability to skip the tagging. An new command line option, –skip-tag
+is added, which translate into an a new field in the options for the hub and
+builder. If that option is present, the builder plugin will skip the tagging
+step.</p>
+  </li>
+  <li>
+    <p>builder plugin: the compose status is attached to the koji task as
+compose-status.json and updated whenever it is fetched from composer. This
+allows to follow the individual image builds.</p>
+  </li>
+  <li>
+    <p>builder plugin: The new logs API, introduce in composer version 24, is used
+to fetch and attach build logs as well as the koji init/import logs.</p>
+  </li>
+  <li>
+    <p>builder plugin: Support for the dynamic build ids, i.e. don’t use the koji
+build id returned from the compose request API call but use the new
+koji_build_id field included in the compose status response. This makes
+koji-osbuild depend on osbuild composer 24!</p>
+  </li>
+  <li>
+    <p>test: lots of improvements to the tests and ci, e.g. using the quay mirror
+for the postgres container or matching the container versions to the host.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Christian Kellner, Lars Karlitski, Ondřej Budai</p>
+
+<p>— Berlin, 2020-11-19</p>
+
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on November 19, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
