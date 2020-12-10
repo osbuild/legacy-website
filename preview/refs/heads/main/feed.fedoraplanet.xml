@@ -3,11 +3,42 @@
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
   <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2020-11-19T18:07:32-06:00</updated>
+  <updated>2020-12-10T13:28:57-06:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator>
   <link href="https://www.osbuild.org/preview/refs/heads/main/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
+
+
+
+<entry>
+  <title>Release of cockpit-composer 27</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-27</id>
+  <published>2020-12-09T00:00:00-06:00</published>
+  <updated>2020-12-09T00:00:00-06:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-12-09-release-cockpit-composer-27.html" rel="alternate" type="text/html" title="Release of cockpit-composer 27" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/27&quot;&gt;cockpit-composer 27&lt;/a&gt;. This release
+has no major new features, but contains useful fixes.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-12-09-release-cockpit-composer-27.html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/27&quot;&gt;cockpit-composer 27&lt;/a&gt;. This release
+has no major new features, but contains useful fixes.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
+is encouraged to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Improve test reliability&lt;/li&gt;
+  &lt;li&gt;Update translations from weblate&lt;/li&gt;
+  &lt;li&gt;Update minor NPM dependencies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Jacob Kozol, Martin Pitt, Xiaofeng Wang&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-12-09&lt;/p&gt;</content>
+</entry>
 
 
 
