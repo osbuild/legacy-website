@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild Composer 26</title>
+    <meta name="title" content="Release Osbuild Composer 26" />
+    <meta property="og:title" content="Release Osbuild Composer 26" />
+
+
+
+    <meta name="description" content="We are happy to announce that we released osbuild-composer 26.
+
+" />
+    <meta property="og:description" content="We are happy to announce that we released osbuild-composer 26.
+
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild-composer 26</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce that we released <a href="https://github.com/osbuild/osbuild-composer/releases/tag/v26">osbuild-composer 26</a>.</p>
+
+<p>It now allows sharing Amazon Machine Images with another account after
+uploading. This is useful when you run osbuild-composer for others: they don’t
+need to pass AWS secrects to your instance, but only an account id.</p>
+
+<p>The composer API gained support for dnf’s <code class="language-plaintext highlighter-rouge">mirrorlist</code> and <code class="language-plaintext highlighter-rouge">metalink</code> URLs,
+making building from official Fedora repositories easier.</p>
+
+<p>It also contains many updates to the RHEL 8.4 images we introduced in the last
+release, as well as bug fixes and stability improvements.</p>
+
+<p>Below you can find the official change log, compiled by Ondřej Budai. Everyone
+is encouraged to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>RHEL 8.4 images got plenty of updates:
+    <ul>
+      <li>Image building for aarch64, ppc64le and s390x is fixed.</li>
+      <li>The root XFS partition now has a random UUID. This change fixes image
+builds on an image built by osbuild-composer.</li>
+      <li>QCOW2 images are now closer to the old official ones:
+        <ul>
+          <li>The default size is now set to 10 GiB.</li>
+          <li>rng-tools are no longer installed.</li>
+          <li>kernel options are now aligned to the old official images.</li>
+        </ul>
+      </li>
+      <li>org.osbuild.rhel84 runner is now used to build these images.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Worker crashed in a koji-finalize job when a previous koji-init job failed.
+This is now fixed.</p>
+  </li>
+  <li>
+    <p>Composer API has now support for mirrorlist and metalink.</p>
+  </li>
+  <li>
+    <p>Composer API now supports sharing an Amazon Machine Image with an another
+account.</p>
+  </li>
+  <li>
+    <p>Upload of aarch64 images to AWS is now fixed.</p>
+  </li>
+  <li>
+    <p>Composer API for Koji returns pending status until all images are finished.
+Previously, it returned failed as soon as the first image build failed.</p>
+  </li>
+  <li>
+    <p>Composer API for Koji and Worker API now log errors. This should very much
+simplify debugging.</p>
+  </li>
+  <li>
+    <p>osbuild-composer(7) man page is now included in the RPM.</p>
+  </li>
+  <li>The testing got some very nice updates too:
+    <ul>
+      <li>The CI now runs a subset of tests on Fedora 33 aarch64.</li>
+      <li>The CI now runs reverse dependency tests against koji-osbuild.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Contributions from: Chloe Kaubisch, Christian Kellner, Jacob Kozol,
+                    Lars Karlitski, Ondřej Budai, Sanne Raymaekers,
+                    Tomas Hozza</p>
+
+<p>— Liberec, 2020-12-16</p>
+
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by Lars Karlitski,
+
+    on December 16, 2020.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>
