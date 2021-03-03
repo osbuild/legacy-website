@@ -77,9 +77,9 @@ build pipelines.
 For high-level documentation and information on development, see its
 [Project Pages @GitHub](https://github.com/osbuild/osbuild-composer).
 
-* **OSBuild Administrator Documentation**:
+* **OSBuild Composer Administrator Documentation**:
 
-  * TBD
+  * [osbuild.org/guides](https://www.osbuild.org/guides/)
 
 ## _osbuild_
 
