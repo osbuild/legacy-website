@@ -29,7 +29,7 @@ The project is currently packaged for the following distributions:
 ## Maintenance
 
 **OSBuild** is released under the terms of the *Apache Software License 2.0,
-Copyright © 2019-2020 Red Hat, Inc.*.
+Copyright © 2019-2021 Red Hat, Inc.*.
 
  * **License**: *Apache Software License 2.0*
  * **Contact**: [@GitHub](https://github.com/osbuild)
