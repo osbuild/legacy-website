@@ -17,10 +17,9 @@ that can be deployed as a hosted service.
 ## Development
 
 Join the development efforts of the open-source
-[osbuild project](https://github.com/osbuild) on GitHub. The project is in its
-early stages and under active development. Contributions of any form are
-welcome, including development efforts, testing, documentation, and general
-feedback.
+[osbuild project](https://github.com/osbuild) on GitHub. Contributions of any
+form are welcome, including development efforts, testing, documentation, and
+general feedback.
 
 The project is currently packaged for the following distributions:
 
