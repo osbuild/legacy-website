@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Release Osbuild 28</title>
+    <meta name="title" content="Release Osbuild 28" />
+    <meta property="og:title" content="Release Osbuild 28" />
+
+
+
+    <meta name="description" content="We are happy to announce version 28 of osbuild. This time with a large set of
+fixes and minor additions to the different stages bundled with osbuild.
+Furthermore, Fedora 35 is now supported as host system.
+" />
+    <meta property="og:description" content="We are happy to announce version 28 of osbuild. This time with a large set of
+fixes and minor additions to the different stages bundled with osbuild.
+Furthermore, Fedora 35 is now supported as host system.
+" />
+
+
+    <meta name="author" content="OSBuild Developers" />
+
+    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+
+  </head>
+
+
+  <body>
+    <header class="tc pv4">
+      <div>
+        <a href="/preview/refs/heads/main/">
+          <img class="h3 w3"
+               alt="Back to home"
+               src="/preview/refs/heads/main/images/osbuild.png" />
+        </a>
+        <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
+        <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
+      </div>
+
+      <nav class="lh-copy">
+        <a href="/preview/refs/heads/main/"
+           class="mh2 link blue hover-mid-gray">Home</a>
+        <a href="/preview/refs/heads/main/news/"
+           class="mh2 link blue hover-mid-gray">News</a>
+        <a href="/preview/refs/heads/main/documentation/"
+           class="mh2 link blue hover-mid-gray">Documentation</a>
+
+        <a href="https://github.com/osbuild"
+           class="mh2 link blue hover-mid-gray">@GitHub</a>
+
+      </nav>
+    </header>
+
+    <main class="mw7 overflow-hidden
+                 center
+                 bt b--light-gray
+                 lh-copy markdown">
+<article class="pv4 ph2">
+  <section class="mb4">
+    <h1 class="mb1 pb0">Release of osbuild 28</h1>
+
+  </section>
+  <section>
+<p>We are happy to announce version 28 of <em>osbuild</em>. This time with a large set of
+fixes and minor additions to the different stages bundled with osbuild.
+Furthermore, Fedora 35 is now supported as host system.</p>
+
+<p>Below you can find the official changelog from the <em>osbuild-28</em> sources. All
+users are recommended to upgrade!</p>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Add a new option to the <code class="language-plaintext highlighter-rouge">org.osbuild.qemu</code> assembler that controls
+the qcow2 format version (<code class="language-plaintext highlighter-rouge">qcow2_compat</code>).</p>
+  </li>
+  <li>
+    <p>Add history entries to the layers of OCI archives produced by the
+<code class="language-plaintext highlighter-rouge">org.osbuild.oci-archive</code> stage. This fixes push failures to quay.io.</p>
+  </li>
+  <li>
+    <p>Include only a specific, limited set of xattrs in OCI archives produced by
+the <code class="language-plaintext highlighter-rouge">org.osbuild.oci-archive</code> stage. This is specifically meant to exclude
+SELinux-related attributes (<code class="language-plaintext highlighter-rouge">security.selinux</code>) which are sometimes added
+even when invoking  <code class="language-plaintext highlighter-rouge">tar</code> with the <code class="language-plaintext highlighter-rouge">--no-selinux</code> option.</p>
+  </li>
+  <li>
+    <p>The package metadata for the <code class="language-plaintext highlighter-rouge">org.osbuild.rpm</code> stage is now sorted by
+package name, to provide a stable sorting of the array independent of
+the <code class="language-plaintext highlighter-rouge">rpm</code> output.</p>
+  </li>
+  <li>
+    <p>Add a new runner for Fedora 35 (<code class="language-plaintext highlighter-rouge">org.osbuild.fedora35</code>) which is
+currently a symlink to the Fedora 30 runner.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">org.osbuild.ostree</code> input now uses <code class="language-plaintext highlighter-rouge">ostree-output</code> as temporary
+directory and its description got fixed to reflect that it does
+indeed support pipeline and source inputs.</p>
+  </li>
+  <li>
+    <p>devcontainer: Include more packages needed for the Python extension and
+various tools to ease debugging and development in general. Preserve
+the fish history across container rebuilds.</p>
+  </li>
+  <li>
+    <p>Stage tests are writing the prodcued metadata to <code class="language-plaintext highlighter-rouge">/tmp</code> so the actual
+data can be inspected in case there is a deviation.</p>
+  </li>
+  <li>
+    <p>CI: Start running images tests against 8.4 and execute image_tests directly
+from osbuild-composer-tests. Base CI images have been updated to Fedora 33.</p>
+  </li>
+</ul>
+
+<p>Contributions from: Achilleas Koutsou, Alexander Todorov, Christian Kellner,
+                    David Rheinsberg</p>
+
+<p>— Berlin, 2021-04-08</p>
+
+  </section>
+  <section class="i gray pl3 mt4">
+    Written
+
+    by David Rheinsberg,
+
+    on April  9, 2021.
+  </section>
+</article>
+
+    </main>
+
+    <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
+
+<a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
+<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+
+    </footer>
+  </body>
+</html>

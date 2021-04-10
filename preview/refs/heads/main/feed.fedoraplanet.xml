@@ -3,11 +3,83 @@
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
   <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2021-03-25T06:53:11-05:00</updated>
+  <updated>2021-04-10T04:41:39-05:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator>
   <link href="https://www.osbuild.org/preview/refs/heads/main/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
   <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
+
+
+
+<entry>
+  <title>Release of osbuild 28</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-28</id>
+  <published>2021-04-09T00:00:00-05:00</published>
+  <updated>2021-04-09T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2021-04-09-release-osbuild-28.html" rel="alternate" type="text/html" title="Release of osbuild 28" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 28 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a large set of
+fixes and minor additions to the different stages bundled with osbuild.
+Furthermore, Fedora 35 is now supported as host system.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2021-04-09-release-osbuild-28.html">&lt;p&gt;We are happy to announce version 28 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a large set of
+fixes and minor additions to the different stages bundled with osbuild.
+Furthermore, Fedora 35 is now supported as host system.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-28&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add a new option to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.qemu&lt;/code&gt; assembler that controls
+the qcow2 format version (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;qcow2_compat&lt;/code&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add history entries to the layers of OCI archives produced by the
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.oci-archive&lt;/code&gt; stage. This fixes push failures to quay.io.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Include only a specific, limited set of xattrs in OCI archives produced by
+the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.oci-archive&lt;/code&gt; stage. This is specifically meant to exclude
+SELinux-related attributes (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;security.selinux&lt;/code&gt;) which are sometimes added
+even when invoking  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar&lt;/code&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--no-selinux&lt;/code&gt; option.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The package metadata for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; stage is now sorted by
+package name, to provide a stable sorting of the array independent of
+the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rpm&lt;/code&gt; output.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add a new runner for Fedora 35 (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.fedora35&lt;/code&gt;) which is
+currently a symlink to the Fedora 30 runner.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.ostree&lt;/code&gt; input now uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ostree-output&lt;/code&gt; as temporary
+directory and its description got fixed to reflect that it does
+indeed support pipeline and source inputs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;devcontainer: Include more packages needed for the Python extension and
+various tools to ease debugging and development in general. Preserve
+the fish history across container rebuilds.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stage tests are writing the prodcued metadata to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/tmp&lt;/code&gt; so the actual
+data can be inspected in case there is a deviation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CI: Start running images tests against 8.4 and execute image_tests directly
+from osbuild-composer-tests. Base CI images have been updated to Fedora 33.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Achilleas Koutsou, Alexander Todorov, Christian Kellner,
+                    David Rheinsberg&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2021-04-08&lt;/p&gt;</content>
+</entry>
 
 
 
@@ -422,6 +494,64 @@ integration test. Explicitly install podman-plugins.&lt;/p&gt;
 
 
 <entry>
+  <title>Release of osbuild 23</title>
+  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-23</id>
+  <published>2020-10-23T00:00:00-05:00</published>
+  <updated>2020-10-23T00:00:00-05:00</updated>
+  <author><name>OSBuild Developers</name></author>
+  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html" rel="alternate" type="text/html" title="Release of osbuild 23" />
+
+  <summary type="html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
+possible to build Fedora on RHEL systems.&lt;/p&gt;</summary>
+  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
+possible to build Fedora on RHEL systems.&lt;/p&gt;
+
+&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-23&lt;/em&gt; sources. All
+users are recommended to upgrade!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; stage now includes the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIGPGP&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIGGPG&lt;/code&gt;
+fields of each installed package in the returned metadata.
+Additionally, its docs have been improved to specify what metadata
+is returned.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The spec file has been changed so that the shebang for assemblers,
+stages and runners are not automatically mangled anymore. Runners
+were already changed to have the correct shebang for their target
+systems. Assemblers and stages are not meant to be run on the host
+itself, but always inside a build root container, which must bring
+the correct dependencies to run all stages and assemblers. For now,
+Python3 (&amp;gt;= 3.6), located at /usr/bin/python3, is required.
+This change will enable building Fedora systems on RHEL hosts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unit tests have been fixed to run on RHEL by dynamically selecting
+a runner that is suitable for the host system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The stages unit tests are now using generated manifests via mpp,
+and have been updated to use Fedora 32. Additionally, the current
+mirror was replaced with &lt;a href=&quot;https://osbuild.org/rpmrepo&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rpmrepo&lt;/code&gt;&lt;/a&gt;,
+which should provide a faster, more reliable package source.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The CI has dropped Fedora 31 but instead includes Fedora 33 as
+systems to run the composer reverse dependency tests for.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Contributions from: Christian Kellner, Lars Karlitski&lt;/p&gt;
+
+&lt;p&gt;— Berlin, 2020-10-23&lt;/p&gt;</content>
+</entry>
+
+
+
+<entry>
   <title>Introducing RPMrepo</title>
   <id>https://www.osbuild.org/preview/refs/heads/main/news/introducing-rpmrepo</id>
   <published>2020-10-23T00:00:00-05:00</published>
@@ -603,64 +733,6 @@ URL:&lt;/p&gt;
 &lt;p&gt;This is it. This snapshot is immutable and will not change during its lifetime.
 Do not hesitate to contact the Image Builder team if you have questions or
 further requests.&lt;/p&gt;</content>
-</entry>
-
-
-
-<entry>
-  <title>Release of osbuild 23</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-23</id>
-  <published>2020-10-23T00:00:00-05:00</published>
-  <updated>2020-10-23T00:00:00-05:00</updated>
-  <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html" rel="alternate" type="text/html" title="Release of osbuild 23" />
-
-  <summary type="html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
-possible to build Fedora on RHEL systems.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
-possible to build Fedora on RHEL systems.&lt;/p&gt;
-
-&lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-23&lt;/em&gt; sources. All
-users are recommended to upgrade!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt; stage now includes the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIGPGP&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SIGGPG&lt;/code&gt;
-fields of each installed package in the returned metadata.
-Additionally, its docs have been improved to specify what metadata
-is returned.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The spec file has been changed so that the shebang for assemblers,
-stages and runners are not automatically mangled anymore. Runners
-were already changed to have the correct shebang for their target
-systems. Assemblers and stages are not meant to be run on the host
-itself, but always inside a build root container, which must bring
-the correct dependencies to run all stages and assemblers. For now,
-Python3 (&amp;gt;= 3.6), located at /usr/bin/python3, is required.
-This change will enable building Fedora systems on RHEL hosts.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Unit tests have been fixed to run on RHEL by dynamically selecting
-a runner that is suitable for the host system.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The stages unit tests are now using generated manifests via mpp,
-and have been updated to use Fedora 32. Additionally, the current
-mirror was replaced with &lt;a href=&quot;https://osbuild.org/rpmrepo&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rpmrepo&lt;/code&gt;&lt;/a&gt;,
-which should provide a faster, more reliable package source.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The CI has dropped Fedora 31 but instead includes Fedora 33 as
-systems to run the composer reverse dependency tests for.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Contributions from: Christian Kellner, Lars Karlitski&lt;/p&gt;
-
-&lt;p&gt;— Berlin, 2020-10-23&lt;/p&gt;</content>
 </entry>
 
 
