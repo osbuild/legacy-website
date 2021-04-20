@@ -20,6 +20,8 @@ on:
   schedule:
   - cron:  '0 0 * * *'
 
+concurrency: wf-import
+
 jobs:
   import:
     name: Import Resources to be Published
