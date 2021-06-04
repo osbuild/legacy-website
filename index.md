@@ -21,6 +21,9 @@ Join the development efforts of the open-source
 form are welcome, including development efforts, testing, documentation, and
 general feedback.
 
+Anyone is also invited to join the #osbuild IRC channel on
+[Libera.Chat](https://libera.chat/). 
+
 The project is currently packaged for the following distributions:
 
  * **Fedora**: [rpms/osbuild](https://src.fedoraproject.org/rpms/osbuild)
