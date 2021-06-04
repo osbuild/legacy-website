@@ -11,6 +11,7 @@ deployed to serve www.osbuild.org.
 
  * **Website**: <https://www.osbuild.org>
  * **Bug Tracker**: <https://github.com/osbuild/osbuild.github.io/issues>
+ * **IRC**: #osbuild on [Libera.Chat](https://libera.chat/)
 
 ### About
 
