@@ -16,10 +16,33 @@
 
   "definitions": {
 
+    "devices": {
+      "title": "Collection of devices for a stage",
+      "additionalProperties": {
+        "$ref": "#/definitions/device"
+      }
+    },
+
+    "device": {
+      "title": "Device for a stage",
+      "additionalProperties": false,
+      "required": ["type", "options"],
+      "properties": {
+        "type": { "type": "string" },
+        "options": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+
     "inputs": {
       "title": "Collection of inputs for a stage",
-      "additionalProperties": {
-        "$ref": "#/definitions/input"
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_\\-\\.]{0,254}": {
+          "$ref": "#/definitions/input"
+        }
       }
     },
 
@@ -31,6 +54,32 @@
         "type": { "type": "string" },
         "origin": { "enum": ["org.osbuild.source", "org.osbuild.pipeline"] },
         "references": { "$ref": "#/definitions/reference" },
+        "options": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+
+    "mounts": {
+      "title": "Collection of mount points for a stage",
+      "additionalProperties": {
+        "$ref": "#/definitions/mount"
+      }
+    },
+
+    "mount": {
+      "title": "Mount point for a stage",
+      "additionalProperties": false,
+      "required": ["type", "source", "target"],
+      "properties": {
+        "type": { "type": "string" },
+        "source": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
         "options": {
           "type": "object",
           "additionalProperties": true
@@ -99,7 +148,9 @@
       "additionalProperties": false,
       "properties": {
         "type": { "type": "string" },
+        "devices": { "$ref": "#/definitions/devices" },
         "inputs": {"$ref": "#/definitions/inputs" },
+        "mounts": {"$ref": "#/definitions/mounts" },
         "options": {
           "type": "object",
           "additionalProperties": true
