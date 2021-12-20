@@ -27,7 +27,7 @@ Anyone is also invited to join the #osbuild IRC channel on
 The project is currently packaged for the following distributions:
 
  * **Fedora**: [rpms/osbuild](https://src.fedoraproject.org/rpms/osbuild)
- * **Arch Linux**: [AUR/osbuild](https://aur.archlinux.org/packages/osbuild/)
+ * **Arch Linux**: [community/osbuild](https://archlinux.org/packages/community/any/osbuild/)
 
 ## Maintenance
 
