@@ -3,16 +3,6 @@ layout: root
 ---
 {%- include global.html -%}
 
-<section class="pv2 ph5
-                bb b--light-gray">
-  {% for news in global_news_by_rdate limit:5 %}
-  <article class="tj">
-    <span class="gray">{{ news.date | date: "%B %e, %Y" }}</span>
-    <a href="{{ news.url | relative_url }}">{{ news.caption }}</a>
-  </article>
-  {% endfor %}
-</section>
-
 <article class="pv4 ph2">
 {{ content }}
 </article>
