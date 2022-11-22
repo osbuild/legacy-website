@@ -67,8 +67,8 @@ jobs:
       run: |
         OSBUILD_VERSION=$(curl --silent "https://api.github.com/repos/osbuild/osbuild/releases/latest" | jq -r .tag_name)
         OSBUILD_COMPOSER_VERSION=$(curl --silent "https://api.github.com/repos/osbuild/osbuild-composer/releases/latest" | jq -r .tag_name)
-        echo "::set-output name=OSBUILD_VERSION::${OSBUILD_VERSION}"
-        echo "::set-output name=OSBUILD_COMPOSER_VERSION::${OSBUILD_COMPOSER_VERSION}"
+        echo "OSBUILD_VERSION=${OSBUILD_VERSION}" >>$GITHUB_OUTPUT
+        echo "OSBUILD_COMPOSER_VERSION=${OSBUILD_COMPOSER_VERSION}" >>$GITHUB_OUTPUT
 
     #
     # Setup Checkout
