@@ -29,7 +29,7 @@ setup. We'll also use `podman` later on:
 You will need one of the bootable install ISO images for
 [Fedora](https://getfedora.org/) or [RHEL](https://developers.redhat.com/products/rhel/download).
 I used a
-[Fedora 32 netinst image](https://ftp.fau.de/fedora/linux/releases/32/Server/x86_64/iso/Fedora-Server-netinst-x86_64-32-1.6.iso) so get that downloading ahead of time.
+[Fedora 32 netinst image](https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/32/Server/x86_64/iso/Fedora-Server-netinst-x86_64-32-1.6.iso) so get that downloading ahead of time.
 
 Lastly, make note of the IP address of your system that is accessible
 from other machines. This address will be peppered through various files
