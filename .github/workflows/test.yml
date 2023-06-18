@@ -40,4 +40,4 @@ jobs:
           --rm \
           --volume "${PWD}:/srv/jekyll" \
           "jekyll/jekyll:stable" \
-          /usr/gem/bin/htmlproofer --assume-extension "./_site"
+          /usr/gem/bin/htmlproofer "./_site"
