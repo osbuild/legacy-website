@@ -6,6 +6,7 @@
   "description": "OSBuild manifest describing a pipeline and all parameters",
   "type": "object",
   "additionalProperties": false,
+  "required": ["version"],
   "properties": {
     "pipelines": { "$ref": "#/definitions/pipelines" },
     "sources": { "$ref": "#/definitions/sources" },
@@ -71,7 +72,7 @@
     "mount": {
       "title": "Mount point for a stage",
       "additionalProperties": false,
-      "required": ["name", "type", "source", "target"],
+      "required": ["name", "type"],
       "properties": {
         "name": { "type": "string" },
         "type": { "type": "string" },
@@ -104,6 +105,7 @@
         "name": { "type:": "string" },
         "build": { "type": "string" },
         "runner": { "type": "string" },
+        "source-epoch": { "type": "integer" },
         "stages": { "$ref": "#/definitions/stages" }
       }
     },
@@ -113,9 +115,23 @@
         {
           "type": "array",
           "items": { "type": "string" }
-        },{
+        }, {
           "type": "object",
           "additionalProperties": true
+        }, {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "options": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
         }
       ]
     },
