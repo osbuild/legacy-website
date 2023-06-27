@@ -42,8 +42,6 @@
       <nav class="lh-copy">
         <a href="/preview/refs/heads/main/"
            class="mh2 link blue hover-mid-gray">Home</a>
-        <a href="/preview/refs/heads/main/news/"
-           class="mh2 link blue hover-mid-gray">News</a>
         <a href="https://www.osbuild.org/guides/introduction.html"
            class="mh2 link blue hover-mid-gray">Documentation</a>
 
@@ -60,129 +58,7 @@
 <article class="pv4 ph2">
 <h1 id="documentation">Documentation</h1>
 
-<p>OSBuild is comprised of many individual projects which
-work together to provide a wide range of features to build and assemble
-operating system artifacts. The graphical user interfaces can be found under
-the term <a href="#image-builder"><strong>Image Builder</strong></a> and provide access to the osbuild
-machinery. They integrate into existing operating system interfaces, including
-the <strong>Cockpit</strong> management console, the <strong>cloud.redhat.com</strong> customer services,
-as well as the classic linux <strong>command-line</strong>.</p>
-
-<p>The <a href="#composer"><strong>Composer</strong></a> project is the underlying system service that
-provides the APIs required by the multitude of user interfaces. It serves as
-arbiter between the specific requirements of the user interfaces and the
-general purpose functionality provided by <a href="#osbuild"><strong>osbuild</strong></a>, the engine
-that drives the builds and assemblies of the individual artifacts.</p>
-
-<p>Users will find help for the graphical interfaces in the respective UI
-documentation of <a href="#image-builder"><strong>Image Builder</strong></a>. The
-<a href="#composer"><strong>Composer</strong></a> section contains help on deploying your own build
-services, or refining the blueprints of the operating system artifacts. Lastly,
-information on the <a href="#osbuild"><strong>osbuild</strong></a> tool sheds light on the inner
-workings, the system requirements, and the wide applicability of the engine and
-heart of OSBuild.</p>
-
-<h2 id="image-builder">Image Builder</h2>
-
-<p>The <strong>Image Builder</strong> user interfaces integrate into existing operating system
-user interfaces and extend them to support building operating system artifacts
-via the OSBuild tools. These interfaces are tightly coupled with their
-respective surrounding interfaces and often documented there. Followingly, a
-list of external user-interfaces and links to their respective documentation,
-followed by a list of user-interface documentation that is part of OSBuild
-itself.</p>
-
-<ul>
-  <li>
-    <p><strong>Cockpit Composer</strong>: The web-based management console <em>Cockpit</em> comes
-bundled with a UI extension to build operating system artifacts. See the
-documentation of
-<a href="https://github.com/osbuild/cockpit-composer"><strong>Cockpit Composer</strong></a> for
-information, or consult the
-<a href="https://cockpit-project.org/guide/latest/"><strong>Cockpit Guide</strong></a> for help on
-general <em>Cockpit</em> questions.</p>
-  </li>
-  <li>
-    <p><strong>CloudDot</strong>: The Red Hat Customer Service Portal on <em>cloud.redhat.com</em> has
-built-in interfaces to the OSBuild functionality, allowing customers to build
-images and other artifacts on-demand. Consult the
-<a href="https://access.redhat.com/support"><strong>Red Hat Support Pages</strong></a> for help, or
-dive into the
-<a href="https://github.com/osbuild/image-builder"><strong>Image Builder Documentation</strong></a>
-to get more details on the underlying software.</p>
-  </li>
-  <li>
-    <p><strong>Command-line Interface</strong>: With <strong>composer-cli</strong> there exists a linux
-command-line interface (CLI) to some of the functionality provided by
-OSBuild. The CLI is part of the <a href="https://weldr.io"><strong>Weldr</strong></a> project, a
-precursor of OSBuild.</p>
-  </li>
-  <li>
-    <p><strong>OSBuild User Documentation</strong>:</p>
-
-    <ul>
-      <li><a href="/preview/refs/heads/main/news/2020-06-01-how-to-ostree-anaconda.html"><strong>HOWTO: Image Builder + OSTree + Anaconda</strong></a></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="composer">Composer</h2>
-
-<p>The system service <strong>OSBuild Composer</strong> provides APIs and services to build
-operating system images and other artifacts. It defines the blueprints of a
-wide range of images and a managed environment to execute the required build
-pipelines.</p>
-
-<p>The <strong>Composer</strong> service exports a large set of APIs, each tailored for a
-specific user-interface and use-case. Underneath, it converts all API requests
-to a uniform worker API which uses the <strong>osbuild</strong> machinery to execute the
-build pipelines.</p>
-
-<p>For high-level documentation and information on development, see its
-<a href="https://github.com/osbuild/osbuild-composer">Project Pages @GitHub</a>.</p>
-
-<ul>
-  <li>
-    <p><strong>OSBuild Composer Administrator Documentation</strong>:</p>
-
-    <ul>
-      <li><a href="https://www.osbuild.org/guides/">osbuild.org/guides</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="osbuild"><em>osbuild</em></h2>
-
-<p>The <em>osbuild</em> project is the heart of OSBuild. It defines a pipeline
-description to build arbitrary operating system artifacts out of many small and
-self-contained stages. Furthermore, it provides an execution engine that will
-consume a pipeline description, execute the pipeline, and provide the resulting
-image back to the user. The <em>osbuild</em> interfaces are meant to be used by
-machines, not humans. Therefore, access to <em>osbuild</em> resources should only be
-required if you plan to develop new <em>osbuild</em> frontends, debug <em>osbuild</em>
-failures on your own, or contribute to the <em>osbuild</em> development.</p>
-
-<p>For high-level documentation and information on development, see its
-<a href="https://github.com/osbuild/osbuild">Project Pages @GitHub</a>.</p>
-
-<ul>
-  <li>
-    <p><strong>OSBuild System Documentation</strong>:</p>
-
-    <ul>
-      <li><a href="/preview/refs/heads/main/man/osbuild-manifest.5"><strong>MAN: osbuild-manifest.5</strong></a></li>
-      <li><a href="/preview/refs/heads/main/man/osbuild.1"><strong>MAN: osbuild.1</strong></a></li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>OSBuild Developer Documentation</strong>:</p>
-
-    <ul>
-      <li><a href="/preview/refs/heads/main/news/2020-10-23-introducing-rpmrepo.html"><strong>Introducing RPMrepo</strong></a></li>
-      <li><a href="/preview/refs/heads/main/rpmrepo/"><strong>RPMrepo: RPM Repository Snapshots</strong></a></li>
-    </ul>
-  </li>
-</ul>
+<p>Our documentation has moved. <a href="https://osbuild.org/guides">Continue reading here</a></p>
 
 </article>
 
