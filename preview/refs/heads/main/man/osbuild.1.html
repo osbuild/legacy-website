@@ -18,11 +18,11 @@
 
     <meta name="author" content="OSBuild Developers" />
 
-    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
-    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
-    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+    <link rel="shortcut icon" href="/legacy-website/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/legacy-website/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/legacy-website/preview/refs/heads/main/stylesheets/media-icons.css" />
 
-    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/legacy-website/preview/refs/heads/main/feed.xml" />
 
   </head>
 
@@ -30,17 +30,17 @@
   <body>
     <header class="tc pv4">
       <div>
-        <a href="/preview/refs/heads/main/">
+        <a href="/legacy-website/preview/refs/heads/main/">
           <img class="h3 w3"
                alt="Back to home"
-               src="/preview/refs/heads/main/images/osbuild.png" />
+               src="/legacy-website/preview/refs/heads/main/images/osbuild.png" />
         </a>
         <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
         <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
       </div>
 
       <nav class="lh-copy">
-        <a href="/preview/refs/heads/main/"
+        <a href="/legacy-website/preview/refs/heads/main/"
            class="mh2 link blue hover-mid-gray">Home</a>
         <a href="https://www.osbuild.org/guides/introduction.html"
            class="mh2 link blue hover-mid-gray">Documentation</a>
@@ -72,23 +72,24 @@ Build-Pipelines for Operating System Artifacts</p>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>osbuild</b>
-[ OPTIONS ] PIPELINE <b><br/>
+[ OPTIONS ] MANIFEST <b><br/>
 osbuild</b> [ OPTIONS ] - <b><br/>
-osbuild --help</b></p>
+osbuild --help <br/>
+osbuild --version</b></p>
 
 <h2 id="heading3">DESCRIPTION
 </h2>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>osbuild</b>
-is a build-system for operating system artifacts. It takes a
-pipeline description as input and produces file-system
-trees, images, or other artifacts as output. Its pipeline
-description gives comprehensive control over the individual
-steps to execute as part of a pipeline. <b>osbuild</b>
-provides isolation from the host system as well as caching
-capabilities, and thus ensures that pipeline builds will be
-deterministic and efficient.</p>
+is a build-system for operating system artifacts. It takes
+an input manifest describing the build pipelines and
+produces file-system trees, images, or other artifacts as
+output. Its pipeline description gives comprehensive control
+over the individual steps to execute as part of a pipeline.
+<b>osbuild</b> provides isolation from the host system as
+well as caching capabilities, and thus ensures that pipeline
+builds will be deterministic and efficient.</p>
 
 <h2 id="heading4">OPTIONS
 </h2>
@@ -108,22 +109,29 @@ and exit with an error. <b><br/>
 <p style="margin-left:22%;">print usage information and
 exit immediately</p>
 
+<p style="margin-left:11%;"><b>--version</b></p>
+
+<p style="margin-left:22%;">print version information and
+exit immediately</p>
+
 <p style="margin-left:11%;"><b>--store=</b><i>DIR</i></p>
 
 <p style="margin-left:22%;">directory where intermediary
 file system trees are stored</p>
 
 
-<p style="margin-left:11%;"><b>--secrets=</b><i>PATH</i></p>
-
-<p style="margin-left:22%;">json file containing a
-dictionary of secrets that are passed to sources</p>
-
-
 <p style="margin-left:11%;"><b>-l&nbsp;</b><i>DIR</i>,&nbsp;<b>--libdir=</b><i>DIR</i></p>
 
 <p style="margin-left:22%;">directory containing stages,
 assemblers, and the osbuild library</p>
+
+
+<p style="margin-left:11%;"><b>--cache-max-size=</b><i>SIZE</i></p>
+
+<p style="margin-left:22%;">maximum size of the cache
+(bytes) or 'unlimited' for no restriction (size may include
+an optional unit suffix, like kB, kiB, MB, MiB and so
+on)</p>
 
 
 <p style="margin-left:11%;"><b>--checkpoint=</b><i>CHECKPOINT</i></p>
@@ -171,6 +179,23 @@ are stored</p>
 <p style="margin-left:22%;">return the manifest in JSON
 format including all the ids</p>
 
+
+<p style="margin-left:11%;"><b>--monitor=</b><i>TYPE</i></p>
+
+<p style="margin-left:22%;">name of the monitor to be
+used</p>
+
+
+<p style="margin-left:11%;"><b>--monitor-fd=</b><i>NUM</i></p>
+
+<p style="margin-left:22%;">file-descriptor to be used for
+the monitor</p>
+
+<p style="margin-left:11%;"><b>--stage-timeout</b></p>
+
+<p style="margin-left:22%;">set the maximal time (in
+seconds) each stage is allowed to run</p>
+
 <p style="margin-left:11%; margin-top: 1em">NB: If neither
 <b>--output-directory</b> nor <b>--checkpoint</b> is
 specified, no attempt to build the manifest will be
@@ -181,7 +206,7 @@ made.</p>
 
 
 <p style="margin-left:11%; margin-top: 1em">The input to
-<b>osbuild</b> is a description of the pipeline to execute,
+<b>osbuild</b> is a description of the pipelines to execute,
 as well as required parameters to each pipeline stage. This
 data must be <i>JSON</i> encoded. It is read from the file
 specified on the command-line, or, if <b>-</b> is passed,
@@ -192,7 +217,59 @@ the manifest is described in <b>osbuild-manifest</b>(5). The
 formal schema of the manifest is available online as the
 OSBuild JSON Schema [1].</p>
 
-<h2 id="heading6">EXAMPLES
+<h2 id="heading6">MONITOR
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Live activity
+of the pipeline execution can be monitored via a built-in
+set of different monitors. The <b>--monitor=TYPE</b> option
+selects the type of monitor that is used. Valid types are:
+<b><br/>
+NullMonitor</b></p>
+
+<p style="margin-left:22%;">No live coverage is reported
+and all monitoring features are disabled. This is the
+default monitor if <b>--json</b> was specified on the
+command-line.</p>
+
+<p style="margin-left:11%;"><b>LogMonitor</b></p>
+
+<p style="margin-left:22%;">A human-readable live monitor
+of the pipeline execution. This monitor prints pipeline
+names, stage names, and relevant options of each stage as it
+is executed. Additionally, timing information is provided
+for each stage. The output is not machine-readable and is
+interspersed with the individual log messages of the stages.
+This is the default monitor if <b>--json</b> was <b>not</b>
+specified.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Monitor output
+is written to the file-descriptor provided via
+<b>--monitor-fd=NUM</b>. If none was specified, standard
+output is used.</p>
+
+<h2 id="heading7">OUTPUT
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">OSBuild only
+ever builds the requested artifacts, rather than all
+artifacts defined in a manifest. Each stage and pipeline has
+an associated ID (which can be acquired by passing
+<b>--inspect</b>). To export an artifact after a stage or
+pipeline finished, pass its ID via <b>--export=ID</b>. A
+sub-directory will be created in the output-directory with
+the ID as the name. The contents of the artifact are then
+stored in that sub-directory.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Additionally,
+any completed pipeline or stage can be cached to avoid
+rebuilding them in subsequent invocations. Use
+<b>--checkpoint=ID</b> to request caching of a specific
+stage or pipeline.</p>
+
+<h2 id="heading8">EXAMPLES
 </h2>
 
 
@@ -233,7 +310,7 @@ sure to execute the <b>osbuild</b> module from the current
 directory, as well as use it to search for stages,
 assemblers, and more.</p>
 
-<h2 id="heading7">SEE ALSO
+<h2 id="heading9">SEE ALSO
 </h2>
 
 
@@ -241,7 +318,7 @@ assemblers, and more.</p>
 <p style="margin-left:11%; margin-top: 1em"><b>osbuild-manifest</b>(5),
 <b>osbuild-composer</b>(1)</p>
 
-<h2 id="heading8">NOTES
+<h2 id="heading10">NOTES
 </h2>
 
 
@@ -262,8 +339,8 @@ assemblers, and more.</p>
 <td>
 
 
-<p style="margin-top: 1em">OSBuild JSON Schema:
-<i>https://osbuild.org/schemas/osbuild1.json</i></p> </td></tr>
+<p style="margin-top: 1em">OSBuild JSON Schema v2:
+<i>https://osbuild.org/schemas/osbuild2.json</i></p> </td></tr>
  </table>
 
 
@@ -274,7 +351,7 @@ assemblers, and more.</p>
     <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
 
 <a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
-<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+<a href="/legacy-website/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
 
     </footer>
   </body>

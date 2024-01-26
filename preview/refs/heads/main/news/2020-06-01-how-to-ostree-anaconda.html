@@ -34,11 +34,11 @@ providing a complete solution yet, so let me walk you through it.
 
     <meta name="author" content="OSBuild Developers" />
 
-    <link rel="shortcut icon" href="/preview/refs/heads/main/images/osbuild.ico" />
-    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/style.css" />
-    <link rel="stylesheet" type="text/css" href="/preview/refs/heads/main/stylesheets/media-icons.css" />
+    <link rel="shortcut icon" href="/legacy-website/preview/refs/heads/main/images/osbuild.ico" />
+    <link rel="stylesheet" type="text/css" href="/legacy-website/preview/refs/heads/main/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/legacy-website/preview/refs/heads/main/stylesheets/media-icons.css" />
 
-    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/preview/refs/heads/main/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="OSBuild" href="/legacy-website/preview/refs/heads/main/feed.xml" />
 
   </head>
 
@@ -46,17 +46,17 @@ providing a complete solution yet, so let me walk you through it.
   <body>
     <header class="tc pv4">
       <div>
-        <a href="/preview/refs/heads/main/">
+        <a href="/legacy-website/preview/refs/heads/main/">
           <img class="h3 w3"
                alt="Back to home"
-               src="/preview/refs/heads/main/images/osbuild.png" />
+               src="/legacy-website/preview/refs/heads/main/images/osbuild.png" />
         </a>
         <h1 class="f5 f4-ns fw6 black-70">OSBuild</h1>
         <h2 class="f6 black-70 fw2 ttu tracked">Build-Pipelines for Operating System Artifacts</h2>
       </div>
 
       <nav class="lh-copy">
-        <a href="/preview/refs/heads/main/"
+        <a href="/legacy-website/preview/refs/heads/main/"
            class="mh2 link blue hover-mid-gray">Home</a>
         <a href="https://www.osbuild.org/guides/introduction.html"
            class="mh2 link blue hover-mid-gray">Documentation</a>
@@ -99,7 +99,7 @@ providing a complete solution yet, so let me walk you through it.</p>
 <h1 id="prerequisites">Prerequisites</h1>
 
 <p>The naming of <em>Image Builder</em> and its various parts need
-<a href="/preview/refs/heads/main/documentation/">some introduction</a>
+<a href="/legacy-website/preview/refs/heads/main/documentation/">some introduction</a>
 before they make sense. So I’ll
 list the actual package names you need for a complete working <em>Image Builder</em>
 setup. We’ll also use <code class="language-plaintext highlighter-rouge">podman</code> later on:</p>
@@ -135,25 +135,25 @@ $ sudo systemctl start cockpit
 your usual Linux user name and password. Make sure your Linux user is an
 administrative account on the local machine. Then click on <em>Image Builder</em> in the menu:</p>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/empty.png" alt="Image Builder empty screen" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/empty.png" alt="Image Builder empty screen" /></p>
 
 <p>Click the <em>Create Blueprint</em> button to make a new blueprint and give it
 a simple name. In the instructions below we use <code class="language-plaintext highlighter-rouge">iot</code> so for simplicity
 just stick with that here:</p>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-blueprint.png" alt="Image Builder Create Blueprint" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-blueprint.png" alt="Image Builder Create Blueprint" /></p>
 
 <p>You don’t need to add any additional software to the blueprint to get a bootable
 system. Click the <em>Create Image</em> button, and choose <em>Fedora IoT Commit</em> as
 the image <em>Type</em>:</p>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-image.png" alt="Image Builder Create Image" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-image.png" alt="Image Builder Create Image" /></p>
 
 <p>Once you click <em>Create</em> the image build will start, and take several minutes
 to complete. You won’t see any progress information or logs until its done,
 so just be patient:</p>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/queue-progress.png" alt="Image Builder in progress" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/queue-progress.png" alt="Image Builder in progress" /></p>
 
 <p>Once the image build is done, choose the option to <em>Download</em> the image which
 is hidden in the kebab menu next to the <em>Logs</em> button. You’ll get a tarball
@@ -162,7 +162,7 @@ which contains the OSTree commit that was just created. Save that file
 to a local directory and we’ll place a few additional files next to it
 in later steps.</p>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/download.png" alt="Image Builder download" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/download.png" alt="Image Builder download" /></p>
 
 <h1 id="create-the-ostree-in-image-builder-command-line">Create the OSTree in Image Builder command line</h1>
 
@@ -288,7 +288,7 @@ cover here.</p>
 <p>At the initial screen that the Installer ISO displays, you’ll see a line
 something like <em>Install Fedora 32</em>:</p>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/bootmenu.png" alt="Anaconda boot menu" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/bootmenu.png" alt="Anaconda boot menu" /></p>
 
 <p>Before the time out, use the arrow keys to select that line, and press
 the TAB key. You’ll see a line of kernel command line options appear below.
@@ -303,14 +303,14 @@ use the IP address you discovered earlier:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inst.ks=http://192.168.11.5:8000/ostree.ks
 </code></pre></div></div>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/kernel-commandline.png" alt="Anaconda kernel command line" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/kernel-commandline.png" alt="Anaconda kernel command line" /></p>
 
 <p>After you press ENTER, the installer should start. If things are working the
 GUI should display but proceed automatically to the installation stage. You’ll
 see text about the system being installed from the OSTree repo, and how it’s
 pulling various objects.</p>
 
-<p><img src="/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/installing.png" alt="Anaconda kernel installing" /></p>
+<p><img src="/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/installing.png" alt="Anaconda kernel installing" /></p>
 
 <p>Once the system is installed, it’ll reboot automatically. To log into your
 newly minted system use the login <code class="language-plaintext highlighter-rouge">core</code> and the password <code class="language-plaintext highlighter-rouge">foobar</code>
@@ -331,7 +331,7 @@ that you saw in the <code class="language-plaintext highlighter-rouge">ostree.ks
     <footer class="tc pv3 bt bb b--light-silver bg-light-gray">
 
 <a href="https://github.com/osbuild"><i class="media-icon github"></i></a>
-<a href="/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
+<a href="/legacy-website/preview/refs/heads/main/feed.xml"><i class="media-icon rss"></i></a>
 
     </footer>
   </body>

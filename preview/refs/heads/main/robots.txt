@@ -1,1 +1,1 @@
-Sitemap: https://www.osbuild.org/preview/refs/heads/main/sitemap.xml
+Sitemap: https://www.osbuild.org/legacy-website/preview/refs/heads/main/sitemap.xml

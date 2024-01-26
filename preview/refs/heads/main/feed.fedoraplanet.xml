@@ -2,27 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="html">OSBuild</title>
   <subtitle>Build-Pipelines for Operating System Artifacts</subtitle>
-  <id>https://www.osbuild.org/preview/refs/heads/main/</id>
-  <updated>2023-06-27T02:48:08-05:00</updated>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/</id>
+  <updated>2024-01-26T03:44:36-06:00</updated>
   <author><name>OSBuild Developers</name></author>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news" rel="alternate" type="text/html" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/feed.fedoraplanet.xml" rel="self" type="application/atom+xml" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news" rel="alternate" type="text/html" />
 
 
 
 <entry>
   <title>Release of osbuild 28</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-28</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-28</id>
   <published>2021-04-09T00:00:00-05:00</published>
   <updated>2021-04-09T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2021-04-09-release-osbuild-28.html" rel="alternate" type="text/html" title="Release of osbuild 28" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2021-04-09-release-osbuild-28.html" rel="alternate" type="text/html" title="Release of osbuild 28" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 28 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a large set of
 fixes and minor additions to the different stages bundled with osbuild.
 Furthermore, Fedora 35 is now supported as host system.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2021-04-09-release-osbuild-28.html">&lt;p&gt;We are happy to announce version 28 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a large set of
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2021-04-09-release-osbuild-28.html">&lt;p&gt;We are happy to announce version 28 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a large set of
 fixes and minor additions to the different stages bundled with osbuild.
 Furthermore, Fedora 35 is now supported as host system.&lt;/p&gt;
 
@@ -85,14 +85,14 @@ from osbuild-composer-tests. Base CI images have been updated to Fedora 33.&lt;/
 
 <entry>
   <title>Release of osbuild-composer 26</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-26</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-26</id>
   <published>2020-12-16T00:00:00-06:00</published>
   <updated>2020-12-16T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-12-16-release-osbuild-composer-26.html" rel="alternate" type="text/html" title="Release of osbuild-composer 26" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-12-16-release-osbuild-composer-26.html" rel="alternate" type="text/html" title="Release of osbuild-composer 26" />
 
   <summary type="html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/osbuild-composer/releases/tag/v26&quot;&gt;osbuild-composer 26&lt;/a&gt;.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-12-16-release-osbuild-composer-26.html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/osbuild-composer/releases/tag/v26&quot;&gt;osbuild-composer 26&lt;/a&gt;.&lt;/p&gt;
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-12-16-release-osbuild-composer-26.html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/osbuild-composer/releases/tag/v26&quot;&gt;osbuild-composer 26&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It now allows sharing Amazon Machine Images with another account after
 uploading. This is useful when you run osbuild-composer for others: they don’t
@@ -169,15 +169,15 @@ simplify debugging.&lt;/p&gt;
 
 <entry>
   <title>Release of cockpit-composer 27</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-27</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-27</id>
   <published>2020-12-09T00:00:00-06:00</published>
   <updated>2020-12-09T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-12-09-release-cockpit-composer-27.html" rel="alternate" type="text/html" title="Release of cockpit-composer 27" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-12-09-release-cockpit-composer-27.html" rel="alternate" type="text/html" title="Release of cockpit-composer 27" />
 
   <summary type="html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/27&quot;&gt;cockpit-composer 27&lt;/a&gt;. This release
 has no major new features, but contains useful fixes.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-12-09-release-cockpit-composer-27.html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/27&quot;&gt;cockpit-composer 27&lt;/a&gt;. This release
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-12-09-release-cockpit-composer-27.html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/27&quot;&gt;cockpit-composer 27&lt;/a&gt;. This release
 has no major new features, but contains useful fixes.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
@@ -200,15 +200,15 @@ is encouraged to upgrade!&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 25</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-25</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-25</id>
   <published>2020-11-19T00:00:00-06:00</published>
   <updated>2020-11-19T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-osbuild-composer-25.html" rel="alternate" type="text/html" title="Release of osbuild-composer 25" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-19-release-osbuild-composer-25.html" rel="alternate" type="text/html" title="Release of osbuild-composer 25" />
 
   <summary type="html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/osbuild-composer/releases/tag/v25&quot;&gt;osbuild-composer 25&lt;/a&gt;. It now
 supports building RHEL 8.4. 🤗&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-osbuild-composer-25.html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/osbuild-composer/releases/tag/v25&quot;&gt;osbuild-composer 25&lt;/a&gt;. It now
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-19-release-osbuild-composer-25.html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/osbuild-composer/releases/tag/v25&quot;&gt;osbuild-composer 25&lt;/a&gt;. It now
 supports building RHEL 8.4. 🤗&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
@@ -252,16 +252,16 @@ our testing RPMs.&lt;/p&gt;
 
 <entry>
   <title>Release of koji-osbuild 3</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-koji-osbuild-3</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-koji-osbuild-3</id>
   <published>2020-11-19T00:00:00-06:00</published>
   <updated>2020-11-19T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-koji-osbuild-3.html" rel="alternate" type="text/html" title="Release of koji-osbuild 3" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-19-release-koji-osbuild-3.html" rel="alternate" type="text/html" title="Release of koji-osbuild 3" />
 
   <summary type="html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/koji-osbuild/releases/tag/v3&quot;&gt;&lt;em&gt;koji-osbuild&lt;/em&gt; 3&lt;/a&gt;, our new project to
 integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;, the build and
 tracking system primarily used by the Fedora Project and Red Hat.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-koji-osbuild-3.html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/koji-osbuild/releases/tag/v3&quot;&gt;&lt;em&gt;koji-osbuild&lt;/em&gt; 3&lt;/a&gt;, our new project to
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-19-release-koji-osbuild-3.html">&lt;p&gt;We are happy to announce that we released &lt;a href=&quot;https://github.com/osbuild/koji-osbuild/releases/tag/v3&quot;&gt;&lt;em&gt;koji-osbuild&lt;/em&gt; 3&lt;/a&gt;, our new project to
 integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;, the build and
 tracking system primarily used by the Fedora Project and Red Hat.&lt;/p&gt;
 
@@ -312,15 +312,15 @@ for the postgres container or matching the container versions to the host.&lt;/p
 
 <entry>
   <title>Release of cockpit-composer 26</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-26</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-26</id>
   <published>2020-11-19T00:00:00-06:00</published>
   <updated>2020-11-19T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-cockpit-composer-26.html" rel="alternate" type="text/html" title="Release of cockpit-composer 26" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-19-release-cockpit-composer-26.html" rel="alternate" type="text/html" title="Release of cockpit-composer 26" />
 
   <summary type="html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/26&quot;&gt;cockpit-composer 26&lt;/a&gt;. This release
 has no major new features, but contains useful fixes.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-19-release-cockpit-composer-26.html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/26&quot;&gt;cockpit-composer 26&lt;/a&gt;. This release
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-19-release-cockpit-composer-26.html">&lt;p&gt;We are happy to announce the release of &lt;a href=&quot;https://github.com/osbuild/cockpit-composer/releases/tag/26&quot;&gt;cockpit-composer 26&lt;/a&gt;. This release
 has no major new features, but contains useful fixes.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
@@ -346,14 +346,14 @@ Xiaofeng Wang&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 24</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-24</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-24</id>
   <published>2020-11-12T00:00:00-06:00</published>
   <updated>2020-11-12T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-12-release-osbuild-composer-24.html" rel="alternate" type="text/html" title="Release of osbuild-composer 24" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-12-release-osbuild-composer-24.html" rel="alternate" type="text/html" title="Release of osbuild-composer 24" />
 
   <summary type="html">&lt;p&gt;We are happy to announce that we released osbuild-composer 24.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-12-release-osbuild-composer-24.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 24.&lt;/p&gt;
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-12-release-osbuild-composer-24.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 24.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
 is encouraged to upgrade!&lt;/p&gt;
@@ -396,15 +396,15 @@ change is the introduction of Fedora 33 in composer’s CI.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 23</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-23</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-23</id>
   <published>2020-11-06T00:00:00-06:00</published>
   <updated>2020-11-06T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-06-release-osbuild-composer-23.html" rel="alternate" type="text/html" title="Release of osbuild-composer 23" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-06-release-osbuild-composer-23.html" rel="alternate" type="text/html" title="Release of osbuild-composer 23" />
 
   <summary type="html">&lt;p&gt;We are happy to announce that we released osbuild-composer 23 – better late
 than never!&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-06-release-osbuild-composer-23.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 23 – better late
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-06-release-osbuild-composer-23.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 23 – better late
 than never!&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
@@ -442,16 +442,16 @@ a local machine.&lt;/p&gt;
 
 <entry>
   <title>Second release of koji-osbuild</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-koji-osbuild-2</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-koji-osbuild-2</id>
   <published>2020-11-04T00:00:00-06:00</published>
   <updated>2020-11-04T00:00:00-06:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-04-release-koji-osbuild-2.html" rel="alternate" type="text/html" title="Second release of koji-osbuild" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-04-release-koji-osbuild-2.html" rel="alternate" type="text/html" title="Second release of koji-osbuild" />
 
   <summary type="html">&lt;p&gt;We are happy to announce the second release of &lt;em&gt;koji-osbuild&lt;/em&gt;, the project
 to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;. This
 is a bugfix release to fix issues uncovered after its first deployment.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-11-04-release-koji-osbuild-2.html">&lt;p&gt;We are happy to announce the second release of &lt;em&gt;koji-osbuild&lt;/em&gt;, the project
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-11-04-release-koji-osbuild-2.html">&lt;p&gt;We are happy to announce the second release of &lt;em&gt;koji-osbuild&lt;/em&gt;, the project
 to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;. This
 is a bugfix release to fix issues uncovered after its first deployment.&lt;/p&gt;
 
@@ -495,15 +495,15 @@ integration test. Explicitly install podman-plugins.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 23</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-23</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-23</id>
   <published>2020-10-23T00:00:00-05:00</published>
   <updated>2020-10-23T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html" rel="alternate" type="text/html" title="Release of osbuild 23" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html" rel="alternate" type="text/html" title="Release of osbuild 23" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
 possible to build Fedora on RHEL systems.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-23-release-osbuild-23.html">&lt;p&gt;We are happy to announce version 23 of &lt;em&gt;osbuild&lt;/em&gt;. This release makes it
 possible to build Fedora on RHEL systems.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-23&lt;/em&gt; sources. All
@@ -553,11 +553,11 @@ systems to run the composer reverse dependency tests for.&lt;/p&gt;
 
 <entry>
   <title>Introducing RPMrepo</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/introducing-rpmrepo</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/introducing-rpmrepo</id>
   <published>2020-10-23T00:00:00-05:00</published>
   <updated>2020-10-23T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-introducing-rpmrepo.html" rel="alternate" type="text/html" title="Introducing RPMrepo" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-23-introducing-rpmrepo.html" rel="alternate" type="text/html" title="Introducing RPMrepo" />
 
   <summary type="html">&lt;p&gt;The Image Builder project builds Fedora and RHEL operating system images, as
 such its test infrastructure is reliant on RPM package repositories to verify
@@ -566,7 +566,7 @@ is not unusual for CI systems to require external resources, but in the case
 of RPM repositories we are suddenly confronted with a moving target: If a test
 fails, was it our Image Builder modification that broke, or does the RPM
 repository include broken updates?&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-23-introducing-rpmrepo.html">&lt;p&gt;The Image Builder project builds Fedora and RHEL operating system images, as
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-23-introducing-rpmrepo.html">&lt;p&gt;The Image Builder project builds Fedora and RHEL operating system images, as
 such its test infrastructure is reliant on RPM package repositories to verify
 previously succeeding builds do not fail with newer Image Builder updates. It
 is not unusual for CI systems to require external resources, but in the case
@@ -679,7 +679,7 @@ repositories we currently take snapshots of.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Details&lt;/strong&gt;: &lt;a href=&quot;/preview/refs/heads/main/rpmrepo/&quot;&gt;osbuild.org/rpmrepo/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Details&lt;/strong&gt;: &lt;a href=&quot;/legacy-website/preview/refs/heads/main/rpmrepo/&quot;&gt;osbuild.org/rpmrepo/&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -739,14 +739,14 @@ further requests.&lt;/p&gt;</content>
 
 <entry>
   <title>Release of osbuild-composer 22</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-22</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-22</id>
   <published>2020-10-16T00:00:00-05:00</published>
   <updated>2020-10-16T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-16-release-osbuild-composer-22.html" rel="alternate" type="text/html" title="Release of osbuild-composer 22" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-16-release-osbuild-composer-22.html" rel="alternate" type="text/html" title="Release of osbuild-composer 22" />
 
   <summary type="html">&lt;p&gt;We are happy to announce that we released osbuild-composer 22.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-16-release-osbuild-composer-22.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 22.&lt;/p&gt;
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-16-release-osbuild-composer-22.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 22.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
 is encouraged to upgrade!&lt;/p&gt;
@@ -787,15 +787,15 @@ also available. See HACKING.md for more details.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 22</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-22</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-22</id>
   <published>2020-10-14T00:00:00-05:00</published>
   <updated>2020-10-14T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-14-release-osbuild-22.html" rel="alternate" type="text/html" title="Release of osbuild 22" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-14-release-osbuild-22.html" rel="alternate" type="text/html" title="Release of osbuild 22" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 22 of &lt;em&gt;osbuild&lt;/em&gt;. This release improves the
 internal error-handling as well as error-reporting on the command-line.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-14-release-osbuild-22.html">&lt;p&gt;We are happy to announce version 22 of &lt;em&gt;osbuild&lt;/em&gt;. This release improves the
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-14-release-osbuild-22.html">&lt;p&gt;We are happy to announce version 22 of &lt;em&gt;osbuild&lt;/em&gt;. This release improves the
 internal error-handling as well as error-reporting on the command-line.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-22&lt;/em&gt; sources. All
@@ -830,17 +830,17 @@ to check for spelling mistakes.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 21</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-21</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-21</id>
   <published>2020-10-07T00:00:00-05:00</published>
   <updated>2020-10-07T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html" rel="alternate" type="text/html" title="Release of osbuild 21" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html" rel="alternate" type="text/html" title="Release of osbuild 21" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
 support for running on Fedora 34. Furthermore, internal errors during
 container setup are now properly reported. And lastly, a lot of work has
 been done to improve the code readability.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-07-release-osbuild-21.html">&lt;p&gt;We are happy to announce version 21 of &lt;em&gt;osbuild&lt;/em&gt;. This release adds
 support for running on Fedora 34. Furthermore, internal errors during
 container setup are now properly reported. And lastly, a lot of work has
 been done to improve the code readability.&lt;/p&gt;
@@ -879,16 +879,16 @@ the modules, instead of relying on standard input.&lt;/p&gt;
 
 <entry>
   <title>First release of koji-osbuild</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-koji-osbuild-1</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-koji-osbuild-1</id>
   <published>2020-10-07T00:00:00-05:00</published>
   <updated>2020-10-07T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-koji-osbuild-1.html" rel="alternate" type="text/html" title="First release of koji-osbuild" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-07-release-koji-osbuild-1.html" rel="alternate" type="text/html" title="First release of koji-osbuild" />
 
   <summary type="html">&lt;p&gt;We are happy to announce the first release of &lt;em&gt;koji-osbuild&lt;/em&gt;, a new project
 to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;, the
 build and tracking system primarily used by the Fedora Project and Red Hat.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-07-release-koji-osbuild-1.html">&lt;p&gt;We are happy to announce the first release of &lt;em&gt;koji-osbuild&lt;/em&gt;, a new project
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-07-release-koji-osbuild-1.html">&lt;p&gt;We are happy to announce the first release of &lt;em&gt;koji-osbuild&lt;/em&gt;, a new project
 to integrate &lt;em&gt;osbuild-composer&lt;/em&gt; with &lt;a href=&quot;https://pagure.io/koji&quot;&gt;koji&lt;/a&gt;, the
 build and tracking system primarily used by the Fedora Project and Red Hat.&lt;/p&gt;
 
@@ -949,15 +949,15 @@ are included in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&
 
 <entry>
   <title>Release of cockpit-composer 25</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-25</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-25</id>
   <published>2020-10-06T00:00:00-05:00</published>
   <updated>2020-10-06T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-06-release-cockpit-composer-25.html" rel="alternate" type="text/html" title="Release of cockpit-composer 25" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-06-release-cockpit-composer-25.html" rel="alternate" type="text/html" title="Release of cockpit-composer 25" />
 
   <summary type="html">&lt;p&gt;We are happy to announce the release of cockpit-composer 25. This release has 
 no major features but contains useful fixes.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-10-06-release-cockpit-composer-25.html">&lt;p&gt;We are happy to announce the release of cockpit-composer 25. This release has 
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-10-06-release-cockpit-composer-25.html">&lt;p&gt;We are happy to announce the release of cockpit-composer 25. This release has 
 no major features but contains useful fixes.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log. Everyone is encouraged to
@@ -992,17 +992,17 @@ upgrade!&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 20</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-20</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-20</id>
   <published>2020-08-17T00:00:00-05:00</published>
   <updated>2020-08-17T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-08-17-release-osbuild-20.html" rel="alternate" type="text/html" title="Release of osbuild 20" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-08-17-release-osbuild-20.html" rel="alternate" type="text/html" title="Release of osbuild 20" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 20 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a big set
 of new features, including support for &lt;em&gt;btrfs&lt;/em&gt; assemblers, as well as reworked
 and improved progress output on the terminal. As usual, a round of bugfixes is
 included as well.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-08-17-release-osbuild-20.html">&lt;p&gt;We are happy to announce version 20 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a big set
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-08-17-release-osbuild-20.html">&lt;p&gt;We are happy to announce version 20 of &lt;em&gt;osbuild&lt;/em&gt;. This time with a big set
 of new features, including support for &lt;em&gt;btrfs&lt;/em&gt; assemblers, as well as reworked
 and improved progress output on the terminal. As usual, a round of bugfixes is
 included as well.&lt;/p&gt;
@@ -1071,16 +1071,16 @@ PEP-8 conformance.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 19</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-19</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-19</id>
   <published>2020-07-31T00:00:00-05:00</published>
   <updated>2020-07-31T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-07-31-release-osbuild-19.html" rel="alternate" type="text/html" title="Release of osbuild 19" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-07-31-release-osbuild-19.html" rel="alternate" type="text/html" title="Release of osbuild 19" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;osbuild&lt;/em&gt;. After a rather long period
 of development, this release comes with a wide range of new features and
 improvements, as well as the usual round of bug fixes.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-07-31-release-osbuild-19.html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;osbuild&lt;/em&gt;. After a rather long period
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-07-31-release-osbuild-19.html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;osbuild&lt;/em&gt;. After a rather long period
 of development, this release comes with a wide range of new features and
 improvements, as well as the usual round of bug fixes.&lt;/p&gt;
 
@@ -1150,15 +1150,15 @@ is run nightly as well.&lt;/p&gt;
 
 <entry>
   <title>Release of cockpit-composer 23</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-23</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-23</id>
   <published>2020-07-30T00:00:00-05:00</published>
   <updated>2020-07-30T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-07-30-release-cockpit-composer-23.html" rel="alternate" type="text/html" title="Release of cockpit-composer 23" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-07-30-release-cockpit-composer-23.html" rel="alternate" type="text/html" title="Release of cockpit-composer 23" />
 
   <summary type="html">&lt;p&gt;We are happy to announce the release of cockpit-composer 23. This release has 
 no major features but contains useful fixes.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-07-30-release-cockpit-composer-23.html">&lt;p&gt;We are happy to announce the release of cockpit-composer 23. This release has 
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-07-30-release-cockpit-composer-23.html">&lt;p&gt;We are happy to announce the release of cockpit-composer 23. This release has 
 no major features but contains useful fixes.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log. Everyone is encouraged to
@@ -1196,15 +1196,15 @@ upgrade!&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 16</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-16</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-16</id>
   <published>2020-06-30T00:00:00-05:00</published>
   <updated>2020-06-30T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-30-release-osbuild-composer-16.html" rel="alternate" type="text/html" title="Release of osbuild-composer 16" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-30-release-osbuild-composer-16.html" rel="alternate" type="text/html" title="Release of osbuild-composer 16" />
 
   <summary type="html">&lt;p&gt;We are happy to announce that we released osbuild-composer 16 yesterday.
 This release has no new features but contains a lot of useful fixes.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-30-release-osbuild-composer-16.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 16 yesterday.
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-30-release-osbuild-composer-16.html">&lt;p&gt;We are happy to announce that we released osbuild-composer 16 yesterday.
 This release has no new features but contains a lot of useful fixes.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log. Everyone is encouraged to
@@ -1268,17 +1268,17 @@ Note that upload to OpenStack is still not available for the end users
 
 <entry>
   <title>Release of osbuild-composer 15</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-15</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-15</id>
   <published>2020-06-12T00:00:00-05:00</published>
   <updated>2020-06-12T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-12-release-osbuild-composer-15.html" rel="alternate" type="text/html" title="Release of osbuild-composer 15" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-12-release-osbuild-composer-15.html" rel="alternate" type="text/html" title="Release of osbuild-composer 15" />
 
   <summary type="html">&lt;p&gt;Today, we released osbuild-composer 15 with several very exciting features.
 Most notably, Composer has now support for building RHEL For Edge and also
 for building images for ppc64le and s390x architectures. Also, a lot of very
 nice fixes are included in this release.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-12-release-osbuild-composer-15.html">&lt;p&gt;Today, we released osbuild-composer 15 with several very exciting features.
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-12-release-osbuild-composer-15.html">&lt;p&gt;Today, we released osbuild-composer 15 with several very exciting features.
 Most notably, Composer has now support for building RHEL For Edge and also
 for building images for ppc64le and s390x architectures. Also, a lot of very
 nice fixes are included in this release.&lt;/p&gt;
@@ -1365,17 +1365,17 @@ the test coverage went up. Thanks all for doing this!&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 14</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-14</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-14</id>
   <published>2020-06-04T00:00:00-05:00</published>
   <updated>2020-06-04T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-04-release-osbuild-composer-14.html" rel="alternate" type="text/html" title="Release of osbuild-composer 14" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-04-release-osbuild-composer-14.html" rel="alternate" type="text/html" title="Release of osbuild-composer 14" />
 
   <summary type="html">&lt;p&gt;Osbuild-composer 13 had numerous new exciting features but unfortunately,
 several annoying bugs slipped into that release too. To address all these
 issues, yesterday our team decided to roll-out an off-schedule bug-fix
 release. Say hi to osbuild-composer 14.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-04-release-osbuild-composer-14.html">&lt;p&gt;Osbuild-composer 13 had numerous new exciting features but unfortunately,
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-04-release-osbuild-composer-14.html">&lt;p&gt;Osbuild-composer 13 had numerous new exciting features but unfortunately,
 several annoying bugs slipped into that release too. To address all these
 issues, yesterday our team decided to roll-out an off-schedule bug-fix
 release. Say hi to osbuild-composer 14.&lt;/p&gt;
@@ -1448,16 +1448,16 @@ these architectures.&lt;/p&gt;
 
 <entry>
   <title>Release of cockpit-composer 19</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-19</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-19</id>
   <published>2020-06-04T00:00:00-05:00</published>
   <updated>2020-06-04T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-19.html" rel="alternate" type="text/html" title="Release of cockpit-composer 19" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-19.html" rel="alternate" type="text/html" title="Release of cockpit-composer 19" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases. There are no major features in this release but 
 upgrading is encouraged.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-19.html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-19.html">&lt;p&gt;We are happy to announce version 19 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases. There are no major features in this release but 
 upgrading is encouraged.&lt;/p&gt;
 
@@ -1495,15 +1495,15 @@ is encouraged to upgrade!&lt;/p&gt;
 
 <entry>
   <title>Release of cockpit-composer 18</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-18</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-18</id>
   <published>2020-06-04T00:00:00-05:00</published>
   <updated>2020-06-04T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-18.html" rel="alternate" type="text/html" title="Release of cockpit-composer 18" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-18.html" rel="alternate" type="text/html" title="Release of cockpit-composer 18" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 18 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-18.html">&lt;p&gt;We are happy to announce version 18 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-04-release-cockpit-composer-18.html">&lt;p&gt;We are happy to announce version 18 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
@@ -1534,11 +1534,11 @@ is encouraged to upgrade!&lt;/p&gt;
 
 <entry>
   <title>How to: Image Builder + OSTree + Anaconda</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/how-to-ostree-anaconda</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/how-to-ostree-anaconda</id>
   <published>2020-06-01T00:00:00-05:00</published>
   <updated>2020-06-01T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-01-how-to-ostree-anaconda.html" rel="alternate" type="text/html" title="How to: Image Builder + OSTree + Anaconda" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-01-how-to-ostree-anaconda.html" rel="alternate" type="text/html" title="How to: Image Builder + OSTree + Anaconda" />
 
   <summary type="html">&lt;p&gt;In version 15, &lt;em&gt;Image Builder&lt;/em&gt; gained support for creating
 &lt;a href=&quot;https://ostree.readthedocs.io/en/latest/&quot;&gt;OSTree&lt;/a&gt; commits.
@@ -1548,7 +1548,7 @@ and its
 &lt;a href=&quot;https://anaconda-installer.readthedocs.io/en/latest/kickstart.html&quot;&gt;Kickstart functionality&lt;/a&gt;.
 This process is rather involved, with none of the individual parts
 providing a complete solution yet, so let me walk you through it.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-06-01-how-to-ostree-anaconda.html">&lt;p&gt;In version 15, &lt;em&gt;Image Builder&lt;/em&gt; gained support for creating
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-06-01-how-to-ostree-anaconda.html">&lt;p&gt;In version 15, &lt;em&gt;Image Builder&lt;/em&gt; gained support for creating
 &lt;a href=&quot;https://ostree.readthedocs.io/en/latest/&quot;&gt;OSTree&lt;/a&gt; commits.
 You can install a Linux system using those OSTree commits by using
 the &lt;a href=&quot;https://fedoraproject.org/wiki/Anaconda&quot;&gt;Anaconda Installer&lt;/a&gt;
@@ -1562,7 +1562,7 @@ providing a complete solution yet, so let me walk you through it.&lt;/p&gt;
 &lt;h1 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h1&gt;
 
 &lt;p&gt;The naming of &lt;em&gt;Image Builder&lt;/em&gt; and its various parts need
-&lt;a href=&quot;/preview/refs/heads/main/documentation/&quot;&gt;some introduction&lt;/a&gt;
+&lt;a href=&quot;/legacy-website/preview/refs/heads/main/documentation/&quot;&gt;some introduction&lt;/a&gt;
 before they make sense. So I’ll
 list the actual package names you need for a complete working &lt;em&gt;Image Builder&lt;/em&gt;
 setup. We’ll also use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;podman&lt;/code&gt; later on:&lt;/p&gt;
@@ -1598,25 +1598,25 @@ $ sudo systemctl start cockpit
 your usual Linux user name and password. Make sure your Linux user is an
 administrative account on the local machine. Then click on &lt;em&gt;Image Builder&lt;/em&gt; in the menu:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/empty.png&quot; alt=&quot;Image Builder empty screen&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/empty.png&quot; alt=&quot;Image Builder empty screen&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the &lt;em&gt;Create Blueprint&lt;/em&gt; button to make a new blueprint and give it
 a simple name. In the instructions below we use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iot&lt;/code&gt; so for simplicity
 just stick with that here:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-blueprint.png&quot; alt=&quot;Image Builder Create Blueprint&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-blueprint.png&quot; alt=&quot;Image Builder Create Blueprint&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You don’t need to add any additional software to the blueprint to get a bootable
 system. Click the &lt;em&gt;Create Image&lt;/em&gt; button, and choose &lt;em&gt;Fedora IoT Commit&lt;/em&gt; as
 the image &lt;em&gt;Type&lt;/em&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-image.png&quot; alt=&quot;Image Builder Create Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/create-image.png&quot; alt=&quot;Image Builder Create Image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you click &lt;em&gt;Create&lt;/em&gt; the image build will start, and take several minutes
 to complete. You won’t see any progress information or logs until its done,
 so just be patient:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/queue-progress.png&quot; alt=&quot;Image Builder in progress&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/queue-progress.png&quot; alt=&quot;Image Builder in progress&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once the image build is done, choose the option to &lt;em&gt;Download&lt;/em&gt; the image which
 is hidden in the kebab menu next to the &lt;em&gt;Logs&lt;/em&gt; button. You’ll get a tarball
@@ -1625,7 +1625,7 @@ which contains the OSTree commit that was just created. Save that file
 to a local directory and we’ll place a few additional files next to it
 in later steps.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/download.png&quot; alt=&quot;Image Builder download&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/download.png&quot; alt=&quot;Image Builder download&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;create-the-ostree-in-image-builder-command-line&quot;&gt;Create the OSTree in Image Builder command line&lt;/h1&gt;
 
@@ -1751,7 +1751,7 @@ cover here.&lt;/p&gt;
 &lt;p&gt;At the initial screen that the Installer ISO displays, you’ll see a line
 something like &lt;em&gt;Install Fedora 32&lt;/em&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/bootmenu.png&quot; alt=&quot;Anaconda boot menu&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/bootmenu.png&quot; alt=&quot;Anaconda boot menu&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Before the time out, use the arrow keys to select that line, and press
 the TAB key. You’ll see a line of kernel command line options appear below.
@@ -1766,14 +1766,14 @@ use the IP address you discovered earlier:&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;inst.ks=http://192.168.11.5:8000/ostree.ks
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/kernel-commandline.png&quot; alt=&quot;Anaconda kernel command line&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/kernel-commandline.png&quot; alt=&quot;Anaconda kernel command line&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After you press ENTER, the installer should start. If things are working the
 GUI should display but proceed automatically to the installation stage. You’ll
 see text about the system being installed from the OSTree repo, and how it’s
 pulling various objects.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/installing.png&quot; alt=&quot;Anaconda kernel installing&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/legacy-website/preview/refs/heads/main/images/pages/2020-06-01-how-to-ostree-anaconda/installing.png&quot; alt=&quot;Anaconda kernel installing&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once the system is installed, it’ll reboot automatically. To log into your
 newly minted system use the login &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;core&lt;/code&gt; and the password &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foobar&lt;/code&gt;
@@ -1784,18 +1784,18 @@ that you saw in the &lt;code class=&quot;language-plaintext highlighter-rouge&qu
 
 <entry>
   <title>Release of osbuild-composer 13</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-13</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-13</id>
   <published>2020-05-29T00:00:00-05:00</published>
   <updated>2020-05-29T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-composer-13.html" rel="alternate" type="text/html" title="Release of osbuild-composer 13" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-29-release-osbuild-composer-13.html" rel="alternate" type="text/html" title="Release of osbuild-composer 13" />
 
   <summary type="html">&lt;p&gt;Yesterday, we released version 13 of &lt;em&gt;osbuild-composer&lt;/em&gt;. We are very proud of
 this release as it contains lots of very nice improvements. The most important
 ones are: support for building Fedora IoT commit tarballs, revamped support
 for RHEL 8 and dropping the ability to build Fedora 30 and several poorly-
 defined image types.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-composer-13.html">&lt;p&gt;Yesterday, we released version 13 of &lt;em&gt;osbuild-composer&lt;/em&gt;. We are very proud of
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-29-release-osbuild-composer-13.html">&lt;p&gt;Yesterday, we released version 13 of &lt;em&gt;osbuild-composer&lt;/em&gt;. We are very proud of
 this release as it contains lots of very nice improvements. The most important
 ones are: support for building Fedora IoT commit tarballs, revamped support
 for RHEL 8 and dropping the ability to build Fedora 30 and several poorly-
@@ -1887,15 +1887,15 @@ big thanks to everyone involved!&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 15</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-15</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-15</id>
   <published>2020-05-29T00:00:00-05:00</published>
   <updated>2020-05-29T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html" rel="alternate" type="text/html" title="Release of osbuild 15" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html" rel="alternate" type="text/html" title="Release of osbuild 15" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
 and, as usual, lots of bugfixes all over.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-29-release-osbuild-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;osbuild&lt;/em&gt;. A handful of new features
 and, as usual, lots of bugfixes all over.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official changelog from the &lt;em&gt;osbuild-15&lt;/em&gt; sources. All
@@ -1961,16 +1961,16 @@ be proper markdown.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 12</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-12</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-12</id>
   <published>2020-05-14T00:00:00-05:00</published>
   <updated>2020-05-14T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-14-release-osbuild-composer-12.html" rel="alternate" type="text/html" title="Release of osbuild-composer 12" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-14-release-osbuild-composer-12.html" rel="alternate" type="text/html" title="Release of osbuild-composer 12" />
 
   <summary type="html">&lt;p&gt;Today, we released version 12 of &lt;em&gt;osbuild-composer&lt;/em&gt;. This time, there are no
 major features. However, you are still encouraged to upgrade because the new
 version contains a lot of fixes and refactorings making the tool more stable.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-14-release-osbuild-composer-12.html">&lt;p&gt;Today, we released version 12 of &lt;em&gt;osbuild-composer&lt;/em&gt;. This time, there are no
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-14-release-osbuild-composer-12.html">&lt;p&gt;Today, we released version 12 of &lt;em&gt;osbuild-composer&lt;/em&gt;. This time, there are no
 major features. However, you are still encouraged to upgrade because the new
 version contains a lot of fixes and refactorings making the tool more stable.&lt;/p&gt;
 
@@ -2019,18 +2019,18 @@ is encouraged to upgrade!&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 14</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-14</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-14</id>
   <published>2020-05-12T00:00:00-05:00</published>
   <updated>2020-05-12T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-12-release-osbuild-14.html" rel="alternate" type="text/html" title="Release of osbuild 14" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-12-release-osbuild-14.html" rel="alternate" type="text/html" title="Release of osbuild 14" />
 
   <summary type="html">&lt;p&gt;Last week, we released version 14 of &lt;em&gt;osbuild&lt;/em&gt;. It is a regular release with a
 handful of new features, as well as a bunch of fixes. The major new feature is
 support for input-validation via JSON-schemata, as well as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--inspect&lt;/code&gt;
 command-line option to get more information about manifests without running the
 pipeline engine.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-12-release-osbuild-14.html">&lt;p&gt;Last week, we released version 14 of &lt;em&gt;osbuild&lt;/em&gt;. It is a regular release with a
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-12-release-osbuild-14.html">&lt;p&gt;Last week, we released version 14 of &lt;em&gt;osbuild&lt;/em&gt;. It is a regular release with a
 handful of new features, as well as a bunch of fixes. The major new feature is
 support for input-validation via JSON-schemata, as well as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--inspect&lt;/code&gt;
 command-line option to get more information about manifests without running the
@@ -2084,15 +2084,15 @@ pipelines as a result of the schema validation work.&lt;/p&gt;
 
 <entry>
   <title>Release of cockpit-composer 17</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-17</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-17</id>
   <published>2020-05-06T00:00:00-05:00</published>
   <updated>2020-05-06T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-06-release-cockpit-composer-17.html" rel="alternate" type="text/html" title="Release of cockpit-composer 17" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-06-release-cockpit-composer-17.html" rel="alternate" type="text/html" title="Release of cockpit-composer 17" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 17 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-05-06-release-cockpit-composer-17.html">&lt;p&gt;We are happy to announce version 17 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-05-06-release-cockpit-composer-17.html">&lt;p&gt;We are happy to announce version 17 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Jacob Kozol. Everyone
@@ -2132,15 +2132,15 @@ have been moved away from selenium.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 11</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-11</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-11</id>
   <published>2020-04-30T00:00:00-05:00</published>
   <updated>2020-04-30T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-30-release-osbuild-composer-11.html" rel="alternate" type="text/html" title="Release of osbuild-composer 11" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-30-release-osbuild-composer-11.html" rel="alternate" type="text/html" title="Release of osbuild-composer 11" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases. It now supports uploading images to Azure as well.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-30-release-osbuild-composer-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-30-release-osbuild-composer-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases. It now supports uploading images to Azure as well.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled by Ondřej Budai. Everyone
@@ -2193,15 +2193,15 @@ Lars Karlitski, Major Hayden, Ondřej Budai, Tom Gundersen&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 13</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-13</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-13</id>
   <published>2020-04-30T00:00:00-05:00</published>
   <updated>2020-04-30T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-30-release-osbuild-13.html" rel="alternate" type="text/html" title="Release of osbuild 13" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-30-release-osbuild-13.html" rel="alternate" type="text/html" title="Release of osbuild 13" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 13 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-30-release-osbuild-13.html">&lt;p&gt;We are happy to announce version 13 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-30-release-osbuild-13.html">&lt;p&gt;We are happy to announce version 13 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases.&lt;/p&gt;
 
 &lt;p&gt;Below you can find the official change log, compiled By Christian Kellner.
@@ -2256,15 +2256,15 @@ within a container.&lt;/p&gt;
 
 <entry>
   <title>Release of cockpit-composer 16</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-16</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-16</id>
   <published>2020-04-16T00:00:00-05:00</published>
   <updated>2020-04-16T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-16-release-cockpit-composer-16.html" rel="alternate" type="text/html" title="Release of cockpit-composer 16" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-16-release-cockpit-composer-16.html" rel="alternate" type="text/html" title="Release of cockpit-composer 16" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 16 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-16-release-cockpit-composer-16.html">&lt;p&gt;We are happy to announce version 16 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-16-release-cockpit-composer-16.html">&lt;p&gt;We are happy to announce version 16 of &lt;em&gt;cockpit-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;
 
 &lt;p&gt;This release adds the ability to upload to AWS. When creating an image 
@@ -2305,17 +2305,17 @@ of weldr/cockpit-composer.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 10</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-10</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-10</id>
   <published>2020-04-15T00:00:00-05:00</published>
   <updated>2020-04-15T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-15-release-osbuild-composer-10.html" rel="alternate" type="text/html" title="Release of osbuild-composer 10" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-15-release-osbuild-composer-10.html" rel="alternate" type="text/html" title="Release of osbuild-composer 10" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases. This release contains mostly bug fixes and internal
 refactorings. We’ve also landed more integration tests and increased unit test
 coverage.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-15-release-osbuild-composer-10.html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-15-release-osbuild-composer-10.html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases. This release contains mostly bug fixes and internal
 refactorings. We’ve also landed more integration tests and increased unit test
 coverage.&lt;/p&gt;
@@ -2369,15 +2369,15 @@ Lars Karlitski, Major Hayden, Martin Sehnoutka, Ondřej Budai, Tom Gundersen&lt;
 
 <entry>
   <title>Release of osbuild 12</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-12</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-12</id>
   <published>2020-04-15T00:00:00-05:00</published>
   <updated>2020-04-15T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-15-release-osbuild-12.html" rel="alternate" type="text/html" title="Release of osbuild 12" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-15-release-osbuild-12.html" rel="alternate" type="text/html" title="Release of osbuild 12" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 12 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-15-release-osbuild-12.html">&lt;p&gt;We are happy to announce version 12 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-15-release-osbuild-12.html">&lt;p&gt;We are happy to announce version 12 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases.&lt;/p&gt;
 
 &lt;p&gt;This release adds multiple stages and sources for building OSTree-based
@@ -2462,16 +2462,16 @@ Budai, Tom Gundersen&lt;/p&gt;
 
 <entry>
   <title>Release of cockpit-composer 15</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-cockpit-composer-15</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-cockpit-composer-15</id>
   <published>2020-04-02T00:00:00-05:00</published>
   <updated>2020-04-02T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-02-release-cockpit-composer-15.html" rel="alternate" type="text/html" title="Release of cockpit-composer 15" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-02-release-cockpit-composer-15.html" rel="alternate" type="text/html" title="Release of cockpit-composer 15" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;cockpit-composer&lt;/em&gt;. Most of the work was 
 spent migrating the backend from &lt;em&gt;lorax-composer&lt;/em&gt; to &lt;em&gt;osbuild-composer&lt;/em&gt;. There 
 were also minor updates to the tests and CI.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-02-release-cockpit-composer-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;cockpit-composer&lt;/em&gt;. Most of the work was 
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-02-release-cockpit-composer-15.html">&lt;p&gt;We are happy to announce version 15 of &lt;em&gt;cockpit-composer&lt;/em&gt;. Most of the work was 
 spent migrating the backend from &lt;em&gt;lorax-composer&lt;/em&gt; to &lt;em&gt;osbuild-composer&lt;/em&gt;. There 
 were also minor updates to the tests and CI.&lt;/p&gt;
 
@@ -2508,15 +2508,15 @@ store.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 9</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-9</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-9</id>
   <published>2020-04-01T00:00:00-05:00</published>
   <updated>2020-04-01T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-composer-9.html" rel="alternate" type="text/html" title="Release of osbuild-composer 9" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-01-release-osbuild-composer-9.html" rel="alternate" type="text/html" title="Release of osbuild-composer 9" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 9 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-composer-9.html">&lt;p&gt;We are happy to announce version 9 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-01-release-osbuild-composer-9.html">&lt;p&gt;We are happy to announce version 9 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;
 
 &lt;p&gt;The most visible changes are that we’re building up-to-date Fedora images now
@@ -2605,17 +2605,17 @@ Tom Gundersen&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 11</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-11</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-11</id>
   <published>2020-04-01T00:00:00-05:00</published>
   <updated>2020-04-01T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html" rel="alternate" type="text/html" title="Release of osbuild 11" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html" rel="alternate" type="text/html" title="Release of osbuild 11" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases. Most of our efforts were again spent on general cleanups and
 minor documentation improvements. No big reworks or feature announcements this
 time.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-04-01-release-osbuild-11.html">&lt;p&gt;We are happy to announce version 11 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases. Most of our efforts were again spent on general cleanups and
 minor documentation improvements. No big reworks or feature announcements this
 time.&lt;/p&gt;
@@ -2678,15 +2678,15 @@ Hayden, Martin Sehnoutka, Ondřej Budai&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild-composer 8</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-composer-8</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-composer-8</id>
   <published>2020-03-18T00:00:00-05:00</published>
   <updated>2020-03-18T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-03-18-release-osbuild-composer-8.html" rel="alternate" type="text/html" title="Release of osbuild-composer 8" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-03-18-release-osbuild-composer-8.html" rel="alternate" type="text/html" title="Release of osbuild-composer 8" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 8 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-03-18-release-osbuild-composer-8.html">&lt;p&gt;We are happy to announce version 8 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-03-18-release-osbuild-composer-8.html">&lt;p&gt;We are happy to announce version 8 of &lt;em&gt;osbuild-composer&lt;/em&gt;, again one of our
 regular biweekly releases.&lt;/p&gt;
 
 &lt;p&gt;The biggest change is that we now use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.osbuild.rpm&lt;/code&gt;
@@ -2721,16 +2721,16 @@ output.&lt;/p&gt;
 
 <entry>
   <title>Release of osbuild 10</title>
-  <id>https://www.osbuild.org/preview/refs/heads/main/news/release-osbuild-10</id>
+  <id>https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/release-osbuild-10</id>
   <published>2020-03-18T00:00:00-05:00</published>
   <updated>2020-03-18T00:00:00-05:00</updated>
   <author><name>OSBuild Developers</name></author>
-  <link href="https://www.osbuild.org/preview/refs/heads/main/news/2020-03-18-release-osbuild-10.html" rel="alternate" type="text/html" title="Release of osbuild 10" />
+  <link href="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-03-18-release-osbuild-10.html" rel="alternate" type="text/html" title="Release of osbuild 10" />
 
   <summary type="html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases. Most of our efforts were spent on general cleanups and minor
 documentation improvements. No big reworks or feature announcements this time.&lt;/p&gt;</summary>
-  <content type="html" xml:base="https://www.osbuild.org/preview/refs/heads/main/news/2020-03-18-release-osbuild-10.html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
+  <content type="html" xml:base="https://www.osbuild.org/legacy-website/preview/refs/heads/main/news/2020-03-18-release-osbuild-10.html">&lt;p&gt;We are happy to announce version 10 of &lt;em&gt;osbuild&lt;/em&gt;, again one of our regular
 biweekly releases. Most of our efforts were spent on general cleanups and minor
 documentation improvements. No big reworks or feature announcements this time.&lt;/p&gt;
 
